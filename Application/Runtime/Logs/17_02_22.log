@@ -1,0 +1,571 @@
+[ 2017-02-22T12:51:05+08:00 ] ::1 /elem/index.php?s=/Admin/Manager/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000053s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000285s ]
+
+[ 2017-02-22T12:51:05+08:00 ] ::1 /elem/index.php?s=/Admin/Manager/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2017-02-22T12:51:20+08:00 ] ::1 /elem/index.php?s=/Admin/Manager/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.002407s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+SQL: SHOW COLUMNS FROM `elem_admin` [ RunTime:0.003337s ]
+SQL: SELECT * FROM `elem_admin` WHERE ( `account` = 'admin' ) AND ( `status` <> '9' ) LIMIT 1   [ RunTime:0.000369s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011347s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000490s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2017-02-22T12:51:21+08:00 ] ::1 /elem/index.php?s=/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.001930s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000015s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002712s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002742s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000443s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+
+[ 2017-02-22T12:51:21+08:00 ] ::1 /elem/index.php?s=/Admin/Index/left
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.001788s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000626s ]
+
+[ 2017-02-22T12:51:21+08:00 ] ::1 /elem/index.php?s=/Admin/Order/orderlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+SQL: SHOW COLUMNS FROM `elem_ordadd` [ RunTime:0.002970s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_ordadd`
+SQL: SHOW COLUMNS FROM `elem_orgood` [ RunTime:0.003862s ]
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 38 行.
+NOTIC: [8] Undefined index: ordname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 40 行.
+NOTIC: [8] Undefined index: addname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 41 行.
+NOTIC: [8] Undefined index: tel /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 42 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_ordadd` WHERE ( `type` <> 9 ) LIMIT 1   [ RunTime:0.000314s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `elem_ordadd` WHERE ( `type` <> 9 ) LIMIT 1  
+NOTIC: [8] Undefined variable: parameter /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 61 行.
+SQL: SELECT * FROM `elem_ordadd` WHERE ( `type` <> 9 ) ORDER BY update_time desc , type asc LIMIT 0,15   [ RunTime:0.000273s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `elem_ordadd` WHERE ( `type` <> 9 ) ORDER BY update_time desc , type asc LIMIT 0,15  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 18 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 19 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 20 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 21 行.
+NOTIC: [8] Undefined index: ordname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 28 行.
+NOTIC: [8] Undefined index: addname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 29 行.
+NOTIC: [8] Undefined index: tel /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 30 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 34 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 35 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 36 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006870s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2017-02-22T12:51:21+08:00 ] ::1 /elem/index.php?s=/Admin/Index/top
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.002138s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000016s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000043s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001531s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2017-02-22T13:01:01+08:00 ] ::1 /elem/index.php?s=/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.002173s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000016s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000046s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003753s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000109s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2017-02-22T13:01:01+08:00 ] ::1 /elem/index.php?s=/Admin/Index/top
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.001745s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000047s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000340s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000379s ]
+
+[ 2017-02-22T13:01:01+08:00 ] ::1 /elem/index.php?s=/Admin/Order/orderlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `elem_ordadd` [ RunTime:0.001652s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_ordadd`
+SQL: SHOW COLUMNS FROM `elem_orgood` [ RunTime:0.002408s ]
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 38 行.
+NOTIC: [8] Undefined index: ordname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 40 行.
+NOTIC: [8] Undefined index: addname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 41 行.
+NOTIC: [8] Undefined index: tel /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 42 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_ordadd` WHERE ( `type` <> 9 ) LIMIT 1   [ RunTime:0.000361s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `elem_ordadd` WHERE ( `type` <> 9 ) LIMIT 1  
+NOTIC: [8] Undefined variable: parameter /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 61 行.
+SQL: SELECT * FROM `elem_ordadd` WHERE ( `type` <> 9 ) ORDER BY update_time desc , type asc LIMIT 0,15   [ RunTime:0.000259s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `elem_ordadd` WHERE ( `type` <> 9 ) ORDER BY update_time desc , type asc LIMIT 0,15  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 18 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 19 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 20 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 21 行.
+NOTIC: [8] Undefined index: ordname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 28 行.
+NOTIC: [8] Undefined index: addname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 29 行.
+NOTIC: [8] Undefined index: tel /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 30 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 34 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 35 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 36 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005940s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000375s ]
+
+[ 2017-02-22T13:01:01+08:00 ] ::1 /elem/index.php?s=/Admin/Index/left
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.002021s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004815s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2017-02-22T13:01:06+08:00 ] ::1 /elem/index.php?s=/Admin/Goods/GoodsList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+SQL: SHOW COLUMNS FROM `elem_goods` [ RunTime:0.003710s ]
+NOTIC: [8] Undefined index: cate_id /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/GoodsController.class.php 第 12 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_goods` LIMIT 1   [ RunTime:0.000338s ]
+SQL: SELECT * FROM `elem_goods` LIMIT 0,15   [ RunTime:0.000276s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined variable: cate_list /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 31 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 66 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 67 行.
+NOTIC: [8] Undefined index: gname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 70 行.
+NOTIC: [8] Undefined index: cname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 72 行.
+NOTIC: [8] Undefined index: gconstituent /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 73 行.
+NOTIC: [8] Undefined index: gpic /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 74 行.
+NOTIC: [8] Undefined index: gcreate_time /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 75 行.
+NOTIC: [8] Undefined index: gupdate_time /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 76 行.
+NOTIC: [8] Undefined index: gprice /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 77 行.
+NOTIC: [8] Undefined index: gremark /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 78 行.
+NOTIC: [8] Undefined index: fstatus /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 80 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 80 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 89 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 92 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 66 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 67 行.
+NOTIC: [8] Undefined index: gname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 70 行.
+NOTIC: [8] Undefined index: cname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 72 行.
+NOTIC: [8] Undefined index: gconstituent /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 73 行.
+NOTIC: [8] Undefined index: gpic /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 74 行.
+NOTIC: [8] Undefined index: gcreate_time /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 75 行.
+NOTIC: [8] Undefined index: gupdate_time /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 76 行.
+NOTIC: [8] Undefined index: gprice /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 77 行.
+NOTIC: [8] Undefined index: gremark /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 78 行.
+NOTIC: [8] Undefined index: fstatus /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 80 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 80 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 89 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 92 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 66 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 67 行.
+NOTIC: [8] Undefined index: gname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 70 行.
+NOTIC: [8] Undefined index: cname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 72 行.
+NOTIC: [8] Undefined index: gconstituent /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 73 行.
+NOTIC: [8] Undefined index: gpic /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 74 行.
+NOTIC: [8] Undefined index: gcreate_time /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 75 行.
+NOTIC: [8] Undefined index: gupdate_time /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 76 行.
+NOTIC: [8] Undefined index: gprice /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 77 行.
+NOTIC: [8] Undefined index: gremark /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 78 行.
+NOTIC: [8] Undefined index: fstatus /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 80 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 80 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 89 行.
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 92 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005318s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000624s ]
+
+[ 2017-02-22T13:01:06+08:00 ] ::1 /elem/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+
+[ 2017-02-22T13:01:06+08:00 ] ::1 /elem/index.php?s=/Index/goodlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.002053s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = 1 )  [ RunTime:0.000227s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = 1 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_toppic` [ RunTime:0.002117s ]
+SQL: SELECT * FROM `elem_toppic`  [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `elem_shop` [ RunTime:0.002680s ]
+SQL: SELECT * FROM `elem_shop` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `elem_goods` [ RunTime:0.003963s ]
+SQL: SELECT * FROM `elem_goods` WHERE ( `sid` = 1 ) AND ( `status` <> 9 )  [ RunTime:0.001559s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006937s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006971s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2017-02-22T13:01:09+08:00 ] ::1 /elem/index.php?s=/Admin/Order/orderlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `elem_ordadd` [ RunTime:0.002118s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_ordadd`
+SQL: SHOW COLUMNS FROM `elem_orgood` [ RunTime:0.002596s ]
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 38 行.
+NOTIC: [8] Undefined index: ordname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 40 行.
+NOTIC: [8] Undefined index: addname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 41 行.
+NOTIC: [8] Undefined index: tel /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 42 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_ordadd` WHERE ( `type` <> 9 ) LIMIT 1   [ RunTime:0.000255s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `elem_ordadd` WHERE ( `type` <> 9 ) LIMIT 1  
+NOTIC: [8] Undefined variable: parameter /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/OrderController.class.php 第 61 行.
+SQL: SELECT * FROM `elem_ordadd` WHERE ( `type` <> 9 ) ORDER BY update_time desc , type asc LIMIT 0,15   [ RunTime:0.000243s ]
+ERR: 1146:Table 'elem.elem_ordadd' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `elem_ordadd` WHERE ( `type` <> 9 ) ORDER BY update_time desc , type asc LIMIT 0,15  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 18 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 19 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 20 行.
+NOTIC: [8] Undefined variable: tab_type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 21 行.
+NOTIC: [8] Undefined index: ordname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 28 行.
+NOTIC: [8] Undefined index: addname /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 29 行.
+NOTIC: [8] Undefined index: tel /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 30 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 34 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 35 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 36 行.
+NOTIC: [8] Undefined index: type /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/8152765a2197b3666aff95d9a9c81666.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000110s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000299s ]
+
+[ 2017-02-22T13:01:11+08:00 ] ::1 /elem/index.php?s=/Admin/Shop/shoplist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `elem_shop` [ RunTime:0.002123s ]
+NOTIC: [8] Undefined index: title /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/ShopController.class.php 第 14 行.
+NOTIC: [8] Undefined index: boss /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/ShopController.class.php 第 15 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_shop` WHERE ( `status` <> 9 ) LIMIT 1   [ RunTime:0.000257s ]
+SQL: SELECT * FROM `elem_shop` WHERE ( `status` <> 9 ) LIMIT 0,15   [ RunTime:0.000332s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8] Undefined index: title /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3eebde74f7627033d01e4d2e4e7d4701.php 第 26 行.
+NOTIC: [8] Undefined index: boss /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Admin/3eebde74f7627033d01e4d2e4e7d4701.php 第 27 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004418s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004438s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2017-02-22T13:01:13+08:00 ] ::1 /elem/index.php?s=/Admin/Shop/manapic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `elem_toppic` [ RunTime:0.002264s ]
+SQL: SELECT * FROM `elem_toppic`  [ RunTime:0.000239s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2017-02-22T13:01:15+08:00 ] ::1 /elem/index.php?s=/Admin/User/userlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+NOTIC: [8] Undefined index: name /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/UserController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `elem_useradd` [ RunTime:0.001844s ]
+ERR: 1146:Table 'elem.elem_useradd' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_useradd`
+NOTIC: [8] Undefined variable: where /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/UserController.class.php 第 13 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_useradd` LIMIT 1   [ RunTime:0.000190s ]
+ERR: 1146:Table 'elem.elem_useradd' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `elem_useradd` LIMIT 1  
+NOTIC: [8] Undefined variable: where /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Admin/Controller/UserController.class.php 第 15 行.
+SQL: SELECT * FROM `elem_useradd` LIMIT 0,15   [ RunTime:0.000122s ]
+ERR: 1146:Table 'elem.elem_useradd' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `elem_useradd` LIMIT 0,15  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004206s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2017-02-22T13:01:17+08:00 ] ::1 /elem/index.php?s=/Admin/Manager/editPwd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000102s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000299s ]
+
+[ 2017-02-22T13:01:18+08:00 ] ::1 /elem/index.php?s=/Admin/Admin/adminList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `elem_admin` [ RunTime:0.002303s ]
+SQL: SELECT `g_id` FROM `elem_admin` WHERE ( `aid` = 1 ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `elem_basic` [ RunTime:0.001987s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+SQL: SHOW COLUMNS FROM `elem_admin` [ RunTime:0.002605s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `elem_admin` WHERE ( `g_id` <> '99' ) AND ( `status` <> '9' ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT * FROM `elem_admin` WHERE ( `g_id` <> '99' ) AND ( `status` <> '9' ) ORDER BY ctime desc LIMIT 0,15   [ RunTime:0.001931s ]
+SQL: SHOW COLUMNS FROM `elem_admin_group` [ RunTime:0.002617s ]
+SQL: SELECT `name` FROM `elem_admin_group` WHERE ( `g_id` = 3 ) LIMIT 1   [ RunTime:0.000307s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004709s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+

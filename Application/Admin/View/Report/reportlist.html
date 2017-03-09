@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>后台管理系统</title>
+	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/invalid.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div id="main-content">
+	<div class="content-box">
+		<!--头部切换-->
+		<div class="content-box-header">
+			<h3>举报列表</h3>
+			<div class="clear"></div>
+		</div>
+
+		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
+			<form action="{:U('Report/reportlist')}" method="post">
+				举报人姓名：<input type="text" name="name" class="text-input" value="{$_REQUEST['name']}">
+				电话：<input type="text" name="tel" class="text-input" value="{$_REQUEST['tel']}">
+				<input type="submit" class="button search-btn" value="查询">
+			</form>
+		</div>
+		
+		<!--表格内容-->
+		<div class="content-box-content">
+			<div class="tab-content default-tab">
+				<form action="{:U('AdminBasic/delList',array('type'=>'real','tname'=>'Report'))}" method="post">
+					<table border="1">
+						<!--标题-->
+						<thead>
+						<tr>
+							<th width="5%">
+								<input class="check-all" type="checkbox" />
+								ID
+							</th>
+							<th width="10%">举报人姓名</th>
+							<th width="15%">联系电话</th>
+							<th width="10%">备注</th>
+							<th width="15%">图片</th>
+							<th width="10%">状态</th>
+							<th width="10%">创建时间</th>
+							<th width="15%">修改时间</th>
+							<th width="10%">操作</th>
+						</tr>
+						</thead>
+						<!--内容-->
+						<tbody>
+						<if condition="empty($list)">
+							<tr><td colspan="10">没有符合条件的结果</td></tr>
+						</if>
+						<volist name="list" id="vo">
+							<tr>
+								<td>
+									<input type="checkbox" name="id[]" value="{$vo['id']}"/>{$vo.id}
+								</td>
+								<td>{$vo.name}</td>
+								<td>{$vo.tel}</td>
+								<td>{$vo.remark}</td>
+								<td>{$vo.pic}</td>
+								<td>
+									<if condition="$vo['status'] eq 0">未处理
+									<else/>已处理
+									</if>
+								</td>
+								<td>{$vo.c_time|date="y-m-d H:m:i",###}</td>
+								<td>{$vo.u_time|date="y-m-d H:m:i",###}</td>
+								<td>
+                                    <a href="{:U('Report/reportedit',array('id'=>$vo['id']))}" title="处理">
+                                        <img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="处理" />
+                                    </a>
+                                    <a href="{:U('Report/reportdel',array('id'=>$vo['id']))}" title="删除">
+                                        <img src="__WEBPUBLIC__/Admin/images/icons/cross.png" alt="Delete" />
+                                    </a>
+								</td>
+							</tr>
+						</volist>
+						<!--表尾-->
+						</tbody>
+						<tfoot>
+						<tr>
+							<td colspan="20">
+								<div class="bulk-actions align-left">
+									<input type="submit" value="批量删除" class="button"/>
+								</div>
+								<div class="pagination">
+									{$page}
+								</div>
+								<div class="clear"></div>
+							</td>
+						</tr>
+						</tfoot>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

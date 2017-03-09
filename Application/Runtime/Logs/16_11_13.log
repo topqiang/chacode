@@ -1,0 +1,359 @@
+[ 2016-11-13T19:24:36+08:00 ] ::1 /elem/index.php?s=/Wap/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001900s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013367s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000942s ]
+
+[ 2016-11-13T19:24:42+08:00 ] ::1 /elem/index.php?s=/Wap/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `elem_shop` [ RunTime:0.007873s ]
+SQL: SELECT * FROM `elem_shop` WHERE ( `username` = 'admin' )  [ RunTime:0.002243s ]
+
+[ 2016-11-13T19:24:43+08:00 ] ::1 /elem/index.php?s=/Wap/Index/self
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `elem_shop` [ RunTime:0.002324s ]
+SQL: SELECT * FROM `elem_shop` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `elem_order` [ RunTime:0.006366s ]
+SQL: SHOW COLUMNS FROM `elem_orgood` [ RunTime:0.004135s ]
+SQL: SELECT * FROM `elem_order` WHERE ( `sid` = 1 ) ORDER BY updatetime desc,type asc  [ RunTime:0.001967s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 6 )  [ RunTime:0.001939s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 7 )  [ RunTime:0.000519s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 2 )  [ RunTime:0.000886s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 1 )  [ RunTime:0.000418s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 8 )  [ RunTime:0.000571s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 3 )  [ RunTime:0.000484s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 9 )  [ RunTime:0.000393s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 5 )  [ RunTime:0.000362s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 4 )  [ RunTime:0.000398s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+NOTIC: [8] Undefined index: num /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Runtime/Cache/Wap/d3d4a72c6e63a65652e6105de9569c1a.php 第 76 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000780s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000822s ]
+
+[ 2016-11-13T19:24:53+08:00 ] ::1 /elem/index.php?s=/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.002125s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000270s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+
+[ 2016-11-13T19:24:53+08:00 ] ::1 /elem/index.php?s=/Index/goodlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.001841s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000264s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_toppic` [ RunTime:0.002831s ]
+SQL: SELECT * FROM `elem_toppic`  [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `elem_shop` [ RunTime:0.003409s ]
+SQL: SELECT * FROM `elem_shop` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `elem_goods` [ RunTime:0.001899s ]
+SQL: SELECT * FROM `elem_goods` WHERE ( `sid` = 1 ) AND ( `status` <> 9 )  [ RunTime:0.000371s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009655s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000559s ]
+
+[ 2016-11-13T19:26:03+08:00 ] ::1 /elem/index.php?s=/Order/addorder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.002089s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000213s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_order` [ RunTime:0.003356s ]
+SQL: SHOW COLUMNS FROM `elem_user` [ RunTime:0.003825s ]
+SQL: SELECT `address`,`name`,`tel` FROM `elem_user` WHERE ( `id` = 1 )  [ RunTime:0.000371s ]
+SQL: INSERT INTO `elem_order` (`sid`,`ordname`,`createtime`,`updatetime`,`type`,`fromuid`,`paymoney`,`status`,`totalnum`,`addname`,`address`,`addtel`) VALUES (1,'12016111319260332296',1479036363,1479036363,0,1,'12.5',0,1,'lisi','天津市北辰区金羽杰1809','9882394194') [ RunTime:0.002396s ]
+SQL: SHOW COLUMNS FROM `elem_ordgood` [ RunTime:0.002487s ]
+SQL: INSERT INTO `elem_ordgood` (`gid`,`oid`,`num`) VALUES (19,10,1) [ RunTime:0.000249s ]
+
+[ 2016-11-13T19:26:03+08:00 ] ::1 /elem/index.php?s=/Order/orderinfo/id/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.001966s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000197s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_order` [ RunTime:0.003382s ]
+SQL: SELECT * FROM `elem_order` WHERE ( `id` = 10 ) LIMIT 1   [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `elem_orgood` [ RunTime:0.002556s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 10 )  [ RunTime:0.000477s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000414s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2016-11-13T19:26:05+08:00 ] ::1 /elem/index.php?s=/Address/editadd/oid/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.001747s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000201s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined index: oid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/AddressController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000611s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2016-11-13T19:26:07+08:00 ] ::1 /elem/index.php?s=/Address/editadd/oid/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.002360s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000218s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined index: oid /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/AddressController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003174s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000081s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000288s ]
+
+[ 2016-11-13T19:26:39+08:00 ] ::1 /elem/index.php?s=/Order/updorder/id/10/type/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.002452s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000207s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_order` [ RunTime:0.003925s ]
+NOTIC: [8] Undefined index: remark /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/OrderController.class.php 第 87 行.
+SQL: UPDATE `elem_order` SET `updatetime`=1479036399,`type`='1' WHERE ( `id` = 10 ) [ RunTime:0.001552s ]
+
+[ 2016-11-13T19:26:39+08:00 ] ::1 /elem/index.php?s=/Index/result
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.001885s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000214s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006156s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000309s ]
+
+[ 2016-11-13T19:26:41+08:00 ] ::1 /elem/index.php?s=/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.001981s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000231s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+
+[ 2016-11-13T19:26:41+08:00 ] ::1 /elem/index.php?s=/Index/goodlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.001814s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000211s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_toppic` [ RunTime:0.002183s ]
+SQL: SELECT * FROM `elem_toppic`  [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `elem_shop` [ RunTime:0.002060s ]
+SQL: SELECT * FROM `elem_shop` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: SHOW COLUMNS FROM `elem_goods` [ RunTime:0.003794s ]
+SQL: SELECT * FROM `elem_goods` WHERE ( `sid` = 1 ) AND ( `status` <> 9 )  [ RunTime:0.000397s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004484s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004514s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2016-11-13T19:26:45+08:00 ] ::1 /elem/index.php?s=/Order/orderlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `elem_gleygood` [ RunTime:0.002250s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_gleygood`
+SQL: SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' )  [ RunTime:0.000233s ]
+ERR: 1146:Table 'elem.elem_gleygood' doesn't exist
+ [ SQL语句 ] : SELECT `goodnum`,`gprice` FROM `elem_gleygood` WHERE ( `glfromuser` = '1' ) 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/elem/Application/Home/Controller/BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `elem_order` [ RunTime:0.003408s ]
+SQL: SHOW COLUMNS FROM `elem_orgood` [ RunTime:0.003475s ]
+SQL: SELECT * FROM `elem_order` WHERE ( `fromuid` = 1 ) ORDER BY updatetime desc,type asc  [ RunTime:0.000511s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 10 )  [ RunTime:0.000563s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 6 )  [ RunTime:0.000434s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 7 )  [ RunTime:0.000366s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 2 )  [ RunTime:0.000352s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 1 )  [ RunTime:0.000348s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 8 )  [ RunTime:0.000633s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 3 )  [ RunTime:0.000456s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 9 )  [ RunTime:0.000710s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 5 )  [ RunTime:0.000442s ]
+SQL: SELECT * FROM `elem_orgood` WHERE ( `oid` = 4 )  [ RunTime:0.000334s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005919s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005943s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000505s ]
+

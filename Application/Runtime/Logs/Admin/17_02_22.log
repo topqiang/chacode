@@ -1,0 +1,24 @@
+[ 2017-02-22T13:00:32+08:00 ] ::1 /WebComp/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+
+[ 2017-02-22T13:00:34+08:00 ] ::1 /WebComp/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+ERR: 1146:Table 'elem.elem_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `elem_basic`
+
