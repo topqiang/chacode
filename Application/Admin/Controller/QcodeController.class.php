@@ -10,17 +10,24 @@ class QcodeController extends AdminBasicController{
 
     public $article = '';
     public function _initialize(){
-        $this->article = D('Qcode');
+        $this->qcode = D('Qcg');
         header("Content-type: text/html; charset=utf-8");
     }
     /**
      * 菜单列表
      */
     public function qcodeList(){
-        $art_result = $this->article->searchArticle('','ctime desc',13);
-        $this->assign('page',$art_result['page_info']);
-        $this->assign('art_list',$art_result['list']);
-        $this->display('articleList');
+
+        if(!empty($_POST['name']))$where['name']=array('like','%'.$_POST['name'].'%');
+
+        $where['status'] = array('neq' , '9');
+        $count = $this -> qcode -> where( $where ) -> count();
+        $page = new \Think\Page($count,15);
+        $res=$this -> qcode -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
+        $this->assign('list',$res);
+        $this->assign('page',$page->show());
+        $this->display('qcodeList');
+        
     }
 
 }

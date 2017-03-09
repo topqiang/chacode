@@ -13,27 +13,27 @@
 	<div class="content-box">
 		<!--头部切换-->
 		<div class="content-box-header">
-			<h3>分类列表</h3>
-			<ul class="content-box-tabs">
-				<li><a href="{:U('Cate/cateList',array('cate'=>'Gcate'))}" class="default-tab">分类列表</a></li>
-				<li><a href="{:U('Cate/cateAdd',array('cate'=>'Gcate'))}">添加分类</a></li>
-			</ul>
+			<h3>防伪列表</h3>
 			<div class="clear"></div>
 		</div>
 		<!--表格内容-->
 		<div class="content-box-content">
 			<div class="tab-content default-tab" id="tab1">
-				<form action="{:U('AdminBasic/delList',array('tname'=>'Gcate','type'=>'real'))}" method="post">
+				<form action="{:U('AdminBasic/delList',array('tname'=>'Qcode','type'=>'real'))}" method="post">
 					<table border="1">
 						<!--标题-->
 						<thead>
 						<tr>
-							<th width="20%">
+							<th width="10%">
 								<!-- <input class="check-all" type="checkbox" /> -->
 								ID
 							</th>
-							<th width="20%">分类名称</th>
-							<th width="50%">备注信息</th>
+							<th width="10%">商品名称</th>
+							<th width="10%">公司名</th>
+							<th width="10%">批次</th>
+							<th width="10%">防伪码</th>
+							<th width="10%">创建时间</th>
+							<th width="30%">二维码</th>
 							<th width="10%">操作</th>
 						</tr>
 						</thead>
@@ -46,10 +46,15 @@
 									{$vo.id}
 								</td>
 								<td>{$vo.name}</td>
-								<td>{$vo.remark}</td>
+								<td>{$vo.company}</td>
+								<td>{$vo.creatcode}</td>
+								<td>{$vo.codenum}</td>
+								<td>{$vo.ctime | date='Y-m-d H:m:i',###}</td>
+
+								<td><img src="{$vo.code_pic}"/></td>
 								<td>
-									<a href="{:U('Cate/cateEdit',array('id'=>$vo['id'],'cate'=>'Gcate'))}" title="编辑"><img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="Edit" /></a>
-									<a href="{:U('Cate/cateDel',array('id'=>$vo['id'],'cate'=>'Gcate'))}" title="删除"><img src="__WEBPUBLIC__/Admin/images/icons/cross.png" alt="Delete" /></a>
+									<a href="{:U('Qcode/qcodeEdit',array('id'=>$vo['id']))}" title="编辑"><img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="Edit" /></a>
+									<a href="{:U('Qcode/qcodeDel',array('id'=>$vo['id']))}" title="删除"><img src="__WEBPUBLIC__/Admin/images/icons/cross.png" alt="Delete" /></a>
 								</td>
 							</tr>
 						</volist>
