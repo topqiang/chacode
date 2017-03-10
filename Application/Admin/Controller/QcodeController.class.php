@@ -19,6 +19,8 @@ class QcodeController extends AdminBasicController{
     public function qcodeList(){
 
         if(!empty($_POST['name']))$where['name']=array('like','%'.$_POST['name'].'%');
+        if(!empty($_POST['creatcode']))$where['creatcode']=$_POST['creatcode'];
+        if(!empty($_POST['codenum']))$where['codenum']=$_POST['codenum'];
 
         $where['status'] = array('neq' , '9');
         $count = $this -> qcode -> where( $where ) -> count();

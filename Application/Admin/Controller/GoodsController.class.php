@@ -80,7 +80,48 @@ class GoodsController extends Controller{
 	}
 
 
-
+	public function qrcode(){
+		$id = $_POST['id'];
+		$codenum = $_POST['codenum'];
+		if (empty($id) || empty($codenum)) {
+			$data = array(
+				'flag' => 'error',
+				'message' => '缺少防伪码'
+				);
+			echo json_encode($date);
+			exit();
+		}
+		$ctime = time();
+		$status = 0;
+        $save_path = 'Public/qrcode/';  //图片存储的绝对路径
+        $web_path = '/Public/qrcode/';        //图片在网页上显示的路径
+        $qr_data = "http://".$_SERVER['HTTP_HOST'].U('Home/Qcode/findcode',array('code_name'=>$codenum));
+        $qr_level ='H';
+        $qr_size = '10';
+        $save_prefix = 'ZETA';
+        if($filename = createQRcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix)){
+            $pic = $web_path.$filename;
+            $data = array(
+            	'fromid' => $id,
+            	'codenum' => $codenum,
+            	'code_pic' => $pic,
+            	'ctime' => $ctime,
+            	'status' => $status
+            	);
+            $res = D('Qcode')->add($data);
+            if ($res) {
+            	$data['id'] = $res;
+            	echo json_encode(array('flag'=>'success','message'=>'生成成功！','data'=>$data));
+            }
+        }else{
+        	$data = array(
+				'flag' => 'error',
+				'message' => '生成失败！'
+				);
+			echo json_encode($date);
+			exit();
+        }
+    }
 
 	/**
 	 * 处理商品图片上传

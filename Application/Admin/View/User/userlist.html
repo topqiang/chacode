@@ -36,11 +36,11 @@
                     <tr>
                         <th width="5%">ID</th>
                         <th width="5%">姓名</th>
-                        <th width="10%">电话</th>
-                        <th width="50%">地址</th>
+                        <th width="5%">省份</th>
                         <th width="5%">性别</th>
-                        <th width="5%">余额</th>
-                        <th width="10%">创建时间</th>
+                        <th width="10%">电话</th>
+                        <th width="10%">地址</th>
+                        <th width="10%">首次访问</th>
                         <th width="10%">操作</th>
                     </tr>
                     </thead>
@@ -51,6 +51,10 @@
                         <tr>
                             <td>{$user.id}</td>
                             <td>{$user.name}</td>
+                            <td>{$user.provance}</td>
+                            <td>
+                                {$user.sex}
+                            </td>
                             <td>
                                 {$user.tel}
                             </td>
@@ -58,13 +62,7 @@
                                 {$user.address}
                             </td>
                             <td>
-                                {$user.sex}
-                            </td>
-                            <td>
-                                {$user.balance}
-                            </td>
-                            <td>
-                                {$user.create_time|date="y-m-d H:m:i"}
+                                {$user.c_time|date="y-m-d H:m:i"}
                             </td>
                             <td>
                                 <!--<a href="{:U('WeiXinArticle/editTextBack',array('wxa_id'=>$text_back['wxa_id']))}" title="编辑">

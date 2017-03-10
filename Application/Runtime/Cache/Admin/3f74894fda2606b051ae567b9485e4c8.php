@@ -15,7 +15,7 @@
     <div class="content-box">
         <!--头部切换-->
         <div class="content-box-header">
-            <h3>会员列表</h3>
+            <h3>访客列表</h3>
             <div class="clear"></div>
         </div>
 
@@ -36,11 +36,11 @@
                     <tr>
                         <th width="5%">ID</th>
                         <th width="5%">姓名</th>
-                        <th width="10%">电话</th>
-                        <th width="50%">地址</th>
+                        <th width="5%">省份</th>
                         <th width="5%">性别</th>
-                        <th width="5%">余额</th>
-                        <th width="10%">创建时间</th>
+                        <th width="10%">电话</th>
+                        <th width="10%">地址</th>
+                        <th width="10%">首次访问</th>
                         <th width="10%">操作</th>
                     </tr>
                     </thead>
@@ -50,6 +50,10 @@
                     <?php if(is_array($userlist)): $i = 0; $__LIST__ = $userlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?><tr>
                             <td><?php echo ($user["id"]); ?></td>
                             <td><?php echo ($user["name"]); ?></td>
+                            <td><?php echo ($user["provance"]); ?></td>
+                            <td>
+                                <?php echo ($user["sex"]); ?>
+                            </td>
                             <td>
                                 <?php echo ($user["tel"]); ?>
                             </td>
@@ -57,13 +61,7 @@
                                 <?php echo ($user["address"]); ?>
                             </td>
                             <td>
-                                <?php echo ($user["sex"]); ?>
-                            </td>
-                            <td>
-                                <?php echo ($user["balance"]); ?>
-                            </td>
-                            <td>
-                                <?php echo (date($user["create_time"],"y-m-d H:m:i")); ?>
+                                <?php echo (date($user["c_time"],"y-m-d H:m:i")); ?>
                             </td>
                             <td>
                                 <!--<a href="<?php echo U('WeiXinArticle/editTextBack',array('wxa_id'=>$text_back['wxa_id']));?>" title="编辑">

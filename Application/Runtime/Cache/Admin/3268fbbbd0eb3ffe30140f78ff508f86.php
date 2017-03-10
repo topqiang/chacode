@@ -64,6 +64,9 @@
 								<td><?php echo ($vo["company"]); ?></td>
 								<td><?php echo ($vo["creatcode"]); ?></td>
                                 <td>
+                                	<a id="<?php echo ($vo['id']); ?>" class="creatcode" title="生成防伪码">
+                                        <img src="/chacode/Public/Admin/images/icons/code.png" alt="生成防伪码" />
+                                    </a>
                                     <a href="<?php echo U('Goods/goodsEdit',array('id'=>$vo['id']));?>" title="编辑">
                                         <img src="/chacode/Public/Admin/images/icons/pencil.png" alt="Edit" />
                                     </a>
@@ -93,5 +96,56 @@
 		</div>
 	</div>
 </div>
+<div id="sou" style="text-align:center;display:none;">
+	<div style="padding:20px;">
+		<div><input type="text" class="codenum" placeholder="请输入防伪码"/></div>
+	</div>
+</div>
+<div id="imgcode" style="text-align:center;display:none;">
+	<div style="padding:20px;">
+		<img id="codeimg" style="width:100%;"/>
+	</div>
+</div>
 </body>
+<script type="text/javascript" src="/chacode/Public/Admin/js/layer/layer.js"></script>
+<script type="text/javascript">
+
+	$(".creatcode").on('click',function(){
+		var id = $(this).attr("id");
+		var index = layer.open({
+			type:1,
+			title: '请输入防伪码',
+			btn: ['生成'],
+			yes: function () {
+				var keywords = $(".codenum").val();
+				if (keywords) {
+					$.ajax({
+						"url":"<?php echo U('Admin/Goods/qrcode');?>",
+						"type":"post",
+						"data":{"id":id,"codenum":keywords},
+						"dataType":"json",
+						"success":function ( res ) {
+							if (res.flag == "success") {
+								$("#codeimg").attr("src","/chacode"+res.data.code_pic);
+								layer.close(index);
+								layer.open({
+									type:1,
+									title:"右键另存为吧！",
+									content: $('#imgcode'),
+									area:["400px","auto"]
+								});
+							}else{
+								alert(res.message);
+							}
+						}
+					});
+				}else{
+					alert("关键词为空！");
+				}
+			},
+			content: $('#sou'),
+			area:["200px","auto"]
+		});  
+	});
+</script>
 </html>
