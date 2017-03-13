@@ -32,4 +32,15 @@ class QcodeController extends AdminBasicController{
         
     }
 
+    public function qcodeDel(){
+        if(empty($_GET['id']))$this->error('没有商品id');
+        
+        $res=$this->qcode->save(array('id'=>$_GET['id'],'status'=>"9"));
+        if($res){
+            $this->success('删除成功',U('Qcode/qcodeList'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
 }

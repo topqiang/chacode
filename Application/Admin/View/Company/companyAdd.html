@@ -46,7 +46,7 @@
 							<input class="text-input small-input" onchange="codeAddress()" type="text" name="address" id="address"/>
 						</p>
 						<p>
-							<label>省份</label>
+							<label>城市</label>
 							<input class="text-input small-input" type="text" name="provance" />
 						</p>
 						<p>
@@ -68,7 +68,13 @@
 						</p>
 						<p>
 							<label>销售商级别</label>
-							<input class="text-input small-input" type="text" name="class" />
+							<select name="class">
+								<option value="1">一级</option>
+								<option value="2">二级</option>
+								<option value="3">三级</option>
+								<option value="4">四级</option>
+								<option value="5">五级</option>
+							</select>
 							<input type="hidden" class="lat" name="lat" />
 							<input type="hidden" class="lnt" name="lnt" />
 						</p>

@@ -10,7 +10,7 @@ class ReportController extends AdminBasicController{
 	}
 
 	public function reportlist(){
-		$shopadd = D("Repo");
+		$shopadd = D("Report");
 		$name = $_POST['name'];
 		$tel = $_POST['tel'];
 		if ( isset($name) ) {
@@ -27,6 +27,4 @@ class ReportController extends AdminBasicController{
 		$this->assign("list",$list);
 		$this->display();
 	}
-
-	
 }

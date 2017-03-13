@@ -42,7 +42,7 @@
 							<input class="text-input small-input" type="text" name="address" id="address" onchange="codeAddress()" value="<?php echo ($info["address"]); ?>"/>
 						</p>
 						<p>
-							<label>省份</label>
+							<label>城市</label>
 							<input class="text-input small-input" type="text" name="provance"  value="<?php echo ($info["provance"]); ?>"/>
 						</p>
 						<p>
@@ -64,7 +64,14 @@
 						</p>
 						<p>
 							<label>销售商级别</label>
-							<input class="text-input small-input" type="text" name="class" value="<?php echo ($info["class"]); ?>"/>
+
+							<select name="class">
+								<option value="1" <?php if($info['class'] == 1): ?>selected<?php endif; ?>>一级</option>
+								<option value="2" <?php if($info['class'] == 2): ?>selected<?php endif; ?>>二级</option>
+								<option value="3" <?php if($info['class'] == 3): ?>selected<?php endif; ?>>三级</option>
+								<option value="4" <?php if($info['class'] == 4): ?>selected<?php endif; ?>>四级</option>
+								<option value="5" <?php if($info['class'] == 5): ?>selected<?php endif; ?>>五级</option>
+							</select>
 							<input type="hidden" name="lat" class="lat" value="<?php echo ($info["lat"]); ?>"/>
 							<input type="hidden" name="lnt" class="lnt" value="<?php echo ($info["lnt"]); ?>"/>
 						</p>

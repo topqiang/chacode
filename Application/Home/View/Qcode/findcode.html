@@ -1,0 +1,69 @@
+<extend name="Public/header"/>
+<block name="main">
+	<div class="fake-head pad732 fs40">
+            <span></span>
+            防伪查询
+        </div>
+	<div class="fake-body bot1">
+	    <div class="">
+			<div class="query-body">
+				<div class="query-code">
+					<input class="code_name" type="text" value="{$_REQUEST['code_name']}" placeholder="请输入防伪码"/>
+				    <span class="postbtn">查询</span>
+				</div>
+				<div class="query-note fs35 result-note">
+					<if condition="!empty($res)">
+						<div class="result-head">查询结果</div>
+						<div class="result-detail">
+							<div class="result-img">
+								<img src="__ROOT__/{$res.code_pic}"/>
+							</div>
+							<p>您输入的“{$res['codenum']}”是“{$res.name}”产品，产品为正品。</p>
+						</div>
+						<div class="result-intro">
+							<p>
+								<span>批次</span>
+								{$res.creatcode}
+							</p>
+							<p>
+								<span>品名</span>
+								{$res.name}
+							</p>
+							<p>
+								<span>生产日期</span>
+								{$res.ctime|date="Y/m/d",###}
+							</p>
+							<p>
+								<span>厂家</span>
+								{$res.name}
+							</p>
+						</div>
+						<else/>
+						您输入的”{$_REQUEST['code_name']}“没有对应的产品信息，请谨防假冒。
+						<a href="">举报</a>
+					</if>
+
+
+				</div>
+			</div>
+		</div>
+		<div class="fake-footer fs35">
+			<p>云南西双版纳州古茶山茶业有限公司</p>
+			<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
+			<p>滇ICP备15000438号</p>
+		</div>
+	</div>
+</block>
+<block name="script">
+	<script type="text/javascript">
+		$(".postbtn").on('click',function () {
+			var code_name = $(".code_name").val();
+			if (code_name == "") {
+				alert("防伪码不能为空！");
+			}else{
+				window.location.href = '{:U("Home/Qcode/findcode")}/code_name/'+code_name;
+			}
+		})
+
+	</script>
+</block>

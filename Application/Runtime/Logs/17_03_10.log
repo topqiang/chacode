@@ -1944,3 +1944,145 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000270s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000286s ]
 
+[ 2017-03-10T17:25:02+08:00 ] ::1 /chacode/index.php?s=/Admin/Manager/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001798s ]
+
+[ 2017-03-10T17:25:02+08:00 ] ::1 /chacode/index.php?s=/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `code_basic` [ RunTime:0.002586s ]
+ERR: 1146:Table 'chacode.code_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017072s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002190s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002245s ]
+
+[ 2017-03-10T17:25:02+08:00 ] ::1 /chacode/index.php?s=/Admin/Index/left
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `code_basic` [ RunTime:0.002386s ]
+ERR: 1146:Table 'chacode.code_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017507s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001100s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001146s ]
+
+[ 2017-03-10T17:25:02+08:00 ] ::1 /chacode/index.php?s=/Admin/User/userlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+SQL: SHOW COLUMNS FROM `code_user` [ RunTime:0.007375s ]
+NOTIC: [8] Undefined index: name /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/UserController.class.php 第 9 行.
+NOTIC: [8] Undefined variable: where /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/UserController.class.php 第 13 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `code_user` LIMIT 1   [ RunTime:0.000390s ]
+NOTIC: [8] Undefined variable: where /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/UserController.class.php 第 15 行.
+SQL: SELECT * FROM `code_user` LIMIT 0,15   [ RunTime:0.000935s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012319s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2017-03-10T17:25:02+08:00 ] ::1 /chacode/index.php?s=/Admin/Index/top
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `code_basic` [ RunTime:0.002646s ]
+ERR: 1146:Table 'chacode.code_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_basic`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002432s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002470s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000459s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2017-03-10T17:25:09+08:00 ] ::1 /chacode/index.php?s=/Admin/Goods/GoodsList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `code_good` [ RunTime:0.004734s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `code_good` WHERE ( `status` <> '9' ) LIMIT 1   [ RunTime:0.000316s ]
+SQL: SELECT * FROM `code_good` WHERE ( `status` <> '9' ) LIMIT 0,15   [ RunTime:0.000256s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: gid /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Runtime/Cache/Admin/3268fbbbd0eb3ffe30140f78ff508f86.php 第 56 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005860s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005885s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000310s ]
+
+[ 2017-03-10T17:25:17+08:00 ] ::1 /chacode/index.php?s=/Admin/Goods/qrcode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `code_good` [ RunTime:0.003704s ]
+NOTIC: [8] Only variables should be assigned by reference /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Common/Common/function.php 第 287 行.
+SQL: SHOW COLUMNS FROM `code_qcode` [ RunTime:0.004204s ]
+SQL: INSERT INTO `code_qcode` (`fromid`,`codenum`,`code_pic`,`ctime`,`status`) VALUES ('1','topqiang123','/Public/qrcode/ZETA238811b099efc5538aacf3bba63ccf52.png',1489137917,0) [ RunTime:0.008020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000834s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
