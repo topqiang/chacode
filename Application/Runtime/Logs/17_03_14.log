@@ -8561,3 +8561,12 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000269s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000286s ]
 
+[ 2017-03-14T18:01:35+08:00 ] ::1 /chacode/index.php?s=/Admin/Qcode/qcodelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001830s ]
+ERR: 系统不支持:mysql
+
