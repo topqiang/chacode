@@ -8223,3 +8223,341 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
 NOTIC: [8] Undefined index: state /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Home/Controller/BaseController.class.php 第 12 行.
 
+[ 2017-03-14T16:53:11+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/api
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.002389s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.001902s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.002519s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.002001s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.002022s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+SQL: SELECT * FROM `code_token` LIMIT 1   [ RunTime:0.000233s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_token` LIMIT 1  
+SQL: INSERT INTO `code_token` (`token`,`api_url`,`ctime`) VALUES ('8971fj844b','http://您的域名/index.php/Api/WeiXin/responseMsg/8971fj844b',1489481591) [ RunTime:0.000207s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : INSERT INTO `code_token` (`token`,`api_url`,`ctime`) VALUES ('8971fj844b','http://您的域名/index.php/Api/WeiXin/responseMsg/8971fj844b',1489481591)
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+NOTIC: [8] Undefined variable: text_back /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Runtime/Cache/Admin/d87c92dbca3dee1e66adc2d32d44b227.php 第 41 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004942s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2017-03-14T16:53:12+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/createMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.002096s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.001953s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.002024s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.002058s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.001991s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+SQL: SELECT * FROM `code_menu` ORDER BY sort desc  [ RunTime:0.000227s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_menu` ORDER BY sort desc 
+SQL: SELECT * FROM `code_menu` WHERE ( `parent_id` = 0 ) ORDER BY sort desc  [ RunTime:0.000151s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_menu` WHERE ( `parent_id` = 0 ) ORDER BY sort desc 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/WeiXinArticleController.class.php 第 337 行.
+SQL: SELECT * FROM `code_access_token` LIMIT 1   [ RunTime:0.000199s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_access_token` LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006639s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006676s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2017-03-14T16:53:14+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/backType/back_type/FollowBack
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.001604s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.001876s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.001776s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.001781s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.002128s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+NOTIC: [8] Undefined index: status /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Common/Model/WeiXinArticleModel.class.php 第 42 行.
+SQL: SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 1 ) AND ( `status` <> '9' ) LIMIT 1   [ RunTime:0.000264s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 1 ) AND ( `status` <> '9' ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005592s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000363s ]
+
+[ 2017-03-14T16:53:14+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/backType/back_type/TextBack
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.002031s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.002215s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.002288s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.001832s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.001712s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+NOTIC: [8] Undefined index: status /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Common/Model/WeiXinArticleModel.class.php 第 14 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `code_weixin_article` WHERE ( `wxa_type` = 2 ) AND ( `status` <> 9 ) ORDER BY ctime desc LIMIT 1   [ RunTime:0.000274s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `code_weixin_article` WHERE ( `wxa_type` = 2 ) AND ( `status` <> 9 ) ORDER BY ctime desc LIMIT 1  
+SQL: SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 2 ) AND ( `status` <> 9 ) ORDER BY ctime desc LIMIT 0,13   [ RunTime:0.000237s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 2 ) AND ( `status` <> 9 ) ORDER BY ctime desc LIMIT 0,13  
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/WeiXinArticleController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007189s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000425s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000449s ]
+
+[ 2017-03-14T16:53:15+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/backType/back_type/PicTextBack
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.002013s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.001827s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.001951s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.001759s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.001578s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+NOTIC: [8] Undefined index: status /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Common/Model/WeiXinArticleModel.class.php 第 14 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `code_weixin_article` WHERE ( `wxa_type` = 3 ) AND ( `status` <> 9 ) ORDER BY wxa_sort desc LIMIT 1   [ RunTime:0.000200s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `code_weixin_article` WHERE ( `wxa_type` = 3 ) AND ( `status` <> 9 ) ORDER BY wxa_sort desc LIMIT 1  
+SQL: SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 3 ) AND ( `status` <> 9 ) ORDER BY wxa_sort desc LIMIT 0,13   [ RunTime:0.000174s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 3 ) AND ( `status` <> 9 ) ORDER BY wxa_sort desc LIMIT 0,13  
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/WeiXinArticleController.class.php 第 37 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2017-03-14T16:53:16+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/backType/back_type/noneBack
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.001926s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.002012s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.001959s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.002153s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.001498s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+NOTIC: [8] Undefined index: status /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Common/Model/WeiXinArticleModel.class.php 第 42 行.
+SQL: SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 0 ) AND ( `status` <> '9' ) LIMIT 1   [ RunTime:0.000181s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_weixin_article` WHERE ( `wxa_type` = 0 ) AND ( `status` <> '9' ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000397s ]
+
+[ 2017-03-14T16:53:16+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/createMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.002269s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.002039s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.001973s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.001884s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.002000s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+SQL: SELECT * FROM `code_menu` ORDER BY sort desc  [ RunTime:0.000194s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_menu` ORDER BY sort desc 
+SQL: SELECT * FROM `code_menu` WHERE ( `parent_id` = 0 ) ORDER BY sort desc  [ RunTime:0.000155s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_menu` WHERE ( `parent_id` = 0 ) ORDER BY sort desc 
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Admin/Controller/WeiXinArticleController.class.php 第 337 行.
+SQL: SELECT * FROM `code_access_token` LIMIT 1   [ RunTime:0.000125s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_access_token` LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004795s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000483s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2017-03-14T16:53:17+08:00 ] ::1 /chacode/index.php?s=/Admin/WeiXinArticle/api
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `code_weixin_article` [ RunTime:0.002126s ]
+ERR: 1146:Table 'chacode.code_weixin_article' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_weixin_article`
+SQL: SHOW COLUMNS FROM `code_token` [ RunTime:0.001994s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_token`
+SQL: SHOW COLUMNS FROM `code_menu` [ RunTime:0.002108s ]
+ERR: 1146:Table 'chacode.code_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_menu`
+SQL: SHOW COLUMNS FROM `code_desc` [ RunTime:0.001905s ]
+ERR: 1146:Table 'chacode.code_desc' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_desc`
+SQL: SHOW COLUMNS FROM `code_access_token` [ RunTime:0.002048s ]
+ERR: 1146:Table 'chacode.code_access_token' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `code_access_token`
+SQL: SELECT * FROM `code_token` LIMIT 1   [ RunTime:0.000286s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `code_token` LIMIT 1  
+SQL: INSERT INTO `code_token` (`token`,`api_url`,`ctime`) VALUES ('mpyowmlvmm','http://您的域名/index.php/Api/WeiXin/responseMsg/mpyowmlvmm',1489481597) [ RunTime:0.000232s ]
+ERR: 1146:Table 'chacode.code_token' doesn't exist
+ [ SQL语句 ] : INSERT INTO `code_token` (`token`,`api_url`,`ctime`) VALUES ('mpyowmlvmm','http://您的域名/index.php/Api/WeiXin/responseMsg/mpyowmlvmm',1489481597)
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+NOTIC: [8] Undefined variable: text_back /Applications/XAMPP/xamppfiles/htdocs/chacode/Application/Runtime/Cache/Admin/d87c92dbca3dee1e66adc2d32d44b227.php 第 41 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003089s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003107s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000286s ]
+
