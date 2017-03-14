@@ -70,8 +70,8 @@
 							</p>
 						</div>
 						<?php else: ?>
-						您输入的”<?php echo ($_REQUEST['code_name']); ?>“没有对应的产品信息，请谨防假冒。
-						<a href="">举报</a><?php endif; ?>
+						<span class="" style="padding:20px;display:block">您输入的”<?php echo ($_REQUEST['code_name']); ?>“没有对应的产品信息，请谨防假冒。
+						<a href="<?php echo U('Report/report');?>">举报</a></span><?php endif; ?>
 
 
 				</div>

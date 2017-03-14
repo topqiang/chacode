@@ -15,6 +15,13 @@ class IndexController extends BaseController {
     public function result(){
         $this -> display();
     }
+
+    public function city(){
+        $city = M('City') -> select();
+        $this -> assign('citylist',$city);
+        $this -> display();
+    }
+
     public function index(){
         $this -> display();
     }

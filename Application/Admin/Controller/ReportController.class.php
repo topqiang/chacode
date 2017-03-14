@@ -20,6 +20,9 @@ class ReportController extends AdminBasicController{
 			$where['tel'] = array('like',"%$tel%");
 		}
 		$where['status'] = array('neq',9);
+		if ( isset($status) ) {
+			$where['status'] = $status;
+		}
 		$count = $shopadd ->where($where)->count();
         $page = new \Think\Page($count,15);
 		$list = $shopadd->limit($page->firstRow,$page->listRows) -> where($where) -> select();
@@ -27,4 +30,15 @@ class ReportController extends AdminBasicController{
 		$this->assign("list",$list);
 		$this->display();
 	}
+
+	public function reportedit(){
+		$shopadd = D("Report");
+        if(empty($_GET['id']))$this->error('举报信息id');
+        $res = $shopadd -> save(array('id'=>$_GET['id'],'status'=>"1"));
+        if($res){
+            $this->success('处理成功',U('Report/reportlist'));
+        }else{
+            $this->error('处理失败');
+        }
+    }
 }

@@ -8,26 +8,7 @@
         <script type="text/javascript" src="/chacode/Public/Home/js/jx.js"></script>
         <title>防伪查询</title>
         <style type="text/css">
-            /*@media only screen and (min-width: 768px){
-                .shop-body{
-                    min-height: 1168px;
-                }
-            }
-            @media only screen and (min-width: 412px){
-                .shop-body{
-                    min-height: 1030px;
-                }
-            }*/
-            /*@media only screen and (min-width: 400px){
-                .shop-body{
-                    min-height: 1430px;
-                }
-            }*/
-            /*@media only screen and (min-width: 360px){
-                .shop-body{
-                    min-height: 1200px;
-                }
-            }*/
+
         </style>
     </head>
     <body>

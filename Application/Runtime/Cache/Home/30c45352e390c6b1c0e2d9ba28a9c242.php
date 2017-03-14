@@ -8,26 +8,7 @@
         <script type="text/javascript" src="/chacode/Public/Home/js/jx.js"></script>
         <title>防伪查询</title>
         <style type="text/css">
-            /*@media only screen and (min-width: 768px){
-                .shop-body{
-                    min-height: 1168px;
-                }
-            }
-            @media only screen and (min-width: 412px){
-                .shop-body{
-                    min-height: 1030px;
-                }
-            }*/
-            /*@media only screen and (min-width: 400px){
-                .shop-body{
-                    min-height: 1430px;
-                }
-            }*/
-            /*@media only screen and (min-width: 360px){
-                .shop-body{
-                    min-height: 1200px;
-                }
-            }*/
+
         </style>
     </head>
     <body>
@@ -49,12 +30,14 @@
 				</div>
 				<div class="report-cont1">
 					<span>备注：</span>
-					<div class="take-photo"></div>
-					<img src="" width="100" height="100"/>
-					<input type="file" name="pic"/>
 					<textarea placeholder="购买渠道" class="remark" name="remark"></textarea>
+					<div class="photoimg">
+						<input type="file" name="pic"/>
+					</div>
+					<img class="showimg" width="200" height="200"/>
 				</div>
-		</div>
+				
+			</div>
 		<div class="fake-footer fs35">
 			<p>云南西双版纳州古茶山茶业有限公司</p>
 			<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
@@ -108,7 +91,7 @@
                 	if (res.flag == "success") {
                 		pic =res.data;
                 		console.log(pic);
-                    	self.prev().attr("src",pic);
+                    	$(".showimg").attr("src",pic);
                 	}else{
                 		alert(res.message);
                 	}

@@ -41,8 +41,8 @@ class ReportController extends BaseController{
         $ext = uniqid().'.'.end($temp);
         $base64    = substr(strstr($pic, ","), 1);
         $image_res = base64_decode($base64);
-        $pic_link  = "Uploads/report/".date('Y-m-d').'/'.$ext;
-        $saveRoot = "Uploads/report/".date('Y-m-d').'/';
+        $pic_link  = "Uploads/report/".$ext;
+        $saveRoot = "Uploads/report/";
         //检查目录是否存在  循环创建目录
         if(!is_dir($saveRoot)){
             mkdir($saveRoot, 0777, true);

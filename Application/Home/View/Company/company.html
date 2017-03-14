@@ -45,7 +45,7 @@
 				<div class="go-there">
 					<div class="go-center">
 						<i></i>
-						<span>带我去这里</span>
+						<span class="gothere">带我去这里</span>
 					</div>					
 				</div>
 			</div>
@@ -58,7 +58,22 @@
 </block>
 <block name="script">
 	<script type="text/javascript">
-		{$company['lat']}
-		{$company['lnt']}
+		if (navigator.geolocation) {
+    		navigator.geolocation.getCurrentPosition(callback);
+    	}
+    	function callback( res ) {
+    		console.log(res);
+    	}
+
+    	$(".gothere").on('click',function () {
+    		var lat = "{$company['lat']}";
+    		var lnt = "{$company['lnt']}";
+    		if (lat && lnt) {
+    			sessionStorage.setItem("end",JSON.stringify({"lat":lat,"lnt":lnt}));
+    			window.location.href="{:U('Address/address')}";
+    		}else{
+    			alert("未找到地址！");
+    		}
+    	});
 	</script>
 </block>

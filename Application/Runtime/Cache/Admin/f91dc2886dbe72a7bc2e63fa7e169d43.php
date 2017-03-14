@@ -13,64 +13,57 @@
 	<div class="content-box">
 		<!--头部切换-->
 		<div class="content-box-header">
-			<h3>举报列表</h3>
+			<h3>防伪列表</h3>
 			<div class="clear"></div>
 		</div>
 
 		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
-			<form action="<?php echo U('Report/reportlist');?>" method="post">
-				举报人姓名：<input type="text" name="name" class="text-input" value="<?php echo ($_REQUEST['name']); ?>">
-				电话：<input type="text" name="tel" class="text-input" value="<?php echo ($_REQUEST['tel']); ?>">
+			<form action="<?php echo U('Qcode/qcodeList');?>" method="post">
+				商品名称：<input type="text" name="name" class="text-input" value="<?php echo ($_REQUEST['name']); ?>">
+				防伪码：<input type="text" name="codenum" class="text-input" value="<?php echo ($_REQUEST['codenum']); ?>">
+				批次：<input type="text" name="creatcode" class="text-input" value="<?php echo ($_REQUEST['creatcode']); ?>">
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>
-		
+
+
 		<!--表格内容-->
 		<div class="content-box-content">
-			<div class="tab-content default-tab">
-				<form action="<?php echo U('AdminBasic/delList',array('type'=>'real','tname'=>'Report'));?>" method="post">
+			<div class="tab-content default-tab" id="tab1">
+				<form action="<?php echo U('AdminBasic/delList',array('tname'=>'Qcode','type'=>'real'));?>" method="post">
 					<table border="1">
 						<!--标题-->
 						<thead>
 						<tr>
-							<th width="5%">
-								<input class="check-all" type="checkbox" />
+							<th width="10%">
+								<!-- <input class="check-all" type="checkbox" /> -->
 								ID
 							</th>
-							<th width="10%">举报人姓名</th>
-							<th width="15%">联系电话</th>
-							<th width="10%">备注</th>
-							<th width="15%">图片</th>
-							<th width="10%">状态</th>
+							<th width="10%">商品名称</th>
+							<th width="20%">公司名</th>
+							<th width="10%">批次</th>
+							<th width="20%">防伪码</th>
 							<th width="10%">创建时间</th>
-							<th width="15%">修改时间</th>
+							<th width="10%">二维码</th>
 							<th width="10%">操作</th>
 						</tr>
 						</thead>
 						<!--内容-->
 						<tbody>
-						<?php if(empty($list)): ?><tr><td colspan="10">没有符合条件的结果</td></tr><?php endif; ?>
 						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 								<td>
-									<input type="checkbox" name="id[]" value="<?php echo ($vo['id']); ?>"/><?php echo ($vo["id"]); ?>
+									<!-- <input type="checkbox" name="id[]" value="<?php echo ($vo['id']); ?>"/> -->
+									<?php echo ($vo["id"]); ?>
 								</td>
 								<td><?php echo ($vo["name"]); ?></td>
-								<td><?php echo ($vo["tel"]); ?></td>
-								<td><?php echo ($vo["remark"]); ?></td>
-								<td><img src="<?php echo ($vo["pic"]); ?>" style="width:50px;"/></td>
+								<td><?php echo ($vo["company"]); ?></td>
+								<td><?php echo ($vo["creatcode"]); ?></td>
+								<td><?php echo ($vo["codenum"]); ?></td>
+								<td><?php echo (date('Y-m-d H:m:i',$vo["ctime "])); ?></td>
+
+								<td><img class="imgcode" src="/chacode<?php echo ($vo["code_pic"]); ?>" style="width:30px"/></td>
 								<td>
-									<?php if($vo['status'] == 0): ?>未处理
-									<?php else: ?>已处理<?php endif; ?>
-								</td>
-								<td><?php echo (date("y-m-d H:m:i",$vo["c_time"])); ?></td>
-								<td><?php echo (date("y-m-d H:m:i",$vo["u_time"])); ?></td>
-								<td>
-                                    <a href="<?php echo U('Report/reportedit',array('id'=>$vo['id']));?>" title="处理">
-                                        <img src="/chacode/Public/Admin/images/icons/pencil.png" alt="处理" />
-                                    </a>
-                                    <a href="<?php echo U('Report/reportdel',array('id'=>$vo['id']));?>" title="删除">
-                                        <img src="/chacode/Public/Admin/images/icons/cross.png" alt="Delete" />
-                                    </a>
+									<a href="<?php echo U('Qcode/qcodeDel',array('id'=>$vo['id']));?>" title="删除"><img src="/chacode/Public/Admin/images/icons/cross.png" alt="Delete" /></a>
 								</td>
 							</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 						<!--表尾-->
@@ -78,9 +71,9 @@
 						<tfoot>
 						<tr>
 							<td colspan="20">
-								<div class="bulk-actions align-left">
+								<!-- <div class="bulk-actions align-left">
 									<input type="submit" value="批量删除" class="button"/>
-								</div>
+								</div> -->
 								<div class="pagination">
 									<?php echo ($page); ?>
 								</div>
@@ -94,5 +87,23 @@
 		</div>
 	</div>
 </div>
+<div id="imgcode" style="text-align:center;display:none;">
+	<div style="padding:20px;">
+		<img id="codeimg" style="width:100%;"/>
+	</div>
+</div>
 </body>
+
+<script type="text/javascript" src="/chacode/Public/Admin/js/layer/layer.js"></script>
+<script type="text/javascript">
+$(".imgcode").on('click',function () {
+	$("#codeimg").attr("src",$(this).attr("src"));
+	layer.open({
+		type:1,
+		title:"右键另存为吧！",
+		content: $('#imgcode'),
+		area:["400px","auto"]
+	});
+});
+</script>
 </html>

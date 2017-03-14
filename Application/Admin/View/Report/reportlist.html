@@ -21,6 +21,10 @@
 			<form action="{:U('Report/reportlist')}" method="post">
 				举报人姓名：<input type="text" name="name" class="text-input" value="{$_REQUEST['name']}">
 				电话：<input type="text" name="tel" class="text-input" value="{$_REQUEST['tel']}">
+				状态：<select name="status">
+						<option value="0">未处理</option>
+						<option value="1">已处理</option>
+					</select>
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>
@@ -60,7 +64,7 @@
 								<td>{$vo.name}</td>
 								<td>{$vo.tel}</td>
 								<td>{$vo.remark}</td>
-								<td>{$vo.pic}</td>
+								<td><img src="{$vo.pic}" style="width:50px;"/></td>
 								<td>
 									<if condition="$vo['status'] eq 0">未处理
 									<else/>已处理

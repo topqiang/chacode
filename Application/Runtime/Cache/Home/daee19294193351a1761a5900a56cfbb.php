@@ -8,26 +8,7 @@
         <script type="text/javascript" src="/chacode/Public/Home/js/jx.js"></script>
         <title>防伪查询</title>
         <style type="text/css">
-            /*@media only screen and (min-width: 768px){
-                .shop-body{
-                    min-height: 1168px;
-                }
-            }
-            @media only screen and (min-width: 412px){
-                .shop-body{
-                    min-height: 1030px;
-                }
-            }*/
-            /*@media only screen and (min-width: 400px){
-                .shop-body{
-                    min-height: 1430px;
-                }
-            }*/
-            /*@media only screen and (min-width: 360px){
-                .shop-body{
-                    min-height: 1200px;
-                }
-            }*/
+
         </style>
     </head>
     <body>
@@ -75,7 +56,7 @@
 				<div class="go-there">
 					<div class="go-center">
 						<i></i>
-						<span>带我去这里</span>
+						<span class="gothere">带我去这里</span>
 					</div>					
 				</div>
 			</div>
@@ -89,8 +70,23 @@
     </body>
     
 	<script type="text/javascript">
-		<?php echo ($company['lat']); ?>
-		<?php echo ($company['lnt']); ?>
+		if (navigator.geolocation) {
+    		navigator.geolocation.getCurrentPosition(callback);
+    	}
+    	function callback( res ) {
+    		console.log(res);
+    	}
+
+    	$(".gothere").on('click',function () {
+    		var lat = "<?php echo ($company['lat']); ?>";
+    		var lnt = "<?php echo ($company['lnt']); ?>";
+    		if (lat && lnt) {
+    			sessionStorage.setItem("end",JSON.stringify({"lat":lat,"lnt":lnt}));
+    			window.location.href="<?php echo U('Address/address');?>";
+    		}else{
+    			alert("未找到地址！");
+    		}
+    	});
 	</script>
 
 </html>

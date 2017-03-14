@@ -11,7 +11,9 @@
         body {
             height: 100%;
             margin: 0px;
-            padding: 0px
+            padding: 0px;
+            width:100%;
+            overflow:hidden;
         }
         #container {
             width: 100%;
@@ -36,22 +38,29 @@
     </div>
     <script>
 
+    	var start;
+    	var drivingService;
+    	var option = JSON.parse(sessionStorage.getItem("end"));
+        var end = new qq.maps.LatLng(option['lat'],option['lnt']);
+        console.log(end);
+        function callback( res ){
+        	start = new qq.maps.LatLng(res.coords.latitude, res.coords.longitude);
+        	var map = new qq.maps.Map(document.getElementById("container"), {
+	            center: start
+	        });
+	         //设置获取驾车线路方案的服务
+	        drivingService = new qq.maps.DrivingService({
+	            map: map,
+	            //展现结果
+	            panel: document.getElementById('infoDiv')
+	 
+	        });
+	        search();
+        }
 
-        var start = new qq.maps.LatLng(39.916527, 116.397128);
-        var end = new qq.maps.LatLng(39.08897,117.11994);
-        console.log(new qq.maps.LatLng());	
-        var map = new qq.maps.Map(document.getElementById("container"), {
-            center: start
-        });
-         //设置获取驾车线路方案的服务
-        var drivingService = new qq.maps.DrivingService({
-            map: map,
-            //展现结果
-            panel: document.getElementById('infoDiv')
- 
-        });
+
          //设置搜索地点信息、驾车方案等属性
-        function search() {
+        function search( ) {
         	var type = ["LEAST_TIME","LEAST_DISTANCE","AVOID_HIGHWAYS","REAL_TRAFFIC","PREDICT_TRAFFIC"];
         	/**
         	*	<option value="LEAST_TIME">最少时间</option>
@@ -77,7 +86,15 @@
             //设置驾驶路线的起点和终点
             drivingService.search(start, end);
         }
-        window.onload = search;
+
+        window.onload=function () {
+			if (navigator.geolocation) {
+	    		navigator.geolocation.getCurrentPosition(callback,function () {
+	    			alert("获取路线失败！");
+	    		});
+	    	}
+        }
+
     </script>
  
 </body>
