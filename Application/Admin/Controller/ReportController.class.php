@@ -41,4 +41,14 @@ class ReportController extends AdminBasicController{
             $this->error('处理失败');
         }
     }
+    public function reportedit(){
+		$shopadd = D("Report");
+        if(empty($_GET['id']))$this->error('举报信息id');
+        $res = $shopadd -> save(array('id'=>$_GET['id'],'status'=>"9"));
+        if($res){
+            $this->success('删除成功',U('Report/reportlist'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
 }
