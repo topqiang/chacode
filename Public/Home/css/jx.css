@@ -27,7 +27,7 @@
 	font-size:40px;
 }
 .pad732{
-	padding:70px 30px 20px;
+	padding:20px 30px 20px;
 }
 .mat10{
 	margin-top:10px;
@@ -70,7 +70,7 @@
 	width:50px;
 	height:50px;
 	position:absolute;
-	top:70px;
+	top:20px;
 	left:30px;
 }
 .fake-body{
@@ -78,7 +78,7 @@
 	background-size:100% 100%;
 	width:100%;
 	position:fixed;
-	top:142px;
+	top:93px;
 	left:0;
 	right:0;
 	bottom:0;
