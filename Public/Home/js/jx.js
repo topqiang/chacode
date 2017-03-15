@@ -21,4 +21,7 @@ $(function(){
 		$(".bg-black").show();
 		$(".report-box").show();
 	})
+	$(".fake-head span").on('click',function () {
+		history.go(-1);
+	})
 })
