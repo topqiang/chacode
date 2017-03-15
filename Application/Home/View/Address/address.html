@@ -90,7 +90,27 @@
         window.onload=function () {
 			if (navigator.geolocation) {
 	    		navigator.geolocation.getCurrentPosition(callback,function () {
-	    			alert("获取路线失败！");
+
+
+	    			var citylocation,map,marker = null;
+                    var init = function() {
+                        var center = new qq.maps.LatLng(39.916527,116.397128);
+                        var city = document.getElementById("city");
+                        map = new qq.maps.Map(document.getElementById('container'),{
+                            center: center,
+                            zoom: 13
+                        });
+                        //获取  城市位置信息查询 接口  
+                        citylocation = new qq.maps.CityService({
+                            //设置地图
+                            map : map,
+
+                            complete : function(results){
+                                console.log(results.detail.latLng);
+                            }
+                        });
+                    }
+                        citylocation.searchCityByIP("{$ip}");
 	    		});
 	    	}
         }

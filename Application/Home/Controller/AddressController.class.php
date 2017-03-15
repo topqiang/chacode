@@ -12,6 +12,7 @@ class AddressController extends BaseController{
 	}
 	
 	public function address(){
+		$this->assign('ip',get_client_ip());
 		$this->display();
 	}
 }
