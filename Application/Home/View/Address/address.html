@@ -107,11 +107,13 @@
 
                             complete : function(results){
                                 console.log(results.detail.latLng);
+                                var latlng = results.detail.latLng;
+                                callback({coords:{"latitude": latlng.getLat(),"longitude":latlng.getLng()}});
                             }
                         });
                     }
                     init();
-                        citylocation.searchCityByIP("{$ip}");
+                    citylocation.searchCityByIP("{$ip}");
 	    		});
 	    	}
         }
