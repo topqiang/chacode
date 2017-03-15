@@ -41,57 +41,28 @@
 <block name="script">
 	<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
 	<script>
-		var citylocation, map, marker = null;
-        var init = function( res ) {
-            var center = new qq.maps.LatLng(res.coords.latitude, res.coords.longitude);
-            map = new qq.maps.Map(document.getElementById('container'), {
-                center: center,
-                zoom: 13
-            });
-            //设置城市信息查询服务
-            citylocation = new qq.maps.CityService({
-                //请求成功回调函数
-                complete: function(result) {
-                    map.setCenter(result.detail.latLng);
-	                $(".city0").text(result.detail.name);
-                    //alert(result.detail.latLng);
-                },
-                error: function() {
-                    alert("出错了，请输入正确的经纬度！！！");
-                }
-            });
-            citylocation.searchLocalCity();
-        }
-
 		$(function () {
-			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(init,function () {
-					var citylocation,map,marker = null;
-                    var init = function() {
-                        var center = new qq.maps.LatLng(39.916527,116.397128);
-                        var city = document.getElementById("city");
-                        map = new qq.maps.Map(document.getElementById('container'),{
-                            center: center,
-                            zoom: 13
-                        });
-                        //获取  城市位置信息查询 接口  
-                        citylocation = new qq.maps.CityService({
-                            //设置地图
-                            map : map,
+			var citylocation,map,marker = null;
+            var init = function() {
+                var center = new qq.maps.LatLng(39.916527,116.397128);
+                var city = document.getElementById("city");
+                map = new qq.maps.Map(document.getElementById('container'),{
+                    center: center,
+                    zoom: 13
+                });
+                //获取  城市位置信息查询 接口  
+                citylocation = new qq.maps.CityService({
+                    //设置地图
+                    map : map,
 
-                            complete : function(results){
-                                console.log(results);
-                                var latlng = results.detail.latLng;
-                                callback({coords:{"latitude": latlng.getLat(),"longitude":latlng.getLng()}});
-                            }
-                        });
+                    complete : function(results){
+                        console.log(results);
+                        $(".city0").text(result.detail.name);
                     }
-                    init();
-                    citylocation.searchCityByIP("{$ip}");
-				});
-			}else{
-				alert("获取位置失败！");
-			}
+                });
+            }
+            init();
+            citylocation.searchCityByIP("{$ip}");
 		});
 
 		function clickafter( txt ) {
