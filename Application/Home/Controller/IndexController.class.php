@@ -18,6 +18,7 @@ class IndexController extends BaseController {
 
     public function city(){
         $city = M('City') -> select();
+        $this -> assign('ip',get_client_ip());
         $this -> assign('citylist',$city);
         $this -> display();
     }
