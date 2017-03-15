@@ -77,8 +77,8 @@ class CompanyController extends AdminBasicController{
                 'provance'      =>$_POST['provance'],
                 'lat'           =>$_POST['lat'],
                 'lnt'           =>$_POST['lnt'],
-                'b_time'        =>$_POST['b_time'],
-                'e_time'        =>$_POST['e_time'],
+                'b_time'        =>strtotime($_POST['b_time']),
+                'e_time'        =>strtotime($_POST['e_time']),
                 'status'        =>0,
             );
             if (!empty($_FILES['tel'])) {
