@@ -17,13 +17,13 @@ class CompanyController extends AdminBasicController{
         if(!empty($_POST['provance']))$where['provance'] = $_POST['provance'];
         $where['status'] = array('neq' , '9');
         $time = date('Y/m/d');
-        $where['b_time'] = array('gt' , $time);
-        $where['e_time'] = array('lt' , $time);
+        $where['b_time'] = array('lt' , $time);
+        $where['e_time'] = array('gt' , $time);
         $count = $this -> company -> where($where) -> count();
         $page = new \Think\Page($count,15);
         $res=$this -> company -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
-        $this -> company -> getLastSql();
-        exit();
+        //$this -> company -> getLastSql();
+        //exit();
         $this->assign('list',$res);
         $this->assign('page',$page->show());
         $this->display('companyList');
