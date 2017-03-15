@@ -17,7 +17,11 @@ class CompanyController extends BaseController{
 		$provance = $_GET['provance'];
 		if (!empty($provance)) {
 			$ratem = M('Company');
-			$rates = $ratem -> where( array('provance' => $provance) ) -> select();
+			$time = date('Y/m/d');
+        	$where['b_time'] = array('lt' , $time);
+        	$where['e_time'] = array('gt' , $time);
+	        $where['provance'] = array('eq' , $provance);
+			$rates = $ratem -> where( $where ) -> select();
 		}
 
 		$this -> assign("companylist",$rates);
