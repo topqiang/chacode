@@ -37,11 +37,18 @@ class CompanyController extends AdminBasicController{
                 'email'         =>$_POST['email'],
                 'class'         =>$_POST['class'],
                 'provance'      =>$_POST['provance'],
-                'tel'           =>$_POST['tel'],
                 'lat'           =>$_POST['lat'],
                 'lnt'           =>$_POST['lnt'],
+                'b_time'        =>$_POST['b_time'],
+                'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
+            if (!empty($_FILES['tel'])) {
+                $res = $this -> upload('tel','company');
+                if ($res != 'error') {
+                    $data['tel'] = $res;
+                }
+            }
             $res=$this->company->add($data);
             if($res){
                 $this->success('添加成功',U('Company/companyList'));
@@ -68,11 +75,18 @@ class CompanyController extends AdminBasicController{
                 'email'         =>$_POST['email'],
                 'class'         =>$_POST['class'],
                 'provance'      =>$_POST['provance'],
-                'tel'           =>$_POST['tel'],
                 'lat'           =>$_POST['lat'],
                 'lnt'           =>$_POST['lnt'],
+                'b_time'        =>$_POST['b_time'],
+                'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
+            if (!empty($_FILES['tel'])) {
+                $res = $this -> upload('tel','company');
+                if ($res != 'error') {
+                    $data['tel'] = $res;
+                }
+            }
             $res=$this->company->save($data);
             if($res){
                 $this->success('修改成功',U('Company/companyList'));
@@ -88,6 +102,25 @@ class CompanyController extends AdminBasicController{
             $this->success('删除成功',U('Company/companyList'));
         }else{
             $this->error('删除失败');
+        }
+    }
+
+    public function upload($filename,$path){
+        $config = array(
+            'subName'    =>    $path, //设置文件名
+        );
+        $upload = new \Think\Upload($config);
+        $upload->maxSize   =     30145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg', 'pdf', 'mp4');// 设置附件上传类型
+        $upload->rootPath  =      './Uploads/' .$path. '/'; // 设置附件上传根目录
+
+        $upload->saveRule       = !empty($name) ? $name : 'uniqid' ;      //保存文件命名规则
+        // 上传单个文件 
+        $info = $upload->uploadOne($_FILES[$filename]);
+        if(!$info) {// 上传错误提示错误信息
+            return "error";
+        }else{// 上传成功 获取上传文件信息
+            return $info['savepath'].$info['savename'];
         }
     }
 }
