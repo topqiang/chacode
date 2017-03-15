@@ -21,7 +21,7 @@
 					<div class="photoimg">
 						<input type="file" name="pic"/>
 					</div>
-					<img class="showimg" width="200" height="200"/>
+					<img class="showimg hid0" width="200" height="200"/>
 				</div>
 				
 			</div>
@@ -77,7 +77,7 @@
                 	if (res.flag == "success") {
                 		pic =res.data;
                 		console.log(pic);
-                    	$(".showimg").attr("src",__ROOT__+"/"+pic);
+                    	$(".showimg").show().attr("src",__ROOT__+"/"+pic);
                 	}else{
                 		alert(res.message);
                 	}
