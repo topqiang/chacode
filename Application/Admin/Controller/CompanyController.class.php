@@ -18,6 +18,9 @@ class CompanyController extends AdminBasicController{
         $where['status'] = array('neq' , '9');
         $count = $this -> company -> where($where) -> count();
         $page = new \Think\Page($count,15);
+        $time = date('Y/m/d');
+        $where['b_time'] = array('lt' , $time);
+        $where['e_time'] = array('gt' , $time);
         $res=$this -> company -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
         $this->assign('list',$res);
         $this->assign('page',$page->show());
