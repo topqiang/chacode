@@ -43,11 +43,12 @@
 							</th>
 							<th width="15%">经销商名称</th>
 							<th width="5%">老板</th>
-							<th width="10%">电话</th>
+							<th width="10%">门店图片</th>
 							<th width="10%">微信号</th>
 							<th width="10%">email</th>
-							<th width="10%">销售级别</th>
-							<th width="10%">所处城市</th>
+							<th width="5%">销售级别</th>
+							<th width="5%">所处城市</th>
+							<th width="10%">代理时间</th>
 							<th width="15%">地址</th>
 							<th width="10%">操作</th>
 						</tr>
@@ -67,11 +68,12 @@
 									{$vo.name}
 								</td>
 								<td>{$vo.boss}</td>
-								<td>{$vo.tel}</td>
+								<td><img src="/Uploads/{$vo.tel}" style="width:50px;"/></td>
 								<td>{$vo.wxcode}</td>
 								<td>{$vo.email}</td>
 								<td>{$vo.class}</td>
 								<td>{$vo.provance}</td>
+								<td>{$vo.b_time}--{$vo.e_time}</td>
 								<td>{$vo.address}</td>
                                 <td>
                                     <a href="{:U('Company/companyEdit',array('id'=>$vo['id']))}" title="编辑">
