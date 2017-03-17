@@ -34,7 +34,7 @@
 					<div class="photoimg">
 						<input type="file" name="pic"/>
 					</div>
-					<img class="showimg" width="200" height="200"/>
+					<img class="showimg hid0" width="200" height="200"/>
 				</div>
 				
 			</div>
@@ -53,9 +53,14 @@
 		var name = $(".name").val();
 		var tel = $(".tel").val();
 		if (name == "" || tel == "") {
-			alert("用户名和手机号不能为空！");
+			alert("姓名和手机号不能为空！");
 			return;
 		}
+		if (!/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$/.test(tel)) {
+			alert("请输入合法的手机号！");
+			return;
+		}
+
 		var remark = $(".remark").val();
 		$.ajax({
 			"url" : "<?php echo U('Report/addReport');?>",
@@ -65,6 +70,7 @@
 			"success" : function (res) {
 				if (res.flag == "success") {
 					alert(res.message);
+					window.location.href = "<?php echo U('Index/index');?>";
 				}
 			}
 		})
@@ -91,7 +97,7 @@
                 	if (res.flag == "success") {
                 		pic =res.data;
                 		console.log(pic);
-                    	$(".showimg").attr("src",pic);
+                    	$(".showimg").show().attr("src","/"+pic);
                 	}else{
                 		alert(res.message);
                 	}

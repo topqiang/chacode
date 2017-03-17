@@ -27,7 +27,7 @@
 	<div class="content-box">
 		<!--头部切换-->
 		<div class="content-box-header">
-			<h3>编辑商品</h3>
+			<h3>编辑经销商</h3>
 			<div class="clear"></div>
 		</div>
 		<div class="content-box-content">
@@ -35,7 +35,7 @@
 				<form action="{:U('Company/companyEdit',array('id'=>$id))}" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<p>
-							<label>商品名称(ID:{$info.id})</label>
+							<label>经销商名称(ID:{$info.id})</label>
 							<input value="{$info.name}" class="text-input small-input" type="text" id="small-input" name="name" />
 						</p>
 						<p>
@@ -47,19 +47,20 @@
 							<input class="text-input small-input" type="text" name="provance"  value="{$info.provance}"/>
 						</p>
 						<p>
-							<label>老板</label>
+							<label>负责人</label>
 							<input class="text-input small-input" type="text" name="boss" value="{$info.boss}"/>
 						</p>
 						<p>
 							<label>门店展示</label>
 							<input class="text-input small-input" type="file" name="tel" />
+
 						</p>
 						<p>
-							<label>开始时间</label>
+							<label>授权起始时间</label>
 							<input class="text-input small-input" type="text" name="b_time" id="b_time" value="{$info.email|date='Y-m-d',###}"/>
 						</p>
 						<p>
-							<label>结束时间</label>
+							<label>授权结束时间</label>
 							<input class="text-input small-input" type="text" name="e_time" id="e_time" value="{$info.email|date='Y-m-d',###}"/>
 						</p>
 						<p>

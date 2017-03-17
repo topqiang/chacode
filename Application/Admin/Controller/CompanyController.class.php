@@ -33,6 +33,23 @@ class CompanyController extends AdminBasicController{
         if(empty($_POST)){
             $this->display('companyAdd');
         }else{
+
+            if (empty($_POST['name'])) {
+                $this->error('经销商不能为空！');
+            }
+            if (empty($_POST['address'])) {
+                $this->error('地址不能为空！');
+            }
+            if (empty($_POST['boss'])) {
+                $this->error('负责人不能为空！');
+            }
+            if (empty($_POST['b_time'])) {
+                $this->error('授权起始时间不能为空！');
+            }
+            if (empty($_POST['e_time'])) {
+                $this->error('授权结束时间不能为空！');
+            }
+
             //存储数据
             $data=array(
                 'name'          =>$_POST['name'],
@@ -48,6 +65,8 @@ class CompanyController extends AdminBasicController{
                 'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
+
+
             if (!empty($_FILES['tel'])) {
                 $res = $this -> upload('tel','company');
                 if ($res != 'error') {
@@ -71,6 +90,24 @@ class CompanyController extends AdminBasicController{
             $this->assign('info',$info[0]);
             $this->display('companyEdit');
         }else{
+
+
+            if (empty($_POST['name'])) {
+                $this->error('经销商不能为空！');
+            }
+            if (empty($_POST['address'])) {
+                $this->error('地址不能为空！');
+            }
+            if (empty($_POST['boss'])) {
+                $this->error('负责人不能为空！');
+            }
+            if (empty($_POST['b_time'])) {
+                $this->error('授权起始时间不能为空！');
+            }
+            if (empty($_POST['e_time'])) {
+                $this->error('授权结束时间不能为空！');
+            }
+
             $data=array(
                 'id'            =>$_GET['id'],
                 'name'          =>$_POST['name'],
@@ -86,6 +123,7 @@ class CompanyController extends AdminBasicController{
                 'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
+
             if (!empty($_FILES['tel'])) {
                 $res = $this -> upload('tel','company');
                 if ($res != 'error') {
@@ -102,7 +140,7 @@ class CompanyController extends AdminBasicController{
     }
     public function companyDel(){
         if(empty($_GET['id']))$this->error('没有经销商id');
-        $res=$this->goods->save(array('id'=>$_GET['id'],'status'=>"9"));
+        $res = $this->company->save(array('id'=>$_GET['id'],'status'=>"9"));
         if($res){
             $this->success('删除成功',U('Company/companyList'));
         }else{

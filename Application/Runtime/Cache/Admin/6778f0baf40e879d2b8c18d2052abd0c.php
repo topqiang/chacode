@@ -64,7 +64,8 @@
 						<li><a href="<?php echo U('Manager/editPwd');?>" target="main">修改密码</a></li>
 					</ul>
 				</li>
-                <?php if($_SESSION['g_id'] != 3): ?><li>
+                <?php if($_SESSION['g_id'] != 3): ?><!-- 
+                <li>
                     <a href="#" class="nav-top-item">微信配置</a>
                     <ul>
                         <li><a href="<?php echo U('WeiXinArticle/api');?>" target="main">API接口</a></li>
@@ -75,7 +76,7 @@
                         <li><a href="<?php echo U('WeiXinArticle/backType',array('back_type'=>'noneBack'));?>" target="main">空回答回复</a></li>
                     </ul>
                 </li>
-                <!-- <li>
+                <li>
                     <a href="#" class="nav-top-item">文章管理</a>
                     <ul>
                         <li><a href="<?php echo U('Article/articleList');?>" target="main">文章列表</a></li>

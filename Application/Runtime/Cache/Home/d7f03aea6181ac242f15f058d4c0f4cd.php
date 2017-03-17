@@ -8,26 +8,7 @@
         <script type="text/javascript" src="/chacode/Public/Home/js/jx.js"></script>
         <title>防伪查询</title>
         <style type="text/css">
-            /*@media only screen and (min-width: 768px){
-                .shop-body{
-                    min-height: 1168px;
-                }
-            }
-            @media only screen and (min-width: 412px){
-                .shop-body{
-                    min-height: 1030px;
-                }
-            }*/
-            /*@media only screen and (min-width: 400px){
-                .shop-body{
-                    min-height: 1430px;
-                }
-            }*/
-            /*@media only screen and (min-width: 360px){
-                .shop-body{
-                    min-height: 1200px;
-                }
-            }*/
+
         </style>
     </head>
     <body>
@@ -47,7 +28,7 @@
 					<?php if(!empty($res)): ?><div class="result-head">查询结果</div>
 						<div class="result-detail">
 							<div class="result-img">
-								<img src="/chacode/<?php echo ($res["code_pic"]); ?>"/>
+								<img src="<?php echo ($res["pic"]); ?>"/>
 							</div>
 							<p>您输入的“<?php echo ($res['codenum']); ?>”是“<?php echo ($res["name"]); ?>”产品，产品为正品。</p>
 						</div>

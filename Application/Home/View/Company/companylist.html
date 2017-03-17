@@ -10,6 +10,7 @@
 					<volist name="companylist" id="comp">
 						<a class="shop-item" href="{:U('Company/company',array('id'=>$comp['id']))}">
 							<span>{$comp.name}</span>
+							<!--
 							<if condition="$comp['class'] eq 1">
 								<i class="shop-item1"></i>
 							<elseif condition="$comp['class'] eq 2"/>
@@ -21,10 +22,15 @@
 							<elseif condition="$comp['class'] eq 5"/>
 								<i class="shop-item5"></i>
 							</if>
+							-->
 						</a>
 					</volist>
-				</div>	
+				</div>
 			</div>
+			<if condition="empty($companylist)">
+				<span style="font-size:40px;padding:0px 20px;">当前地区没有经销商，请选择其他地区。</span>
+			</if>
+
 			<div class="fake-footer fs35">
 				<p>云南西双版纳州古茶山茶业有限公司</p>
 				<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>

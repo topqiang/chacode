@@ -22,6 +22,7 @@
 				<div class="shop-list">
 					<?php if(is_array($companylist)): $i = 0; $__LIST__ = $companylist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$comp): $mod = ($i % 2 );++$i;?><a class="shop-item" href="<?php echo U('Company/company',array('id'=>$comp['id']));?>">
 							<span><?php echo ($comp["name"]); ?></span>
+							<!--
 							<?php if($comp['class'] == 1): ?><i class="shop-item1"></i>
 							<?php elseif($comp['class'] == 2): ?>
 								<i class="shop-item2"></i>
@@ -31,9 +32,12 @@
 								<i class="shop-item4"></i>
 							<?php elseif($comp['class'] == 5): ?>
 								<i class="shop-item5"></i><?php endif; ?>
+							-->
 						</a><?php endforeach; endif; else: echo "" ;endif; ?>
-				</div>	
+				</div>
 			</div>
+			<?php if(empty($companylist)): ?><span style="font-size:40px;padding:0px 20px;">当前地区没有经销商，请选择其他地区。</span><?php endif; ?>
+
 			<div class="fake-footer fs35">
 				<p>云南西双版纳州古茶山茶业有限公司</p>
 				<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>

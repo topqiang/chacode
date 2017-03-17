@@ -13,7 +13,7 @@
 	<div class="content-box">
 		<!--头部切换-->
 		<div class="content-box-header">
-			<h3>销售商列表</h3>
+			<h3>经销商列表</h3>
 			<ul class="content-box-tabs">
 				<li><a href="<?php echo U('Company/companyList');?>" class="default-tab current">列表</a></li>
 				<li><a href="<?php echo U('Company/companyAdd');?>">添加</a></li>
@@ -41,13 +41,14 @@
 								<input class="check-all" type="checkbox" />
 								ID
 							</th>
-							<th width="15%">经销商名称</th>
-							<th width="5%">老板</th>
-							<th width="10%">电话</th>
-							<th width="10%">微信号</th>
-							<th width="10%">email</th>
-							<th width="10%">销售级别</th>
+							<th width="10%">经销商名称</th>
+							<th width="10%">负责人</th>
+							<th width="10%">门店图片</th>
+							<!--<th width="10%">微信号</th>
+							<th width="10%">email</th>-->
+							<th width="5%">销售级别</th>
 							<th width="10%">所处城市</th>
+							<th width="15%">代理时间</th>
 							<th width="15%">地址</th>
 							<th width="10%">操作</th>
 						</tr>
@@ -64,11 +65,12 @@
 									<?php echo ($vo["name"]); ?>
 								</td>
 								<td><?php echo ($vo["boss"]); ?></td>
-								<td><?php echo ($vo["tel"]); ?></td>
-								<td><?php echo ($vo["wxcode"]); ?></td>
-								<td><?php echo ($vo["email"]); ?></td>
+								<td><img src="/Uploads/<?php echo ($vo["tel"]); ?>" style="width:50px;"/></td>
+								<!--<td><?php echo ($vo["wxcode"]); ?></td>
+								<td><?php echo ($vo["email"]); ?></td>-->
 								<td><?php echo ($vo["class"]); ?></td>
 								<td><?php echo ($vo["provance"]); ?></td>
+								<td><?php echo ($vo["b_time"]); ?>--<?php echo ($vo["e_time"]); ?></td>
 								<td><?php echo ($vo["address"]); ?></td>
                                 <td>
                                     <a href="<?php echo U('Company/companyEdit',array('id'=>$vo['id']));?>" title="编辑">
