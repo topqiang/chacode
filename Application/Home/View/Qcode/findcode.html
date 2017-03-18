@@ -11,34 +11,36 @@
 					<input class="code_name" type="text" value="{$_REQUEST['code_name']}" placeholder="请输入防伪码"/>
 				    <span class="postbtn">查询</span>
 				</div>
-				<div class="query-note fs35 result-note">
-					<if condition="!empty($res)">
-						<div class="result-head">查询结果</div>
-						<div class="result-detail">
-							<div class="result-img">
-								<img src="{$res.pic}"/>
+				<if condition="!empty($res)">
+					<div class="query-note fs35 result-note">
+						
+							<div class="result-head">查询结果</div>
+							<div class="result-detail">
+								<div class="result-img">
+									<img src="{$res.pic}"/>
+								</div>
+								<p>您输入的“{$res['codenum']}”是“{$res.name}”产品，产品为正品。</p>
 							</div>
-							<p>您输入的“{$res['codenum']}”是“{$res.name}”产品，产品为正品。</p>
-						</div>
-						<div class="result-intro">
-							<p>
-								<span>批次</span>
-								{$res.creatcode}
-							</p>
-							<p>
-								<span>品名</span>
-								{$res.name}
-							</p>
-							<p>
-								<span>生产日期</span>
-								{$res.ctime|date="Y/m/d",###}
-							</p>
-						</div>
-						<else/>
-						<span class="" style="padding:20px;display:block">您输入的”{$_REQUEST['code_name']}“没有对应的产品信息，请谨防假冒。
-						<a href="{:U('Report/report')}">举报</a></span>
-					</if>
-				</div>
+							<div class="result-intro">
+								<p>
+									<span>批次</span>
+									{$res.creatcode}
+								</p>
+								<p>
+									<span>品名</span>
+									{$res.name}
+								</p>
+								<p>
+									<span>生产日期</span>
+									{$res.ctime|date="Y/m/d",###}
+								</p>
+							</div>
+							
+					</div>
+				<else/>
+					<span class="" style="padding:20px;display:block">您输入的”{$_REQUEST['code_name']}“没有对应的产品信息，请谨防假冒。
+					<a href="{:U('Report/report')}">举报</a></span>
+				</if>
 
 				<div class="fake-submit1 mat40"><span class="linkbtn">经销商查询</span></div>
 
