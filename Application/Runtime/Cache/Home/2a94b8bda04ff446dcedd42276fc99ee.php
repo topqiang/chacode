@@ -27,7 +27,7 @@
 				</div>
 				<div class="fake-code"><input class="code_name" type="text" placeholder="输入十位防伪验证码"/></div>
 				<div class="fake-submit"><span class="postbtn">查询</span></div>
-				<div class="fake-submit1"><span class="linkbtn">经销商查询</span></div>
+				
 				<div class="fake-footer fs35 footer1">
 					<p>云南西双版纳州古茶山茶业有限公司</p>
 					<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
@@ -40,8 +40,8 @@
     
 	<script type="text/javascript">
 		$(".postbtn").on('click',function () {
-			var code_name = $(".code_name").val();
 			if ( !/^[a-zA-Z0-9]{10}$/.test(code_name) ) {
+			var code_name = $(".code_name").val();
 				alert("请输入合法的防伪码！");
 				return;
 			}
@@ -52,9 +52,6 @@
 			}
 		})
 
-		$(".linkbtn").on('click',function () {
-			window.location.href="<?php echo U('Index/city');?>";
-		})
 	</script>
 
 </html>

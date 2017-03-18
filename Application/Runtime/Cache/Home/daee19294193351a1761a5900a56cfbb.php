@@ -18,6 +18,9 @@
 			<?php echo ($company["name"]); ?>
 		</div>
 		<div class="fake-body bot1">
+			<div class="result-img" style="padding-top:50px;">
+				<img src="/Uploads/<?php echo ($company["tel"]); ?>"/>
+			</div>
 			<div class="shop-body">
 				<div class="result-intro shop-intro">
 					<p>
@@ -29,17 +32,17 @@
 						<?php echo ($company["boss"]); ?>
 					</p>
 					<p>
-						<span>电话</span>
-						<?php echo ($company["tel"]); ?>
+						<span>代理期限</span>
+						<?php echo ($company["b_time"]); ?>--<?php echo ($company["e_time"]); ?>
 					</p>
-					<p>
+					<!--<p>
 						<span>微信号</span>
 						<?php echo ($company["wxcode"]); ?>
 					</p>
 					<p>
 						<span>电子邮件</span>
 						<?php echo ($company["email"]); ?>
-					</p>
+					</p>-->
 					<p>
 						<span>经销商级别</span>
 						<?php if($company['class'] == 1): ?>一级

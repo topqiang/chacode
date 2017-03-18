@@ -31,9 +31,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="nav-top-item">销售商管理</a>
+                    <a href="#" class="nav-top-item">经销商管理</a>
                     <ul>
-                        <li><a href="<?php echo U('Company/companyList');?>" target="main">销售商列表</a></li>
+                        <li><a href="<?php echo U('Company/companyList');?>" target="main">经销商列表</a></li>
                     </ul>
                 </li>
                 <li>

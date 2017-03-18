@@ -22,7 +22,8 @@
 				举报人姓名：<input type="text" name="name" class="text-input" value="<?php echo ($_REQUEST['name']); ?>">
 				电话：<input type="text" name="tel" class="text-input" value="<?php echo ($_REQUEST['tel']); ?>">
 				状态：<select name="status">
-						<option value="0">未处理</option>
+						<option></option>
+						<option value="2">未处理</option>
 						<option value="1">已处理</option>
 					</select>
 				<input type="submit" class="button search-btn" value="查询">

@@ -45,17 +45,14 @@
 								<span>生产日期</span>
 								<?php echo (date("Y/m/d",$res["ctime"])); ?>
 							</p>
-							<p>
-								<span>厂家</span>
-								<?php echo ($res["name"]); ?>
-							</p>
 						</div>
 						<?php else: ?>
 						<span class="" style="padding:20px;display:block">您输入的”<?php echo ($_REQUEST['code_name']); ?>“没有对应的产品信息，请谨防假冒。
 						<a href="<?php echo U('Report/report');?>">举报</a></span><?php endif; ?>
-
-
 				</div>
+
+				<div class="fake-submit1 mat40"><span class="linkbtn">经销商查询</span></div>
+
 			</div>
 		</div>
 		<div class="fake-footer fs35">
@@ -76,7 +73,9 @@
 				window.location.href = '<?php echo U("Home/Qcode/findcode");?>/code_name/'+code_name;
 			}
 		})
-
+		$(".linkbtn").on('click',function () {
+			window.location.href="<?php echo U('Index/city');?>";
+		})
 	</script>
 
 </html>

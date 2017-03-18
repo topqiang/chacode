@@ -53,7 +53,7 @@
 						<p>
 							<label>门店展示</label>
 							<input class="text-input small-input" type="file" name="tel" />
-
+							<span style="color:red;">图片尺寸640x400，大小不超过1M。</span>
 						</p>
 						<p>
 							<label>授权起始时间</label>
@@ -75,11 +75,9 @@
 							<label>销售商级别</label>
 
 							<select name="class">
-								<option value="1" <if condition="$info['class'] eq 1">selected</if>>一级</option>
-								<option value="2" <if condition="$info['class'] eq 2">selected</if>>二级</option>
-								<option value="3" <if condition="$info['class'] eq 3">selected</if>>三级</option>
-								<option value="4" <if condition="$info['class'] eq 4">selected</if>>四级</option>
-								<option value="5" <if condition="$info['class'] eq 5">selected</if>>五级</option>
+								<option value="1" <if condition="$info['class'] eq 1">selected</if>>省级</option>
+								<option value="2" <if condition="$info['class'] eq 2">selected</if>>市级</option>
+								<option value="3" <if condition="$info['class'] eq 3">selected</if>>县级</option>
 							</select>
 							<input type="hidden" name="lat" class="lat" value="{$info.lat}"/>
 							<input type="hidden" name="lnt" class="lnt" value="{$info.lnt}"/>

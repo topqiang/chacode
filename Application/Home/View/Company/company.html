@@ -33,15 +33,11 @@
 					<p>
 						<span>经销商级别</span>
 						<if condition="$company['class'] eq 1">
-							一级
+							省级
 						<elseif condition="$company['class'] eq 2"/>
-							二级
+							市级
 						<elseif condition="$company['class'] eq 3"/>
-							三级
-						<elseif condition="$company['class'] eq 4"/>
-							四级
-						<elseif condition="$company['class'] eq 5"/>
-							五级
+							县级
 						</if>
 					</p>
 				</div>

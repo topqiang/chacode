@@ -20,6 +20,7 @@ class CompanyController extends BaseController{
 			$time = date('Y/m/d');
         	$where['b_time'] = array('lt' , $time);
         	$where['e_time'] = array('gt' , $time);
+        	$where['status'] = array('neq' , 9);
 	        $where['provance'] = array('eq' , $provance);
 			$rates = $ratem -> where( $where ) -> select();
 		}

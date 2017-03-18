@@ -13,6 +13,8 @@ class ReportController extends AdminBasicController{
 		$shopadd = D("Report");
 		$name = $_POST['name'];
 		$tel = $_POST['tel'];
+		$status = $_POST['status'];
+
 		if ( isset($name) ) {
 			$where['name'] = array('like',"%$name%");
 		}
@@ -20,7 +22,10 @@ class ReportController extends AdminBasicController{
 			$where['tel'] = array('like',"%$tel%");
 		}
 		$where['status'] = array('neq',9);
-		if ( isset($status) ) {
+		if ( isset($status) && !empty($status) ) {
+			if ($status == "2") {
+				$status = "0";
+			}
 			$where['status'] = $status;
 		}
 		$count = $shopadd ->where($where)->count();

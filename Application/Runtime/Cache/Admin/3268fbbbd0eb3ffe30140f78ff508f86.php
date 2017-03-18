@@ -42,7 +42,7 @@
 							</th>
 							<th width="15%">商品名称</th>
 							<th width="10%">缩略图</th>
-							<th width="20%">生成时间</th>
+							<th width="20%">生产日期</th>
 							<th width="20%">厂家名称</th>
 							<th width="20%">批次</th>
 							<th width="10%">操作</th>
@@ -61,7 +61,7 @@
 								</td>
 								<td><img src="/chacode/<?php echo ($vo["pic"]); ?>" height="30" /></td>
 								<td><?php echo (date("y-m-d H:m:i",$vo["ctime"])); ?></td>
-								<td><?php echo ($vo["company"]); ?></td>
+								<td>云南西双版纳州古茶山茶业有限公司勐海龙园茶厂</td>
 								<td><?php echo ($vo["creatcode"]); ?></td>
                                 <td>
                                 	<a id="<?php echo ($vo['id']); ?>" class="creatcode" title="生成防伪码">
@@ -98,7 +98,11 @@
 </div>
 <div id="sou" style="text-align:center;display:none;">
 	<div style="padding:20px;">
-		<div><input type="text" class="codenum" placeholder="请输入防伪码"/></div>
+		<form>
+		<div><input type="text" class="codenum text-input" placeholder="请输入初始编码"/></div>
+		<div><input type="number" class="start text-input" placeholder="请输入起始序号"/></div>
+		<div><input type="number" class="cnum text-input" placeholder="请输入生成数量"/></div>
+		</form>
 	</div>
 </div>
 <div id="imgcode" style="text-align:center;display:none;">
@@ -118,11 +122,19 @@
 			btn: ['生成'],
 			yes: function () {
 				var keywords = $(".codenum").val();
-				if (keywords) {
+				var start = $(".start").val();
+				var cnum = $(".cnum").val();
+				var test = /^[1-9]\d{0,4}$/;
+
+				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)))) {
+					layer.msg("请输入5位数以内且相加后小于5位数！");
+					return;
+				}
+				if (/^\w{1,5}$/.test(keywords)) {
 					$.ajax({
 						"url":"<?php echo U('Admin/Goods/qrcode');?>",
 						"type":"post",
-						"data":{"id":id,"codenum":keywords},
+						"data":{"id":id,"codenum":keywords,"start":start,"cnum":cnum},
 						"dataType":"json",
 						"success":function ( res ) {
 							if (res.flag == "success") {
@@ -140,11 +152,11 @@
 						}
 					});
 				}else{
-					alert("关键词为空！");
+					layer.msg("关键词为空！");
 				}
 			},
 			content: $('#sou'),
-			area:["200px","auto"]
+			area:["300px","auto"]
 		});  
 	});
 </script>
