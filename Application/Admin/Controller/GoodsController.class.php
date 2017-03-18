@@ -33,6 +33,8 @@ class GoodsController extends Controller{
 				'creatcode'		=>$_POST['creatcode'],
 				'status'		=>0,
 			);
+			dump($data);
+			exit();
 			$res=$this->goods->add($data);
 			if($res){
 				$this->success('添加成功',U('Goods/goodsList'));
