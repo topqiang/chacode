@@ -130,29 +130,30 @@
 					layer.msg("请输入5位数以内且相加后小于5位数！");
 					return;
 				}
-				if (/^\w{1,5}$/.test(keywords)) {
+				if (/^\w{5}$/.test(keywords)) {
 					$.ajax({
 						"url":"<?php echo U('Admin/Goods/qrcode');?>",
 						"type":"post",
-						"data":{"id":id,"codenum":keywords,"start":start,"cnum":cnum},
+						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum},
 						"dataType":"json",
 						"success":function ( res ) {
 							if (res.flag == "success") {
-								$("#codeimg").attr("src","/chacode"+res.data.code_pic);
+								//$("#codeimg").attr("src","/chacode"+res.data.code_pic);
 								layer.close(index);
-								layer.open({
-									type:1,
-									title:"右键另存为吧！",
-									content: $('#imgcode'),
-									area:["400px",""]
-								});
+								// layer.open({
+								// 	type:1,
+								// 	title:"右键另存为吧！",
+								// 	content: $('#imgcode'),
+								// 	area:["400px",""]
+								// });
+								layer.msg("生成成功！请去二维码列表下载，或通过ftp批量下载吧！");
 							}else{
 								alert(res.message);
 							}
 						}
 					});
 				}else{
-					layer.msg("关键词为空！");
+					layer.msg("初始编码应为5位数字");
 				}
 			},
 			content: $('#sou'),

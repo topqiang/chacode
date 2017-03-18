@@ -79,10 +79,21 @@ class GoodsController extends Controller{
 		}
 	}
 
+	public function createCode($path,$code){
+		$save_path = 'Public/qrcode/'.$path.'/';  //图片存储的绝对路径
+        $qr_data = "http://".$_SERVER['HTTP_HOST'].U('Home/Qcode/findcode',array('code_name'=>$code));
+        $qr_level ='H';
+        $qr_size = '10';
+        $save_prefix = $code;
+        return createQRcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix);
+	}
 
 	public function qrcode(){
 		$id = $_POST['id'];
 		$codenum = $_POST['codenum'];
+		$start = $_POST['start'];
+		$cnum = $_POST['cnum'];
+		$web_path = '/Public/qrcode/'.$codenum.'/';        //图片在网页上显示的路径
 		if (empty($id) || empty($codenum)) {
 			$data = array(
 				'flag' => 'error',
@@ -91,36 +102,41 @@ class GoodsController extends Controller{
 			echo json_encode($date);
 			exit();
 		}
-		$ctime = time();
-		$status = 0;
-        $save_path = 'Public/qrcode/';  //图片存储的绝对路径
-        $web_path = '/Public/qrcode/';        //图片在网页上显示的路径
-        $qr_data = "http://".$_SERVER['HTTP_HOST'].U('Home/Qcode/findcode',array('code_name'=>$codenum));
-        $qr_level ='H';
-        $qr_size = '10';
-        $save_prefix = 'ZETA';
-        if($filename = createQRcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix)){
-            $pic = $web_path.$filename;
-            $data = array(
-            	'fromid' => $id,
-            	'codenum' => $codenum,
-            	'code_pic' => $pic,
-            	'ctime' => $ctime,
-            	'status' => $status
-            	);
-            $res = D('Qcode')->add($data);
-            if ($res) {
-            	$data['id'] = $res;
-            	echo json_encode(array('flag'=>'success','message'=>'生成成功！','data'=>$data));
-            }
-        }else{
-        	$data = array(
-				'flag' => 'error',
-				'message' => '生成失败！'
-				);
-			echo json_encode($date);
-			exit();
-        }
+
+		while ( $cnum > 0) {
+			$str = "";
+			for ( $i=0; $i < 5-strlen($start); $i++) { 
+				$str .="0";
+			}
+			$code = $codenum.$str.$start;
+			if ($filename = $this -> createCode($codenum,$code)) {
+				$ctime = time();
+				$status = 0;
+				$pic = $web_path.$filename;
+	            $data = array(
+	            	'fromid' => $id,
+	            	'codenum' => $code,
+	            	'code_pic' => $pic,
+	            	'ctime' => $ctime,
+	            	'status' => $status
+	            	);
+	            $res = D('Qcode')->add($data);
+	            if (!$res) {
+	            	echo json_encode(array('flag'=>'error','message'=>'保存失败！'));
+	            	exit();
+	            }
+			}else{
+				$data = array(
+					'flag' => 'error',
+					'message' => '生成失败！'
+					);
+				echo json_encode($date);
+				exit();
+			}
+			++$start;
+			--$cnum;
+		}
+		echo json_encode(array('flag'=>'success','message'=>'生成成功！'));
     }
 
 	/**
