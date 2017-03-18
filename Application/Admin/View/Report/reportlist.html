@@ -74,9 +74,11 @@
 								<td>{$vo.c_time|date="y-m-d H:m:i",###}</td>
 								<td>{$vo.u_time|date="y-m-d H:m:i",###}</td>
 								<td>
-                                    <a href="{:U('Report/reportedit',array('id'=>$vo['id']))}" title="处理">
-                                        <img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="处理" />
-                                    </a>
+                                    <if condition="$vo['status'] eq 0">
+                                    	<a href="{:U('Report/reportedit',array('id'=>$vo['id']))}" title="处理">
+                                        	<img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="处理" />
+                                    	</a>
+                                    </if>
                                     <a href="{:U('Report/reportdel',array('id'=>$vo['id']))}" title="删除">
                                         <img src="__WEBPUBLIC__/Admin/images/icons/cross.png" alt="Delete" />
                                     </a>
