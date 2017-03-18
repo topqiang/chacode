@@ -73,9 +73,8 @@
 						</p>
 						<p>
 							<label>代理的产品</label>
-							<?php dump($info)?>
 							<volist name="goods" id="good">
-								<input type="checkbox" name="paygoods[]" value="{$good['id']}" <if condition="in_array($good['id'],$info['paygoods'])"> selected</if>/>{$good['name']}
+								<input type="checkbox" name="paygoods[]" value="{$good['id']}" <if condition="in_array($good['id'],$info['paygoods'])"> checked</if>/>{$good['name']}
 							</volist>
 						</p>
 						<p>
