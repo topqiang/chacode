@@ -65,7 +65,11 @@
 								<td>{$vo.name}</td>
 								<td>{$vo.tel}</td>
 								<td>{$vo.remark}</td>
-								<td><img src="{$vo.pic}" style="width:50px;"/></td>
+								<td>
+									<if condition="!empty($vo['pic'])">
+										<img src="{$vo.pic}" style="width:50px;"/>
+									</if>
+								</td>
 								<td>
 									<if condition="$vo['status'] eq 0">未处理
 									<else/>已处理
