@@ -28,13 +28,10 @@ class GoodsController extends Controller{
 			$data=array(
 				'name'			=>$_POST['name'],
 				'pic'			=>"Uploads/goods/".$upload_res['result'],
-				'company'		=>$_POST['company'],
 				'ctime'	=>time(),
 				'creatcode'		=>$_POST['creatcode'],
 				'status'		=>0,
 			);
-			dump($data);
-			exit();
 			$res=$this->goods->add($data);
 			if($res){
 				$this->success('添加成功',U('Goods/goodsList'));
@@ -58,7 +55,6 @@ class GoodsController extends Controller{
 			$data=array(
 				'id'			=>$_GET['id'],
 				'name'			=>$_POST['name'],
-				'company'		=>$_POST['company'],
 				'creatcode'		=>$_POST['creatcode']
 			);
 			if($upload_res['flag']=='success')$data['pic']="Uploads/goods/".$upload_res['result'];
