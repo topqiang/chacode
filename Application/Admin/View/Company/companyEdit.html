@@ -72,6 +72,12 @@
 							<input class="text-input small-input" type="text" name="email" value="{$info.email}"/>
 						</p>
 						<p>
+							<label>代理的产品</label>
+							<volist name="goods" id="good">
+								<input type="checkbox" name="paygoods[]" value="{$good['id']}" <if condition="in_array($good['id'],$info['paygoods'])"> selected</if>/>{$good['name']}
+							</volist>
+						</p>
+						<p>
 							<label>销售商级别</label>
 
 							<select name="class">

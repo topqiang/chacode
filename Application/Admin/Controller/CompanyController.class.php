@@ -91,8 +91,14 @@ class CompanyController extends AdminBasicController{
     public function companyEdit(){
         if(empty($_GET['id']))$this->error('没有商品id');
         if(empty($_POST)){
+            $where['status'] = array('neq' , '9');
+            $gods = $this->goods->where($where)->select();
+            $this -> assign("goods",$gods);
+
             $this->assign('id',$_GET['id']);
             $info=$this->company->where(array('id'=>$_GET['id']))->select();
+                $info[0]['paygoods'] = explode(',', $info[0]['paygoods']);
+
             $this->assign('info',$info[0]);
             $this->display('companyEdit');
         }else{
@@ -130,6 +136,10 @@ class CompanyController extends AdminBasicController{
                 'status'        =>0,
             );
 
+            if (!empty($_POST['paygoods'])) {
+                $data['paygoods'] = implode(",",$_POST['paygoods']);
+            }
+            
             if (!empty($_FILES['tel'])) {
                 $res = $this -> upload('tel','company');
                 if ($res != 'error') {
