@@ -80,7 +80,7 @@
 						<p>
 							<label>代理的产品</label>
 							<volist name="goods" id="good">
-								<input class="text-input small-input" type="checkbox" name="paygoods[]" value="{$good['id']}"/>
+								<input type="checkbox" name="paygoods[]" value="{$good['id']}"/>{$good['name']}
 							</volist>
 						</p>
 						<p>
