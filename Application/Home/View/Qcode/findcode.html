@@ -55,8 +55,9 @@
 	<script type="text/javascript">
 		$(".postbtn").on('click',function () {
 			var code_name = $(".code_name").val();
-			if (code_name == "") {
-				alert("防伪码不能为空！");
+			if ( !/^\w{5}\d{5}$/.test(code_name) ) {
+				alert("请输入合法的防伪码！");
+				return;
 			}else{
 				window.location.href = '{:U("Home/Qcode/findcode")}/code_name/'+code_name;
 			}

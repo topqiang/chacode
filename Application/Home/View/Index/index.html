@@ -26,13 +26,10 @@
 <block name="script">
 	<script type="text/javascript">
 		$(".postbtn").on('click',function () {
-			if ( !/^[a-zA-Z0-9]{10}$/.test(code_name) ) {
 			var code_name = $(".code_name").val();
+			if ( !/^\w{5}\d{5}$/.test(code_name) ) {
 				alert("请输入合法的防伪码！");
 				return;
-			}
-			if (code_name == "") {
-				alert("防伪码不能为空！");
 			}else{
 				window.location.href = '{:U("Home/Qcode/findcode")}/code_name/'+code_name;
 			}
