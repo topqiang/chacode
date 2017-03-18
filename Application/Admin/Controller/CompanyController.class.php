@@ -23,8 +23,8 @@ class CompanyController extends AdminBasicController{
         $count = $this -> company -> where($where) -> count();
         $page = new \Think\Page($count,15);
         $res=$this -> company -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
-        echo $this -> company -> getLastSql();
-        exit();
+        //echo $this -> company -> getLastSql();
+        //exit();
         $this->assign('list',$res);
         $this->assign('page',$page->show());
         $this->display('companyList');
