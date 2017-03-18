@@ -53,7 +53,7 @@ class CompanyController extends AdminBasicController{
             if (empty($_POST['e_time'])) {
                 $this->error('授权结束时间不能为空！');
             }
-
+            
             //存储数据
             $data=array(
                 'name'          =>$_POST['name'],
@@ -69,7 +69,9 @@ class CompanyController extends AdminBasicController{
                 'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
-
+            if (!empty($_POST['paygoods'])) {
+                $data['paygoods'] = implode(",",$_POST['paygoods']);
+            }
 
             if (!empty($_FILES['tel'])) {
                 $res = $this -> upload('tel','company');
