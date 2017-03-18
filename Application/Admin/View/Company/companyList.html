@@ -71,7 +71,12 @@
 								<td><img src="/Uploads/{$vo.tel}" style="width:50px;"/></td>
 								<!--<td>{$vo.wxcode}</td>
 								<td>{$vo.email}</td>-->
-								<td>{$vo.class}</td>
+								<td>
+									<if condition="$vo['class'] eq 1">省级
+										<elseif condition="$vo['class'] eq 2"/>市级
+										<elseif condition="$vo['class'] eq 3"/>县级
+									</if>
+								</td>
 								<td>{$vo.provance}</td>
 								<td>{$vo.b_time}--{$vo.e_time}</td>
 								<td>{$vo.address}</td>
