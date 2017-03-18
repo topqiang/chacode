@@ -59,7 +59,6 @@
 							<label>门店展示</label>
 							<input class="text-input small-input" type="file" name="tel" />
 							<span style="color:red;">图片尺寸640x400，大小不超过1M。</span>
-							
 						</p>
 						<p>
 							<label>授权起始时间</label>
@@ -77,6 +76,12 @@
 						<p>
 							<label>邮箱</label>
 							<input class="text-input small-input" type="text" name="email" />
+						</p>
+						<p>
+							<label>代理的产品</label>
+							<volist name="goods" id="good">
+								<input class="text-input small-input" type="checkbox" name="paygoods[]" value="{$good['id']}"/>
+							</volist>
 						</p>
 						<p>
 							<label>销售商级别</label>

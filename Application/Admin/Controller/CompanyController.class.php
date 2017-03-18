@@ -8,6 +8,7 @@ use Think\Controller;
  */
 class CompanyController extends AdminBasicController{
     public function _initialize(){
+        $this->goods = D("Good");
         $this->company = D("Company");
     }
 
@@ -31,6 +32,9 @@ class CompanyController extends AdminBasicController{
 
     public function companyAdd(){
         if(empty($_POST)){
+            $where['status'] = array('neq' , '9');
+            $gods = $this->goods->where($where)->select();
+            $this -> assign("goods",$gods);
             $this->display('companyAdd');
         }else{
 
