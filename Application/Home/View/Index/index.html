@@ -25,7 +25,7 @@
 </block>
 <block name="script">
 	<script type="text/javascript">
-		$(".postbtn").on('click',function () {
+		$(".fake-submit").on('click',function () {
 			var code_name = $(".code_name").val();
 			if ( !/^\w{5}\d{5}$/.test(code_name) ) {
 				alert("请输入合法的防伪码！");
