@@ -137,9 +137,6 @@
 					return;
 				}
 				if (/^\w{5}$/.test(keywords)) {
-					var loading = layer.load(1, {
-					  shade: [0.4,'#fff'] //0.1透明度的白色背景
-					});
 					$.ajax({
 						"url":"{:U('Admin/Goods/qrcode')}",
 						"type":"post",
@@ -149,7 +146,6 @@
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","__ROOT__"+res.data.code_pic);
 								layer.close( index );
-								layer.close( loading );
 								// layer.open({
 								// 	type:1,
 								// 	title:"右键另存为吧！",
@@ -163,6 +159,7 @@
 							}
 						}
 					});
+					layer.msg("后台生成中！请稍后查看！");
 				}else{
 					layer.msg("初始编码应为5位数字");
 				}

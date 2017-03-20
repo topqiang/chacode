@@ -91,7 +91,6 @@ class GoodsController extends Controller{
 
 	public function qrcode(){
 		set_time_limit(0);
-		ignore_user_abort(true);
 		$id = $_POST['id'];
 		$codenum = $_POST['codenum'];
 		$start = $_POST['start'];
@@ -104,8 +103,6 @@ class GoodsController extends Controller{
 				);
 			echo json_encode($date);
 			exit();
-		}else{
-			echo json_encode(array('flag'=>'success','message'=>'生成成功！'));
 		}
 		for ( $i=0; $i < 5-strlen($start); $i++) { 
 			$str .="0";
