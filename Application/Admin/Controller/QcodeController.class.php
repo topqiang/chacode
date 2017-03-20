@@ -37,7 +37,7 @@ class QcodeController extends AdminBasicController{
         $count = $this -> qcode -> where( $where ) -> count();
         $page = new \Think\Page($count,15);
         foreach($map as $key=>$val) {
-            $page->parameter[$key]   =   urlencode($val);
+            $page->parameter[$key]   =   $val;
         }
         $res=$this -> qcode -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
 
