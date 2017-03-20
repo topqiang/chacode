@@ -18,16 +18,16 @@ class QcodeController extends AdminBasicController{
      */
     public function qcodeList(){
 
-        if(!empty($_POST['name'])){
-            $where['name']=array('like','%'.$_POST['name'].'%');
+        if(!empty($_REQUEST['name'])){
+            $where['name']=array('like','%'.$_REQUEST['name'].'%');
             $map['name'] = $where['name'];
         }
-        if(!empty($_POST['creatcode'])){
-            $where['creatcode']=$_POST['creatcode'];
+        if(!empty($_REQUEST['creatcode'])){
+            $where['creatcode']=$_REQUEST['creatcode'];
             $map['creatcode'] = $where['creatcode'];
         }
-        if(!empty($_POST['codenum'])){
-            $where['codenum']=$_POST['codenum'];
+        if(!empty($_REQUEST['codenum'])){
+            $where['codenum']=$_REQUEST['codenum'];
             $map['codenum'] = $where['codenum'];
         }
 
