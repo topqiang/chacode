@@ -108,7 +108,7 @@ class GoodsController extends Controller{
 			$str .="0";
 		}
 		$startnum = $codenum.$str.$start;
-		while ( $cnum > 0) {
+		while ( $cnum >= 0) {
 			$str = "";
 			for ( $i=0; $i < 5-strlen($start); $i++) { 
 				$str .="0";
