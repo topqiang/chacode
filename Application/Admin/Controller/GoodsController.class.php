@@ -83,13 +83,14 @@ class GoodsController extends Controller{
 	public function createCode($path,$code){
 		$save_path = 'Public/qrcode/'.$path.'/';  //图片存储的绝对路径
         $qr_data = "http://".$_SERVER['HTTP_HOST'].U('Home/Qcode/findcode',array('code_name'=>$code));
-        $qr_level ='H';
-        $qr_size = '10';
+        $qr_level ='L';
+        $qr_size = '4';
         $save_prefix = $code;
         return createQRcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix);
 	}
 
 	public function qrcode(){
+		set_time_limit(0);
 		$id = $_POST['id'];
 		$codenum = $_POST['codenum'];
 		$start = $_POST['start'];
@@ -103,11 +104,11 @@ class GoodsController extends Controller{
 			echo json_encode($date);
 			exit();
 		}
-
 		for ( $i=0; $i < 5-strlen($start); $i++) { 
 			$str .="0";
 		}
 		$startnum = $codenum.$str.$start;
+		
 		while ( $cnum > 0) {
 			$str = "";
 			for ( $i=0; $i < 5-strlen($start); $i++) { 
