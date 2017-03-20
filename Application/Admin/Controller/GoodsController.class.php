@@ -25,10 +25,13 @@ class GoodsController extends Controller{
 			$upload_res=$this->upload();
 			if($upload_res['flag']=='no')$this->error('没有商品图片');
 			//存储数据
+			if (!$_POST['ctime']) {
+				$this->error('生产日期不能为空！');
+			}
 			$data=array(
 				'name'			=>$_POST['name'],
 				'pic'			=>"Uploads/goods/".$upload_res['result'],
-				'ctime'	=>time(),
+				'ctime'			=>$_POST['ctime'],
 				'creatcode'		=>$_POST['creatcode'],
 				'status'		=>0,
 			);

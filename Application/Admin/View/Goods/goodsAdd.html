@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/invalid.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/laydate/laydate.js"></script>
+
 </head>
 <body>
 <div id="main-content">
@@ -31,6 +33,10 @@
 						<p>
 							<label>缩略图</label>
 							<input type="file" name="pic" />
+						</p>
+						<p>
+							<label>生产日期</label>
+							<input class="text-input small-input" type="text" name="ctime" id="b_time"/>
 						</p>
 						<!--<p>
 							<label>厂家名称</label>
@@ -59,5 +65,15 @@
 			alert("请上传大小在500k以下的图片");
 		};
 	});
+
+	var start = {
+	  elem: '#b_time',
+	  format: 'YYYY/MM/DD',
+	  min: '2011-06-16', //设定最小日期为当前日期
+	  max: '2099-06-16', //最大日期
+	  istime: true,
+	  istoday: false
+	};
+	laydate(start);
 </script>
 </html>
