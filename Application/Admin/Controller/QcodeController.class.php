@@ -39,7 +39,7 @@ class QcodeController extends AdminBasicController{
         foreach($map as $key=>$val) {
             $page->parameter[$key]   =   $val;
         }
-        $res=$this -> qcode -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
+        $res=$this -> qcode -> where($where) -> order('id desc') -> limit($page->firstRow,$page->listRows) -> select();
 
 
         $this->assign('list',$res);

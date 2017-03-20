@@ -145,7 +145,7 @@
 						"success":function ( res ) {
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","__ROOT__"+res.data.code_pic);
-								layer.close( index );
+								
 								// layer.open({
 								// 	type:1,
 								// 	title:"右键另存为吧！",
@@ -160,6 +160,7 @@
 						}
 					});
 					layer.msg("后台生成中！请稍后查看！");
+					layer.close( index );
 				}else{
 					layer.msg("初始编码应为5位数字");
 				}
