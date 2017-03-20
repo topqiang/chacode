@@ -20,15 +20,15 @@ class QcodeController extends AdminBasicController{
 
         if(!empty($_REQUEST['name'])){
             $where['name']=array('like','%'.$_REQUEST['name'].'%');
-            $map['name'] = $where['name'];
+            $map['name'] = $_REQUEST['name'];
         }
         if(!empty($_REQUEST['creatcode'])){
             $where['creatcode']=$_REQUEST['creatcode'];
-            $map['creatcode'] = $where['creatcode'];
+            $map['creatcode'] = $_REQUEST['creatcode'];
         }
         if(!empty($_REQUEST['codenum'])){
             $where['codenum']=$_REQUEST['codenum'];
-            $map['codenum'] = $where['codenum'];
+            $map['codenum'] = $_REQUEST['codenum'];
         }
 
 
