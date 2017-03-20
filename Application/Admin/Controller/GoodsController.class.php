@@ -104,6 +104,10 @@ class GoodsController extends Controller{
 			exit();
 		}
 
+		for ( $i=0; $i < 5-strlen($start); $i++) { 
+			$str .="0";
+		}
+		$startnum = $codenum.$str.$start;
 		while ( $cnum > 0) {
 			$str = "";
 			for ( $i=0; $i < 5-strlen($start); $i++) { 
@@ -137,7 +141,17 @@ class GoodsController extends Controller{
 			++$start;
 			--$cnum;
 		}
-		echo json_encode(array('flag'=>'success','message'=>'生成成功！'));
+		$gooddata = array(
+			'id' => $id,
+			'company' => $startnum."---".$code
+			);
+		$res=$this->goods->save($gooddata);
+		if ($res) {
+			echo json_encode(array('flag'=>'success','message'=>'生成成功！'));
+		}else{
+			echo json_encode(array('flag'=>'error','message'=>'数据保存失败！'));
+		}
+		
     }
 
 	/**

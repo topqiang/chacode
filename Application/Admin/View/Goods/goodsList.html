@@ -43,7 +43,7 @@
 							<th width="15%">商品名称</th>
 							<th width="10%">缩略图</th>
 							<th width="20%">生产日期</th>
-							<th width="20%">厂家名称</th>
+							<th width="20%">防伪区间</th>
 							<th width="20%">批次</th>
 							<th width="10%">操作</th>
 						</tr>
@@ -64,12 +64,14 @@
 								</td>
 								<td><img src="__WEBROOT__/{$vo.pic}" height="30" /></td>
 								<td>{$vo.ctime|date="y-m-d H:m:i",###}</td>
-								<td>云南西双版纳州古茶山茶业有限公司勐海龙园茶厂</td>
+								<td>{$vo.company}</td>
 								<td>{$vo.creatcode}</td>
                                 <td>
+                                	<if condition="empty($vo['company'])">
                                 	<a id="{$vo['id']}" class="creatcode" title="生成防伪码">
                                         <img src="__WEBPUBLIC__/Admin/images/icons/code.png" alt="生成防伪码" />
                                     </a>
+                                    </if>
                                     <a href="{:U('Goods/goodsEdit',array('id'=>$vo['id']))}" title="编辑">
                                         <img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="Edit" />
                                     </a>
