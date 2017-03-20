@@ -33,7 +33,7 @@ class CompanyController extends AdminBasicController{
     public function companyAdd(){
         if(empty($_POST)){
             $where['status'] = array('neq' , '9');
-            $gods = $this->goods->where($where)->select();
+            $gods = $this->goods ->where($where)->select();
             $this -> assign("goods",$gods);
             $this->display('companyAdd');
         }else{
