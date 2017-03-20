@@ -68,9 +68,9 @@
 								<td>{$vo.creatcode}</td>
                                 <td>
                                 	<if condition="empty($vo['company'])">
-                                	<a id="{$vo['id']}" class="creatcode" title="生成防伪码">
-                                        <img src="__WEBPUBLIC__/Admin/images/icons/code.png" alt="生成防伪码" />
-                                    </a>
+	                                	<a id="{$vo['id']}" class="creatcode" title="生成防伪码">
+	                                        <img src="__WEBPUBLIC__/Admin/images/icons/code.png" alt="生成防伪码" />
+	                                    </a>
                                     </if>
                                     <a href="{:U('Goods/goodsEdit',array('id'=>$vo['id']))}" title="编辑">
                                         <img src="__WEBPUBLIC__/Admin/images/icons/pencil.png" alt="Edit" />
@@ -153,6 +153,7 @@
 								// 	area:["400px",""]
 								// });
 								layer.msg("生成成功！请去二维码列表下载，或通过ftp批量下载吧！");
+								window.location.reload();
 							}else{
 								alert(res.message);
 							}
