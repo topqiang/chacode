@@ -4,6 +4,7 @@ use Think\Controller;
 class GoodsController extends Controller{
 	public function _initialize(){
 		$this->goods = D("Good");
+		$this->qcode = D('Qcode');
 	}
 
 	public function goodsList(){
@@ -126,7 +127,7 @@ class GoodsController extends Controller{
 	            	'ctime' => $ctime,
 	            	'status' => $status
 	            	);
-	            $res = D('Qcode')->add($data);
+	            $res = $this->qcode->add($data);
 	            if (!$res) {
 	            	echo json_encode(array('flag'=>'error','message'=>'保存失败！'));
 	            	exit();
