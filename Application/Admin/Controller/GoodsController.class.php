@@ -95,7 +95,8 @@ class GoodsController extends Controller{
 		$codenum = $_POST['codenum'];
 		$start = $_POST['start'];
 		$cnum = $_POST['cnum'];
-		$web_path = '/Public/qrcode/'.$codenum.'/';        //图片在网页上显示的路径
+		$path = $codenum."_".$start;
+		$web_path = '/Public/qrcode/'.$path.'/';        //图片在网页上显示的路径
 		if (empty($id) || empty($codenum)) {
 			$data = array(
 				'flag' => 'error',
@@ -115,7 +116,7 @@ class GoodsController extends Controller{
 				$str .="0";
 			}
 			$code = $codenum.$str.$start;
-			if ($filename = $this -> createCode($codenum,$code)) {
+			if ($filename = $this -> createCode($path,$code)) {
 				$ctime = time();
 				$status = 0;
 				$pic = $web_path.$filename;
