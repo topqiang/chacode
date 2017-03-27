@@ -12,15 +12,14 @@ class BaseController extends Controller{
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
 		if ($state) {
-		 	echo "$state";
-		 	echo "$code";
+		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
+			$res = $this -> curl("",$url);
+			dump($res);
 		 	exit();
-		}
-		// echo ($user);
-		if (!isset($user) && $isweixin) {
+		}else if (!isset($user) && $isweixin) {
 			$code = session('code');
 			if (!isset($code)) {
-				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=weixin#wechat_redirect";
+				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
 		// 		echo "$url";
 		// 		exit();
 				echo "$url";
@@ -29,4 +28,24 @@ class BaseController extends Controller{
 		 	exit();
 		}
 	}
+
+	public function curl($data,$url){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_USERAGENT,  'Mozilla/5.0 (compatible;MSIE 5.01;Windows NT5.0)');
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $tmpInfo=curl_exec($ch);
+        if (curl_errno($ch)) {
+            return curl_errno($ch);
+        }
+        curl_close($ch);
+        return $tmpInfo;
+    }
 }
