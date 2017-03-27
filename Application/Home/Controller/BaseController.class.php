@@ -12,10 +12,15 @@ class BaseController extends Controller{
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
 		if ($state) {
+
+
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
 			$access = json_decode($res,true);
-			dump($access);
+			S('access_token',$access['access_token'],2*60*60);
+			session('openid',$access['openid']);
+			dump($this -> getUserInfo($access['openid'],$access['access_token']));
+			//dump($access);
 		 	exit();
 		}else if (!isset($user) && $isweixin) {
 			$code = session('code');
@@ -30,10 +35,17 @@ class BaseController extends Controller{
 		}
 	}
 
-	public function curl($data,$url){
+	public function getUserInfo($openid,$access_token){
+		$url = "https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&openid=$openid&lang=zh_CN";
+		$res = $this -> curl("",$url,"GET");
+		$access = json_decode($res,true);
+		return $access;
+	}
+
+	public function curl($data,$url,$type="POST"){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $type);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($ch, CURLOPT_USERAGENT,  'Mozilla/5.0 (compatible;MSIE 5.01;Windows NT5.0)');
