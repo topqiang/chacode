@@ -6,6 +6,7 @@
         </div>
 		<div class="fake-body txtcen bot1">
 			<div class="shop-body">
+				<div id="loginimg"></div>
 				<div class="fake-bg2"></div>
 				<div class="fake-word">
 					<div class="fs40 mat50">勐海龙园茶业</div>
@@ -24,7 +25,21 @@
 		</div>		
 </block>
 <block name="script">
+	<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	<script type="text/javascript">
+
+		var obj = new WxLogin({
+          id:"loginimg", 
+          appid: "wxcea55f8c63756008", 
+          scope: "snsapi_login", 
+          redirect_uri: "{$requri}",
+          state: "",
+          style: "",
+          href: ""
+        });
+
+
+
 		$(".fake-submit").on('click',function () {
 			var code_name = $(".code_name").val();
 			if ( !/^\w{5}\d{5}$/.test(code_name) ) {
