@@ -10,8 +10,10 @@ class BaseController extends Controller{
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 
 		$state = $_REQUEST['state'];
+		$code = $_REQUEST['code'];
 		if ($state) {
 		 	echo "$state";
+		 	echo "$code";
 		 	exit();
 		}
 		// echo ($user);
