@@ -12,18 +12,19 @@ class BaseController extends Controller{
 		$state = $_REQUEST['state'];
 		if ($state) {
 		 	echo "回调成功！";
+		 	exit();
 		}
 		// echo ($user);
-		// if (!isset($user) && $isweixin) {
-		// 	$code = session('code');
+		if (!isset($user) && $isweixin) {
+			$code = session('code');
 			if (!isset($code)) {
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
 		// 		echo "$url";
 		// 		exit();
 				echo "$url";
-	 		//Header("Location: $url");
+	 		Header("Location: $url");
+			}
+		 	exit();
 		}
-	 	exit();
-		// }
 	}
 }
