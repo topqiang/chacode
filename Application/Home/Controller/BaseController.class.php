@@ -20,7 +20,8 @@ class BaseController extends Controller{
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
 		// 		echo "$url";
 		// 		exit();
-	 		Header("Location: $url");
+				echo "$url";
+	 		//Header("Location: $url");
 		}
 	 	exit();
 		// }
