@@ -14,7 +14,8 @@ class BaseController extends Controller{
 		if ($state) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
-			dump($res);
+			$access = json_decode($res,true);
+			dump($access);
 		 	exit();
 		}else if (!isset($user) && $isweixin) {
 			$code = session('code');
