@@ -22,7 +22,7 @@ class BaseController extends Controller{
 		// 		echo "$url";
 		// 		exit();
 				echo "$url";
-	 		Header("Location: $url");
+	 			//Header("Location: $url");
 			}
 		 	exit();
 		}
