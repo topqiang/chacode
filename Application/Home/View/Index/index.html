@@ -40,7 +40,11 @@
           href: ""
         });
 	</if>
-
+	setInterval(function () {
+		if ($(".qrcode").length >0) {
+			console.log($(".qrcode").attr("src"));
+		}
+	},500);
 
 		$(".fake-submit").on('click',function () {
 			var code_name = $(".code_name").val();
