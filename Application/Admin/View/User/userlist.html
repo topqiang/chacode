@@ -59,10 +59,10 @@
                                 {$user.tel}
                             </td>
                             <td>
-                                {$user.address}
+                                <img src="{$user.address}" style="height:50px;"/>
                             </td>
                             <td>
-                                {$user.c_time|date="y-m-d H:m:i"}
+                                {$user.c_time|date="Y-m-d H:m:i",###}
                             </td>
                             <td>
                                 <!--<a href="{:U('WeiXinArticle/editTextBack',array('wxa_id'=>$text_back['wxa_id']))}" title="编辑">
