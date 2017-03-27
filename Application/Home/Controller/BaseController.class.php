@@ -10,6 +10,8 @@ class BaseController extends Controller{
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
+		$this -> assign('requri',urlencode($redirect_uri));
+
 		if ($state && !$user) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
@@ -39,7 +41,6 @@ class BaseController extends Controller{
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
 				//Header("Location: $url");
 			}
-			$this -> assign('requri',urlencode($redirect_uri));
 		 	exit();
 		}
 	}
