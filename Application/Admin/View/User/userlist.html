@@ -53,7 +53,7 @@
                             <td>{$user.name}</td>
                             <td>{$user.provance}</td>
                             <td>
-                                {$user.sex}
+                                <if condition="$user['sex'] eq 1">男<else/>女</if>
                             </td>
                             <td>
                                 {$user.tel}
