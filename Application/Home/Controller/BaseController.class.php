@@ -11,7 +11,7 @@ class BaseController extends Controller{
 
 		$state = $_REQUEST['state'];
 		if ($state) {
-		 	echo "回调成功！";
+		 	echo "$state";
 		 	exit();
 		}
 		// echo ($user);
