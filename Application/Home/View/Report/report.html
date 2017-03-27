@@ -45,6 +45,16 @@
 		if (!/^1[3|4|5|8]{1}\d{9}$/.test(tel)) {
 			alert("请输入合法的手机号！");
 			return;
+		}else{
+			$.ajax({
+            	"url":"{:U('User/upduser')}",
+            	"type":"post",
+            	"dataType":"json",
+            	"data":{"tel":tel},
+            	"success":function ( res ) {
+            		console.log( res );		
+            	}
+            })
 		}
 
 		var remark = $(".remark").val();
