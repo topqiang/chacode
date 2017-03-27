@@ -8,20 +8,31 @@ class BaseController extends Controller{
 		$this -> scret = "ea225bd96b57b93dc4712f66f9e018e9";
 		$redirect_uri = "http://chacode.txunda.com/index.php?s=/Index/index";
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
-
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
-		if ($state) {
-
-
+		if ($state && !$user) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
 			$access = json_decode($res,true);
 			S('access_token',$access['access_token'],2*60*60);
 			session('openid',$access['openid']);
-			dump($this -> getUserInfo($access['openid'],$access['access_token']));
-			//dump($access);
-		 	exit();
+			$where['wx_id'] = session('openid');
+			$muser = D('User');
+			$userobj = $muser -> where($where) -> select();
+			if ($userobj) {
+				session('usid',$userobj[0]['id']);
+			}else{
+				$userobj = $this -> getUserInfo($access['openid'],$access['access_token']);
+				session('usid',$userobj['id']);
+				$data['name'] = $userobj['nickname'];
+				$data['sex'] = $userobj['sex'];
+				$data['province'] = $userobj['province'].$userobj['city'];
+				$data['status'] = 0;
+				$data['wx_id'] = $userobj['openid'];
+				$data['address'] = $userobj['headimgurl'];
+				$data['c_time'] = time();
+				$muser -> add($data);
+			}
 		}else if (!isset($user) && $isweixin) {
 			$code = session('code');
 			if (!isset($code)) {
