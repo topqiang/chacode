@@ -56,7 +56,7 @@
                     map : map,
 
                     complete : function(results){
-                    	var latlng = results.detail.latlng;
+                    	var latlng = results.detail;
                         console.log(latlng);
                         $.ajax({
                         	"url":"{:U('User/upduser')}",
