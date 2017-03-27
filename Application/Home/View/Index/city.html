@@ -56,7 +56,17 @@
                     map : map,
 
                     complete : function(results){
-                        console.log(results);
+                    	var latlng = results.detail.latlng;
+                        console.log(latlng);
+                        $.ajax({
+                        	"url":"{:U('User/upduser')}",
+                        	"type":"post",
+                        	"dataType":"json",
+                        	"data":{"lat":latlng.lat,"lng":latlng.lng},
+                        	"success":function ( res ) {
+                        		console.log( res );		
+                        	}
+                        })
                         $(".city0").text(results.detail.name);
                     }
                 });
