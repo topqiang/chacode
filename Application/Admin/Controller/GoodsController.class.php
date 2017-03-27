@@ -9,7 +9,6 @@ class GoodsController extends Controller{
 
 	public function goodsList(){
 		if(!empty($_POST['name']))$where['name']=array('like','%'.$_POST['name'].'%');
-
 		$where['status'] = array('neq' , '9');
 		$count = $this -> goods -> where($where) -> count();
 		$page = new \Think\Page($count,15);
