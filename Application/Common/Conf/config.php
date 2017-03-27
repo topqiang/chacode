@@ -22,8 +22,8 @@ return  array(
     'DB_TYPE'               => 'mysql',     // 数据库类型
     'DB_HOST'               => '127.0.0.1', // 服务器地址
     'DB_NAME'               => 'chacode',          // 数据库名
-    'DB_USER'               => 'chacode',      // 用户名
-    'DB_PWD'                => '123456',          // 密码
+    'DB_USER'               => 'chenml',      // 用户名
+    'DB_PWD'                => '020200',          // 密码
     'DB_PORT'               => '3306',        // 端口
     'DB_PREFIX'             => 'code_',    // 数据库表前缀
     'DB_FIELDTYPE_CHECK'    => false,       // 是否进行字段类型检查

@@ -4,8 +4,8 @@ use Think\Controller;
 class BaseController extends Controller{
 	public function _initialize(){
 		$user = session('usid');
-		$this -> appid = "wx245365f89e539e23";
-		$this -> scret = "e78d55752e8b5b31e4aa10254163c5af";
+		$this -> appid = "wx83c3034ad39a3d24";
+		$this -> scret = "ea225bd96b57b93dc4712f66f9e018e9";
 		$redirect_uri = "http://chacode.txunda.com";
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 
