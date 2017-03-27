@@ -26,14 +26,14 @@ class BaseController extends Controller{
 				session('usid',$userobj['id']);
 				$data['name'] = $userobj['nickname'];
 				$data['sex'] = $userobj['sex'];
-				$data['province'] = $userobj['province'].$userobj['city'];
+				$data['provance'] = $userobj['province'].$userobj['city'];
 				$data['status'] = 0;
 				$data['wx_id'] = $userobj['openid'];
 				$data['address'] = $userobj['headimgurl'];
 				$data['c_time'] = time();
 				$muser -> add($data);
 			}
-		}else if (!isset($user) && $isweixin) {
+		}else if (!$user && $isweixin) {
 			$code = session('code');
 			if (!isset($code)) {
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
