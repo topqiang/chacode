@@ -6,7 +6,7 @@ class BaseController extends Controller{
 		$user = session('usid');
 		$this -> appid = "wx83c3034ad39a3d24";
 		$this -> scret = "ea225bd96b57b93dc4712f66f9e018e9";
-		$redirect_uri = "http://chacode.txunda.com/";
+		$redirect_uri = "http://chacode.txunda.com/index.php?s=/Index/index";
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 
 		$state = $_REQUEST['state'];
@@ -18,7 +18,7 @@ class BaseController extends Controller{
 		if (!isset($user) && $isweixin) {
 			$code = session('code');
 			if (!isset($code)) {
-				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
+				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=weixin#wechat_redirect";
 		// 		echo "$url";
 		// 		exit();
 				echo "$url";
