@@ -4,20 +4,19 @@ use Think\Controller;
 class BaseController extends Controller{
 	public function _initialize(){
 		$user = session('usid');
-		$this -> appid = "wxcea55f8c63756008";
+		$this -> appid = "wx83c3034ad39a3d24";
 		$this -> scret = "ea225bd96b57b93dc4712f66f9e018e9";
 		$redirect_uri = "http://chacode.txunda.com".$_SERVER['REQUEST_URI'];
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
 		$this -> assign('requri',urlencode($redirect_uri));
-		$url = "https://open.weixin.qq.com/connect/qrconnect?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
-		echo $url;
-		exit();
+
 		if ($state && !$user) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
 			$access = json_decode($res,true);
+			dump($access);
 			S('access_token',$access['access_token'],2*60*60);
 			session('openid',$access['openid']);
 			$where['wx_id'] = session('openid');
@@ -41,12 +40,8 @@ class BaseController extends Controller{
 
 			$code = session('code');
 			if (!isset($code)) {
-				//$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
-
-				$url = "https://open.weixin.qq.com/connect/qrconnect?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
-				echo $url;
-				exit();
-				Header("Location: $url");
+				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
+				//Header("Location: $url");
 			}
 		}
 	}
