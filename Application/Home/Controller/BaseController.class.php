@@ -11,7 +11,9 @@ class BaseController extends Controller{
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
 		$this -> assign('requri',urlencode($redirect_uri));
-
+		$url = "https://open.weixin.qq.com/connect/qrconnect?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+		echo $url;
+		exit();
 		if ($state && !$user) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
