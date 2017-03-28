@@ -21,7 +21,7 @@
 
         <div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
             <form action="{:U('User/userlist')}" method="post">
-                用户名：<input type="text" name="name" class="text-input" value="$_REQUEST['name']">
+                用户名：<input type="text" name="name" class="text-input" value="{$_REQUEST['name']}">
                 <input type="submit" class="button search-btn" value="查询">
             </form>
         </div>
