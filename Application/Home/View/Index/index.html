@@ -40,13 +40,6 @@
           href: ""
         });
 	</if>
-	setInterval(function () {
-		if ($("#loginimg").html() >0) {
-			console.log($(".qrcode").attr("src"));
-		}else{
-			console.log("no");
-		}
-	},500);
 
 		$(".fake-submit").on('click',function () {
 			var code_name = $(".code_name").val();
