@@ -10,7 +10,6 @@ class BaseController extends Controller{
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
-		echo "$user";
 		if ($state && empty($user)) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
