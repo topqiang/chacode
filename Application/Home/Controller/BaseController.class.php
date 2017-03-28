@@ -11,8 +11,8 @@ class BaseController extends Controller{
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
 		$this -> assign('requri',urlencode($redirect_uri));
-
-		if ($state && !$user) {
+		echo "$user";
+		if ($state && empty($user)) {
 		 	$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this -> appid."&secret=".$this -> scret."&code=$code&grant_type=authorization_code";
 			$res = $this -> curl("",$url);
 			$access = json_decode($res,true);
