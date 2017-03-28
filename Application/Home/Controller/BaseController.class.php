@@ -4,7 +4,7 @@ use Think\Controller;
 class BaseController extends Controller{
 	public function _initialize(){
 		$user = session('usid');
-		$this -> appid = "wx83c3034ad39a3d24";
+		$this -> appid = "wxcea55f8c63756008";
 		$this -> scret = "ea225bd96b57b93dc4712f66f9e018e9";
 		$redirect_uri = "http://chacode.txunda.com".$_SERVER['REQUEST_URI'];
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
@@ -40,7 +40,7 @@ class BaseController extends Controller{
 			$code = session('code');
 			if (!isset($code)) {
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
-				//Header("Location: $url");
+				Header("Location: $url");
 			}
 		}
 	}
