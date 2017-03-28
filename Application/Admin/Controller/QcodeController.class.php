@@ -34,7 +34,7 @@ class QcodeController extends AdminBasicController{
 
         $where['status'] = array('neq' , '9');
 
-        $count = $this -> qcode -> where( $where ) -> count();
+        $count = $this -> qcode -> where( $where ) -> order('visnum desc,id desc') -> count();
         $page = new \Think\Page($count,15);
         foreach($map as $key=>$val) {
             $page->parameter[$key]   =   $val;
