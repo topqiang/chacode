@@ -34,7 +34,7 @@ class BaseController extends Controller{
 				$data['c_time'] = time();
 				$muser -> add($data);
 			}
-		}else if (!$user && $isweixin) {
+		}else if (empty($user) && $isweixin) {
 
 			$code = session('code');
 			if (!isset($code)) {
