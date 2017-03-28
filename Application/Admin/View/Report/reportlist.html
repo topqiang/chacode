@@ -67,7 +67,7 @@
 								<td>{$vo.remark}</td>
 								<td>
 									<if condition="!empty($vo['pic'])">
-										<img src="{$vo.pic}" style="width:50px;"/>
+										<img src="{$vo.pic}" class="imgcode" style="width:50px;"/>
 									</if>
 								</td>
 								<td>
@@ -110,5 +110,23 @@
 		</div>
 	</div>
 </div>
+<div id="imgcode" style="text-align:center;display:none;">
+	<div style="padding:20px;">
+		<img id="codeimg" style="width:100%;"/>
+	</div>
+</div>
 </body>
+
+<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/layer/layer.js"></script>
+<script type="text/javascript">
+$(".imgcode").on('click',function () {
+	$("#codeimg").attr("src",$(this).attr("src"));
+	layer.open({
+		type:1,
+		title:"右键另存为吧！",
+		content: $('#imgcode'),
+		area:["400px","auto"]
+	});
+});
+</script>
 </html>
