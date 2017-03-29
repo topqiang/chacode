@@ -8,7 +8,7 @@ use Think\Controller;
  */
 class CompanyController extends AdminBasicController{
     public function _initialize(){
-        $this->goods = D("Good");
+        $this->goods = D("Goods");
         $this->company = D("Company");
     }
 
