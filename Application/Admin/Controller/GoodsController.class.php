@@ -5,6 +5,10 @@ class GoodsController extends Controller{
 	public function _initialize(){
 		$this->goods = D("Good");
 		$this->qcode = D('Qcode');
+        $this->good = D("Goods");
+		$where['status'] = array('neq' , '9');
+        $gods = $this->good ->where($where)->select();
+        $this -> assign("goods",$gods);
 	}
 
 	public function goodsList(){

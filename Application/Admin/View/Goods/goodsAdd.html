@@ -28,7 +28,12 @@
 					<fieldset>
 						<p>
 							<label>商品名称</label>
-							<input class="text-input small-input" type="text" id="small-input" name="name" />
+								<select name="name">
+									<volist name="goods" id="good">
+										<option value="{$good['name']}">{$good['name']}</option>
+									</volist>
+								</select>
+							<!--<input class="text-input small-input" type="text" id="small-input" name="name" />-->
 						</p>
 						<p>
 							<label>缩略图</label>
