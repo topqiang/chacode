@@ -212,6 +212,9 @@
 }
 .result-img img{
 	width:100%;
+	border: 20px solid #FFF;
+    box-sizing: border-box;
+    box-shadow: 6px 6px 21px #aaa;
 }
 .result-detail p{
 	line-height:65px;
