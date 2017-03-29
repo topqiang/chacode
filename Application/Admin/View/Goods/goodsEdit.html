@@ -24,7 +24,7 @@
 							<label>商品名称(ID:{$info.id})</label>
 							<!--<input value="{$info.name}" class="text-input small-input" type="text" id="small-input" name="name" />-->
 							<select name="name">
-								<volist name="goods" id="good">
+								<volist name="goodss" id="good">
 									<option value="{$good['name']}" <if condition="$good['name'] eq {$info.name}">selected</if>>{$good['name']}</option>
 								</volist>
 							</select>

@@ -8,7 +8,7 @@ class GoodsController extends Controller{
         $this->good = D("Goods");
 		$where['status'] = array('neq' , '9');
         $gods = $this->good ->where($where)->select();
-        $this -> assign("goods",$gods);
+        $this -> assign("goodss",$gods);
 	}
 
 	public function goodsList(){
