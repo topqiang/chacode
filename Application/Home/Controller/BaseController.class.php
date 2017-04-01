@@ -38,8 +38,6 @@ class BaseController extends Controller{
 			}
 		}else if (empty($user) && $isweixin) {
 			//$this -> assign('requri',urlencode($redirect_uri));
-			echo get_client_ip();
-			exit();
 			$code = session('code');
 			if (!isset($code)) {
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=weixin#wechat_redirect";
