@@ -17,7 +17,7 @@ class IndexController extends BaseController {
     }
 
     public function city(){
-        $city = M('Company') -> distinct(true) -> field('provance') -> select();
+        $city = M('Company') -> distinct(true) -> field('provance') -> where(array('status' => array('neq',9))) -> select();
         $this -> assign('ip',get_client_ip());
         $this -> assign('citylist',$city);
         $this -> display();
