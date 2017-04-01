@@ -4,8 +4,12 @@ use Think\Controller;
 class BaseController extends Controller{
 	public function _initialize(){
 		$user = session('usid');
-		$this -> appid = "wxcea55f8c63756008";
-		$this -> scret = "e43a7eee290334ce8c3900bf85ecf161";
+		// $this -> appid = "wxcea55f8c63756008";
+		// $this -> scret = "e43a7eee290334ce8c3900bf85ecf161";
+		$this -> appid = "wxe247b4db6ae12262";
+		$this -> scret = "38d47c0f84d10b9a36c69ccda1a7d58b";
+		echo get_client_ip();
+		exit();
 		$uri = (strlen($_SERVER['REQUEST_URI']) > 1 ) ? $_SERVER['REQUEST_URI'] : "";
 		$redirect_uri = "http://admin.lypuer.com".$uri;
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
@@ -39,7 +43,7 @@ class BaseController extends Controller{
 			$code = session('code');
 			if (!isset($code)) {
 				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
-				//Header("Location: $url");
+				Header("Location: $url");
 			}
 		}
 	}
