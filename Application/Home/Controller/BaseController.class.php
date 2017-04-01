@@ -6,7 +6,8 @@ class BaseController extends Controller{
 		$user = session('usid');
 		// $this -> appid = "wxcea55f8c63756008";
 		// $this -> scret = "e43a7eee290334ce8c3900bf85ecf161";
-		$this -> appid = "wxe247b4db6ae12262";
+		$this -> appid = "wx245365f89e539e23";
+		$this -> component_appid = "wxe247b4db6ae12262";
 		$this -> scret = "38d47c0f84d10b9a36c69ccda1a7d58b";
 		$uri = (strlen($_SERVER['REQUEST_URI']) > 1 ) ? $_SERVER['REQUEST_URI'] : "";
 		$redirect_uri = "http://admin.lypuer.com";
@@ -40,7 +41,7 @@ class BaseController extends Controller{
 			//$this -> assign('requri',urlencode($redirect_uri));
 			$code = session('code');
 			if (!isset($code)) {
-				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=weixin#wechat_redirect";
+				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=weixin&component_appid=".$this -> component_appid."#wechat_redirect";
 				Header("Location: $url");
 			}
 		}
