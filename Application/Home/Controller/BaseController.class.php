@@ -9,7 +9,7 @@ class BaseController extends Controller{
 		$this -> appid = "wxe247b4db6ae12262";
 		$this -> scret = "38d47c0f84d10b9a36c69ccda1a7d58b";
 		$uri = (strlen($_SERVER['REQUEST_URI']) > 1 ) ? $_SERVER['REQUEST_URI'] : "";
-		$redirect_uri = "http://admin.lypuer.com".$uri;
+		$redirect_uri = "http://admin.lypuer.com";
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
