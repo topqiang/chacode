@@ -6,7 +6,8 @@ class BaseController extends Controller{
 		$user = session('usid');
 		$this -> appid = "wxcea55f8c63756008";
 		$this -> scret = "e43a7eee290334ce8c3900bf85ecf161";
-		$redirect_uri = "http://admin.lypuer.com/index.php".$_SERVER['REQUEST_URI'];
+		$uri = (strlen($_SERVER['REQUEST_URI']) > 1 ) ? $_SERVER['REQUEST_URI'] : "";
+		$redirect_uri = "http://admin.lypuer.com/index.php".$uri;
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
 		$state = $_REQUEST['state'];
 		$code = $_REQUEST['code'];
