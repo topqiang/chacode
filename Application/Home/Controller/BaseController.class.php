@@ -40,7 +40,7 @@ class BaseController extends Controller{
 			//$this -> assign('requri',urlencode($redirect_uri));
 			$code = session('code');
 			if (!isset($code)) {
-				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_userinfo&state=weixin#wechat_redirect";
+				$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=".urlencode($redirect_uri)."&response_type=code&scope=snsapi_base&state=weixin#wechat_redirect";
 				Header("Location: $url");
 			}
 		}
