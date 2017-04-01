@@ -9,6 +9,7 @@ class CompanyController extends BaseController{
 		$id = $_GET['id'];
 		$ratem = M('Company');
 		$rates = $ratem -> where( array( 'id' => $id ) ) -> select();
+		
 		$this -> assign("company",$rates[0]);
 		$this -> display();
 	}
