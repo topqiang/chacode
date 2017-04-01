@@ -21,7 +21,7 @@ class CompanyController extends BaseController{
         	$where['b_time'] = array('lt' , $time);
         	$where['e_time'] = array('gt' , $time);
         	$where['status'] = array('neq' , 9);
-	        $where['provance'] = array('eq' , $provance);
+	        $where['provance'] = array('like' , "%$provance%");
 			$rates = $ratem -> where( $where ) -> select();
 		}
 
