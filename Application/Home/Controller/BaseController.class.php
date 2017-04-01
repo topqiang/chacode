@@ -8,8 +8,6 @@ class BaseController extends Controller{
 		// $this -> scret = "e43a7eee290334ce8c3900bf85ecf161";
 		$this -> appid = "wxe247b4db6ae12262";
 		$this -> scret = "38d47c0f84d10b9a36c69ccda1a7d58b";
-		echo get_client_ip();
-		exit();
 		$uri = (strlen($_SERVER['REQUEST_URI']) > 1 ) ? $_SERVER['REQUEST_URI'] : "";
 		$redirect_uri = "http://admin.lypuer.com".$uri;
 		$isweixin = preg_match('/MicroMessenger/',$_SERVER['HTTP_USER_AGENT']);
