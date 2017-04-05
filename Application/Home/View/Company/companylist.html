@@ -10,6 +10,7 @@
 					<volist name="companylist" id="comp">
 						<a class="shop-item" href="{:U('Company/company',array('id'=>$comp['id']))}">
 							<span>{$comp.name}</span>
+							代理产品：{$comp.paygoods}
 							<!--
 							<if condition="$comp['class'] eq 1">
 								<i class="shop-item1"></i>
