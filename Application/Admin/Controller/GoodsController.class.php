@@ -15,7 +15,7 @@ class GoodsController extends Controller{
 		if(!empty($_POST['name']))$where['name']=array('like','%'.$_POST['name'].'%');
 		$where['status'] = array('neq' , '9');
 		$count = $this -> goods -> where($where) -> count();
-		$page = new \Think\Page($count,15);
+		$page = new \Think\Page($count,100);
 		$res=$this -> goods -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
 		$this->assign('list',$res);
 		$this->assign('page',$page->show());
