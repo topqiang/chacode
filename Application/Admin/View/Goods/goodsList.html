@@ -130,13 +130,12 @@
 				var keywords = $(".codenum").val();
 				var start = $(".start").val();
 				var cnum = $(".cnum").val();
-				var test = /^[1-9]\d{0,4}$/;
-				console.log(parseInt(cnum)+parseInt(start)-1);
+				var test = /^[1-9]\d{0,5}$/;
 				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)-1))) {
-					layer.msg("请输入5位以内有效数字且相加后小于5位数！");
+					layer.msg("请输入6位以内有效数字且相加后小于6位数！");
 					return;
 				}
-				if (/^\w{5}$/.test(keywords)) {
+				if (/^\w{4}$/.test(keywords)) {
 					$.ajax({
 						"url":"{:U('Admin/Goods/qrcode')}",
 						"type":"post",
@@ -162,7 +161,7 @@
 					layer.msg("后台生成中！请稍后查看！");
 					layer.close( index );
 				}else{
-					layer.msg("初始编码应为5位数字");
+					layer.msg("初始编码应为4位字符");
 				}
 			},
 			content: $('#sou'),
