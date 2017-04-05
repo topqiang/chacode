@@ -10,7 +10,6 @@ class BaseController extends Controller{
 	 	if ($userobj) {
 	 		session('usid',$userobj[0]['id']);
 	 	}else{
-	 		$isweixin = ;
 	 		if (preg_match('/iPhone/',$_SERVER['HTTP_USER_AGENT'])) {
 	 			$where['address'] = "苹果手机";
 	 		}else if (preg_match('/Android/',$_SERVER['HTTP_USER_AGENT'])) {
