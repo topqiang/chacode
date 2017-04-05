@@ -132,7 +132,7 @@
 				var cnum = $(".cnum").val();
 				var test = /^[1-9]\d{0,4}$/;
 
-				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)))) {
+				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)-1))) {
 					layer.msg("请输入5位以内有效数字且相加后小于5位数！");
 					return;
 				}
