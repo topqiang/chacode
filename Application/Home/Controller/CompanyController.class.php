@@ -48,6 +48,8 @@ class CompanyController extends BaseController{
 				}
 				$rates[ $index ]['paygoods'] = $str;
 			}
+			dump($rates);
+			exit();
 		}
 
 		$this -> assign("companylist",$rates);
