@@ -62,7 +62,7 @@
                         	"url":"{:U('User/upduser')}",
                         	"type":"post",
                         	"dataType":"json",
-                        	"data":{"lat":latlng.lat,"lng":latlng.lng},
+                        	"data":{"lat":latlng.lat,"lng":latlng.lng,"provance":results.detail.name},
                         	"success":function ( res ) {
                         		console.log( res );		
                         	}

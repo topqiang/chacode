@@ -17,6 +17,9 @@ class UserController extends Controller{
 		if ($_POST['tel']) {
 			$data['tel'] = $_POST['tel'];
 		}
+		if ($_POST['provance']) {
+			$data['provance'] = $_POST['provance'];
+		}
 		$res = $this -> user -> save( $data );
 		if ($res) {
 			echo json_encode(array('flag' => 'success','message' => '修改成功！' ));
