@@ -17,7 +17,12 @@ class IndexController extends BaseController {
     }
 
     public function city(){
-        $city = M('Company') -> distinct(true) -> field('provance') -> where(array('status' => array('neq',9))) -> select();
+        $time = date('Y/m/d');
+        $where['b_time'] = array('lt' , $time);
+        $where['e_time'] = array('gt' , $time);
+        $where['status'] = array('neq' , 9);
+
+        $city = M('Company') -> distinct(true) -> field('provance') -> where($where) -> select();
         $this -> assign('ip',get_client_ip());
         $this -> assign('citylist',$city);
         $this -> display();
