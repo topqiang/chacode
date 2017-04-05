@@ -37,7 +37,7 @@ class CompanyController extends BaseController{
 	        $where['provance'] = array('like' , "%$provance%");
 			$rates = $ratem -> where( $where ) -> select();
 			foreach ($rates as $index => $obj) {
-				$whe['id'] = array('in' , $$obj['paygoods']);
+				$whe['id'] = array('in' , $obj['paygoods']);
 				$res = $this -> goods -> where($whe) -> select();
 				$str = "";
 				foreach ($res as $key => $value) {
