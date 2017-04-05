@@ -14,6 +14,10 @@ class BaseController extends Controller{
 	 			$where['address'] = "苹果手机";
 	 		}else if (preg_match('/Android/',$_SERVER['HTTP_USER_AGENT'])) {
 	 			$where['address'] = "安卓手机";
+	 		}else if (preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT'])) {
+	 			$where['address'] = "iPad平板";
+	 		}else if (preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT'])) {
+	 			$where['address'] = "iPad平板";
 	 		}else{
 	 			$where['address'] = "PC电脑";
 	 		}
