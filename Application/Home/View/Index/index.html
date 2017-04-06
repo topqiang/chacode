@@ -27,31 +27,6 @@
 		</if>
 </block>
 <block name="script">
-	<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
-	<script type="text/javascript">
-	<if condition="$requri and empty($_REQUEST['code'])">
-		var obj = new WxLogin({
-          id:"loginimg", 
-          appid: "wxcea55f8c63756008", 
-          scope: "snsapi_login", 
-          redirect_uri: "{$requri}",
-          state: "weixin",
-          style: "",
-          href: ""
-        });
-	</if>
-
-		$(".fake-submit").on('click',function () {
-			var code_name = $(".code_name").val();
-			if ( !/^\w{5}\d{5}$/.test(code_name) ) {
-				alert("请输入合法的防伪码！");
-				return;
-			}else{
-				window.location.href = '{:U("Home/Qcode/findcode")}/code_name/'+code_name;
-			}
-		});
-
-
 	<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
 	<script>
 		$(function () {
