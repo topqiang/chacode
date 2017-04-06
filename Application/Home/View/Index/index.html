@@ -49,7 +49,43 @@
 			}else{
 				window.location.href = '{:U("Home/Qcode/findcode")}/code_name/'+code_name;
 			}
-		})
+		});
+
+
+	<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+	<script>
+		$(function () {
+			var citylocation,map,marker = null;
+            var init = function() {
+                var center = new qq.maps.LatLng(39.916527,116.397128);
+                var city = document.getElementById("city");
+                map = new qq.maps.Map(document.getElementById('container'),{
+                    center: center,
+                    zoom: 13
+                });
+                //获取  城市位置信息查询 接口  
+                citylocation = new qq.maps.CityService({
+                    //设置地图
+                    map : map,
+
+                    complete : function(results){
+                    	var latlng = results.detail.latLng;
+                        console.log(latlng);
+                        $.ajax({
+                        	"url":"{:U('User/upduser')}",
+                        	"type":"post",
+                        	"dataType":"json",
+                        	"data":{"lat":latlng.lat,"lng":latlng.lng,"provance":results.detail.name},
+                        	"success":function ( res ) {
+                        		console.log( res );		
+                        	}
+                        });
+                    }
+                });
+            }
+            init();
+            citylocation.searchCityByIP("{$ip}");
+		});
 
 	</script>
 </block>
