@@ -30,7 +30,6 @@
 <block name="script">
 	<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
 	<script>
-
         $(".fake-submit").on('click',function () {
             var code_name = $(".code_name").val();
             if ( !/^\w{5}\d{5}$/.test(code_name) ) {
@@ -55,7 +54,6 @@
                 citylocation = new qq.maps.CityService({
                     //设置地图
                     map : map,
-
                     complete : function(results){
                     	var latlng = results.detail.latLng;
                         console.log(latlng);
