@@ -10,6 +10,7 @@ class IndexController extends BaseController {
     public function _initialize(){
     	parent::_initialize();
     	//完善购物车数量查询
+        $this -> assign('ip',get_client_ip());
     }
 
     public function result(){
@@ -23,7 +24,7 @@ class IndexController extends BaseController {
         $where['status'] = array('neq' , 9);
 
         $city = M('Company') -> distinct(true) -> field('provance') -> where($where) -> select();
-        $this -> assign('ip',get_client_ip());
+        
         $this -> assign('citylist',$city);
         $this -> display();
     }
