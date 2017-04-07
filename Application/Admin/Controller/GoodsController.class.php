@@ -113,7 +113,14 @@ class GoodsController extends Controller{
 			$str .="0";
 		}
 		$startnum = $codenum.$str.$start;
-		
+		$length = $this -> qcode -> where(array('codenum' => $startnum)) -> select();
+
+		if ( $length ) {
+			echo json_encode(array('flag'=>'error','message'=>'编码已存在！'));
+			exit();
+		}
+
+
 		while ( $cnum > 0) {
 			$str = "";
 			for ( $i=0; $i < 5-strlen($start); $i++) { 
