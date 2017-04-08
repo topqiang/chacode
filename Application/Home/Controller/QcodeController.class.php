@@ -22,8 +22,8 @@ class QcodeController extends BaseController{
 				'id' => $res[0]['id'],
 				'visnum' => $res[0]['visnum'] + 1
 				);
-
 			M('Qcode') -> save($data);
+			session('gsname',$res[0]['name']);
 			$this -> assign('res',$res[0]);
 		
 		}

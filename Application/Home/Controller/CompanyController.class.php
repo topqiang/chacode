@@ -36,21 +36,30 @@ class CompanyController extends BaseController{
         	$where['status'] = array('neq' , 9);
 	        $where['provance'] = array('like' , "%$provance%");
 			$rates = $ratem -> where( $where ) -> select();
+			$gsname = session('gsname');
+			$cprates = array();
 			foreach ($rates as $index => $obj) {
+				$flag = false;
 				$whe['id'] = array('in' , $obj['paygoods']);
 				$res = $this -> goods -> where($whe) -> select();
 				$str = "";
+
 				foreach ($res as $key => $value) {
 					if ($key != 0) {
 						$str .=",";
 					}
 					$str .= $value['name'];
+					if ( $gsname == $value['name']) {
+						$flag = true;
+					}
 				}
 				$rates[ $index ]['paygoods'] = $str;
+				if ($flag) {
+					array_push($cprates,$rates[ $index ]);
+				}
 			}
 		}
-
-		$this -> assign("companylist",$rates);
+		$this -> assign("companylist",$cprates);
 		$this -> display();
 	}
 }
