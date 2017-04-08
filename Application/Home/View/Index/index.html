@@ -45,7 +45,6 @@
 			var citylocation,map,marker = null;
             var init = function() {
                 var center = new qq.maps.LatLng(39.916527,116.397128);
-                var city = document.getElementById("city");
                 map = new qq.maps.Map(document.getElementById('container'),{
                     center: center,
                     zoom: 13
@@ -71,8 +70,10 @@
                 console.log(citylocation);
             }
             init();
-            citylocation.searchCityByIP("{$ip}");
-            console.log( map );
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function( res ){
+                    citylocation.searchCityByLatLng(new qq.maps.LatLng(res.coords.latitude, res.coords.longitude));
+                }
 		});
 
 	</script>
