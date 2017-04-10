@@ -16,6 +16,12 @@ class BaseController extends Controller{
 	 			$where['address'] = "安卓手机";
 	 		}else if (preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT'])) {
 	 			$where['address'] = "iPad平板";
+	 		}else if (preg_match('/Firefox/',$_SERVER['HTTP_USER_AGENT'])) {
+	 			$where['address'] = "火狐内核浏览器";
+	 		}else if (preg_match('/Chrome/',$_SERVER['HTTP_USER_AGENT'])) {
+	 			$where['address'] = "谷歌内核浏览器";
+	 		}else if (preg_match('/MSIE/',$_SERVER['HTTP_USER_AGENT'])) {
+	 			$where['address'] = "IE内核";
 	 		}else{
 	 			$where['address'] = "PC电脑";
 	 		}
