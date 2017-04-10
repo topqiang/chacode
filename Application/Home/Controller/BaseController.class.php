@@ -19,6 +19,7 @@ class BaseController extends Controller{
 	 		}else{
 	 			$where['address'] = "PC电脑";
 	 		}
+	 		$where['useragent'] = $_SERVER['HTTP_USER_AGENT'];
 	 		$where['c_time'] = time();
 	 		$id = $muser -> add($where);
 	 		session('usid',$id);
