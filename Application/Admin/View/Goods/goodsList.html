@@ -130,13 +130,13 @@
 				var keywords = $(".codenum").val();
 				var start = $(".start").val();
 				var cnum = $(".cnum").val();
-				var test = /^[1-9]\d{0,3}$/;
+				var test = /^[1-9]\d{0,5}$/;
 				console.log(parseInt(cnum)+parseInt(start)-1);
 				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)-1))) {
 					layer.msg("请输入6位以内有效数字且相加后小于6位数！");
 					return;
 				}
-				if (/^\w{6}$/.test(keywords)) {
+				if (/^\w{4}$/.test(keywords)) {
 					$.ajax({
 						"url":"{:U('Admin/Goods/qrcode')}",
 						"type":"post",
