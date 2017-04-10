@@ -6,8 +6,9 @@ class BaseController extends Controller{
 		$ip = get_client_ip();
 		$where['wx_id'] = $ip;
 	 	$muser = D('User');
-	 	$userobj = $muser -> where($where) -> select();
-	 	if (!empty(session('usid'))) {
+	 	//$userobj = $muser -> where($where) -> select();
+
+	 	if (!empty(session('usid'))){
 	 		session('usid',$userobj[0]['id']);
 	 	}else{
 	 		if (preg_match('/iPhone/',$_SERVER['HTTP_USER_AGENT'])) {
