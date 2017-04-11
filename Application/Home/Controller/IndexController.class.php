@@ -23,7 +23,7 @@ class IndexController extends BaseController {
         $where['e_time'] = array('gt' , $time);
         $where['status'] = array('neq' , 9);
         $gsid = session('gsid');
-        //$where['paygoods'] = array('like',"%$gsid%");
+        $where['paygoods'] = array('like',"%$gsid%");
         $city = M('Company') -> distinct(true) -> field('provance') -> where($where) -> select();
         
         $this -> assign('citylist',$city);

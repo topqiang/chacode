@@ -24,7 +24,9 @@ class QcodeController extends BaseController{
 				);
 			M('Qcode') -> save($data);
 			session('gsname',$res[0]['name']);
-			session('gsid',$res[0]['id']);
+			$her['name'] = $res[0]['name'];
+			$gg = M("Goods") -> where($her) -> select();
+			session('gsid',$gg[0]['id']);
 			$this -> assign('res',$res[0]);
 		
 		}
