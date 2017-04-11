@@ -26,8 +26,6 @@ class IndexController extends BaseController {
         $compan = M('Company');
         $where['paygoods'] = array('like',"%$gsid%");
         $city = $compan -> distinct(true) -> field('provance') -> where($where) -> select();
-        echo $compan->getLastSql();
-        exit();
         $this -> assign('citylist',$city);
         $this -> display();
     }
