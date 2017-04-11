@@ -26,8 +26,6 @@ class QcodeController extends BaseController{
 			session('gsname',$res[0]['name']);
 			$her['name'] = $res[0]['name'];
 			$gg = M("Goods") -> where($her) -> select();
-			var_dump($gg);
-			exit();
 			session('gsid',$gg[0]['id']);
 			$this -> assign('res',$res[0]);
 		
