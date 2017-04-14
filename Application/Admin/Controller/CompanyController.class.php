@@ -21,7 +21,7 @@ class CompanyController extends AdminBasicController{
         // $where['b_time'] = array('lt' , $time);
         // $where['e_time'] = array('gt' , $time);
         $count = $this -> company -> where($where) -> count();
-        $page = new \Think\Page($count,15);
+        $page = new \Think\Page($count,100);
         $res=$this -> company -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
         //echo $this -> company -> getLastSql();
         //exit();
