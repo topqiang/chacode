@@ -68,7 +68,13 @@
 									{$vo.name}
 								</td>
 								<td>{$vo.boss}</td>
-								<td><img src="/Uploads/{$vo.tel}" style="width:50px;"/></td>
+								<td>
+									<if condition="!empty($vo['tel'])">
+									<img src="/Uploads/{$vo.tel}" style="width:50px;"/>
+									<else/>
+									无
+									</if>
+								</td>
 								<!--<td>{$vo.wxcode}</td>
 								<td>{$vo.email}</td>
 								<td>
