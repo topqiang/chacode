@@ -50,6 +50,7 @@ class QcodeController extends BaseController{
 			M('Qcode') -> save($data);
 			$her['name'] = $res[0]['name'];
 			$gg = M("Goods") -> where($her) -> select();
+			$res[0]['gsid'] = $gg[0]['id'];
 			apiResponse('success','查询成功！',$res[0]);
 		}else{
 			apiResponse('error','数据不存在！');
