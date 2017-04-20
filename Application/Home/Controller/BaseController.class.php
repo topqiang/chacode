@@ -82,6 +82,7 @@ class BaseController extends Controller{
 		return $access;
 	}
 
+
 	public function curl($data,$url,$type="POST"){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

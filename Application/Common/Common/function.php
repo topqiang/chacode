@@ -256,7 +256,10 @@ function apiChangeDate($list,$rule){
 	
 }
 
-
+function apiResponse($flag = 'error', $message = '',$data = array()){
+    $result = array('flag'=>$flag,'message'=>$message,'data'=>$data);
+    print json_encode($result);exit;
+}
 
 
 /**

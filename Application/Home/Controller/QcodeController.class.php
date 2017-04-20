@@ -36,5 +36,27 @@ class QcodeController extends BaseController{
 	}
 
 
+	public function wxfindcode(){
+
+		$where['codenum'] = $_GET['code_name'];
+				
+		$res = $this -> qcg -> where($where) -> select();
+		
+		if (!empty($res)) {
+			$data = array(
+				'id' => $res[0]['id'],
+				'visnum' => $res[0]['visnum'] + 1
+				);
+			M('Qcode') -> save($data);
+			$her['name'] = $res[0]['name'];
+			$gg = M("Goods") -> where($her) -> select();
+			apiResponse('success','查询成功！',$res[0]);
+		}else{
+			apiResponse('error','数据不存在！');
+		}
+	
+	}
+
+
 
 }
