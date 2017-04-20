@@ -73,6 +73,7 @@ class GoodsController extends Controller{
 			}
 		}
 	}
+
 	public function goodsDel(){
 		if(empty($_GET['id']))$this->error('没有商品id');
 		
