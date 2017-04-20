@@ -61,7 +61,7 @@ class ReportController extends BaseController{
     public function wxupload(){
         $upload_res=$this->upload();
         if($upload_res['flag']=='success'){
-            $data['pic']="Uploads/goods/".$upload_res['result']
+            $data['pic']="Uploads/report/".$upload_res['result'];
             apiResponse("success","上传成功！",$data);
         }else{
             apiResponse("error","上传失败！");
@@ -82,7 +82,7 @@ class ReportController extends BaseController{
         }*/
         if($is_upload){
             //load("@.function.php");
-            $upload_res=$this->uploadThemeImg('goods');
+            $upload_res=$this->uploadThemeImg('report');
             if(empty($upload_res['error'])){
                 return array('flag'=>'success','result'=>$upload_res[0]);
             }else{
