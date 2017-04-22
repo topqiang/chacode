@@ -335,12 +335,12 @@
 .shop-item{
 	padding: 15px 0px;
 	overflow:hidden;
+	display: block;
 	width:100%;
 	border-bottom:1px solid #ddd;
 }
 .shop-item:last-child{
 	border-bottom:0;
-	display: block;
 }
 .shop-item span{
 	font-size:35px;
