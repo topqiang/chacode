@@ -23,9 +23,9 @@ class AddressController extends BaseController{
 		$tolng = $_GET['tolng'];
 		$url = "http://api.map.baidu.com/direction/v2/transit?origin=$fromlat,$fromlng&destination=$tolat,$tolng&ak=l51Pp7gkTg8aqPNIgUh3UlClq8NBBeza";
 		$datajson = $this -> curl( "" , $url,"GET");
-		if ( $datajson ) {
-			$obj = json_decode($datajson,true);
-			apiResponse( "success" , "返回成功！" , $obj );
+		$obj = json_decode($datajson,true);
+		if ( $obj && $obj['status'] ==0 ) {
+			apiResponse( "success" , "返回成功！" , $obj['result']['routes'][0] );
 		}else{
 			apiResponse( "error" , "返回错误！" );
 		}
