@@ -26,6 +26,11 @@ class BaseController extends Controller{
 	 		}else{
 	 			$where['address'] = "PC电脑";
 	 		}
+
+	 		if (preg_match('/appservice/',$_SERVER['HTTP_USER_AGENT'])) {
+	 			$where['address'] = $where['address']."小程序";
+	 		}
+
 	 		$where['useragent'] = $_SERVER['HTTP_USER_AGENT'];
 	 		$where['c_time'] = time();
 	 		$id = $muser -> add($where);
