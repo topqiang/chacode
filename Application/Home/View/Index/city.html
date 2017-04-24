@@ -66,6 +66,7 @@
                         		console.log( res );		
                         	}
                         })
+                        sessionStorage.setItem("ci",results.detail.name);
                         $(".city0").text(results.detail.name);
                     }
                 });
@@ -76,7 +77,7 @@
     		}
 	    	function callback( res ) {
 	    		console.log(res);
-	    		
+
 	    		citylocation.searchCityByLatLng(new qq.maps.LatLng(res.coords.latitude, res.coords.longitude));
 	    	}
             //citylocation.searchCityByIP("{$ip}");

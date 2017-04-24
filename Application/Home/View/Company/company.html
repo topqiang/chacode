@@ -27,7 +27,7 @@
 						{$company.b_time}--{$company.e_time}
 					</p>
 					<if condition="!empty($company['wxcode'])">
-					<p>
+					<p class="disn">
 						<span>电话</span>
 						{$company.wxcode}
 					</p>
@@ -80,5 +80,13 @@
     			alert("未找到地址！");
     		}
     	});
+
+    	<if condition="!empty($company['wxcode'])">
+			var city = sessionStorage.getItem('ci');
+			var pro = "{$company.provance}";
+			if (pro.indexOf(city) != -1) {
+				$(".disn").show();
+			}
+		</if>
 	</script>
 </block>
