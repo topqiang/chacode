@@ -39,7 +39,7 @@ class QcodeController extends BaseController{
 	public function wxfindcode(){
 
 		$where['codenum'] = $_GET['code_name'];
-		$where['name'] = array("like","%".$_GET['code_name']."%");
+		$where['name'] = array("like","%".$_GET['name']."%");
 
 				
 		$res = $this -> qcg -> where($where) -> select();
