@@ -142,7 +142,9 @@
 .fake-footer p{
 	margin-top:10px;
 }
-
+.disn{
+	display: none;
+}
 
 .query-body{
 	padding:100px 3% 50px;
