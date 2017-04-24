@@ -27,7 +27,7 @@ class AddressController extends BaseController{
 		if ( $obj && $obj['status'] ==0 ) {
 			apiResponse( "success" , "返回成功！" , $obj['result']['routes'][0] );
 		}else{
-			apiResponse( "error" , "返回错误！" );
+			apiResponse( "error" , "返回错误！",$obj );
 		}
 	
 	}
