@@ -84,7 +84,7 @@
     	<if condition="!empty($company['wxcode'])">
 			var city = sessionStorage.getItem('ci');
 			var pro = "{$company.provance}";
-			if (pro.indexOf(city) != -1 || city.indexOf(pro) != -1) {
+			if (city && (pro.indexOf(city) != -1 || city.indexOf(pro) != -1)) {
 				$(".disn").show();
 			}
 		</if>
