@@ -21,7 +21,7 @@ class AddressController extends BaseController{
 		$fromlng = $_GET['fromlng'];
 		$tolat = $_GET['tolat'];
 		$tolng = $_GET['tolng'];
-		$url = "http://api.map.baidu.com/direction/v2/transit?origin=$fromlat,$fromlng&destination=$tolat,$tolng&ak=l51Pp7gkTg8aqPNIgUh3UlClq8NBBeza";
+		$url = "http://api.map.baidu.com/direction/v1/transit?origin=$fromlat,$fromlng&destination=$tolat,$tolng&mode=driving&ak=l51Pp7gkTg8aqPNIgUh3UlClq8NBBeza";
 		$datajson = $this -> curl( "" , $url,"GET");
 		$obj = json_decode($datajson,true);
 		if ( $obj && $obj['status'] ==0 ) {
