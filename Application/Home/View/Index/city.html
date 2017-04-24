@@ -76,7 +76,8 @@
     		}
 	    	function callback( res ) {
 	    		console.log(res);
-	    		citylocation.searchCityByLatLng(new qq.maps.LatLng(39,116));
+	    		
+	    		citylocation.searchCityByLatLng(new qq.maps.LatLng(res.coords.latitude, res.coords.longitude));
 	    	}
             //citylocation.searchCityByIP("{$ip}");
 		});
