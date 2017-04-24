@@ -26,11 +26,13 @@
 						<span>代理期限</span>
 						{$company.b_time}--{$company.e_time}
 					</p>
-					<!--<p>
-						<span>微信号</span>
+					<if condition="!empty($company['wxcode'])">
+					<p>
+						<span>电话</span>
 						{$company.wxcode}
 					</p>
-					<p>
+					</if>
+					<!--<p>
 						<span>电子邮件</span>
 						{$company.email}
 					</p>
