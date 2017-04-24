@@ -27,7 +27,7 @@ class BaseController extends Controller{
 	 			$where['address'] = "PC电脑";
 	 		}
 
-	 		if (preg_match('/appservice/',$_SERVER['HTTP_USER_AGENT'])) {
+	 		if ($_GET['motype'] || $_POST['motype']) {
 	 			$where['address'] = $where['address']."小程序";
 	 		}
 
