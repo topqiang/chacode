@@ -57,11 +57,11 @@
 						</p>
 						<p>
 							<label>授权起始时间</label>
-							<input class="text-input small-input" type="text" name="b_time" id="b_time" value="{$info.email|date='Y-m-d',###}"/>
+							<input class="text-input small-input" type="text" name="b_time" id="b_time" value="{$info.b_time|date='Y-m-d',###}"/>
 						</p>
 						<p>
 							<label>授权结束时间</label>
-							<input class="text-input small-input" type="text" name="e_time" id="e_time" value="{$info.email|date='Y-m-d',###}"/>
+							<input class="text-input small-input" type="text" name="e_time" id="e_time" value="{$info.e_time|date='Y-m-d',###}"/>
 						</p>
 						<p>
 							<label>电话/微信号</label>
@@ -154,6 +154,7 @@
 	  min: '2011-06-16', //设定最小日期为当前日期
 	  max: '2099-06-16', //最大日期
 	  istoday: false,
+	  start: '{$info.b_time|date="Y-m-d",###}',  //开始日期
 	  choose: function(datas){
 	     end.min = datas; //开始日选好后，重置结束日的最小日期
 	     end.start = datas; //将结束日的初始值设定为开始日
@@ -165,6 +166,7 @@
 	  min: laydate.now(),
 	  max: '2099-06-16',
 	  istoday: false,
+	  start: '{$info.e_time|date="Y-m-d",###}',  //开始日期
 	  choose: function(datas){
 	    start.max = datas; //结束日选好后，重置开始日的最大日期
 	  }

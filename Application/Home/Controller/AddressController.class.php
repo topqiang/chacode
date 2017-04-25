@@ -29,7 +29,6 @@ class AddressController extends BaseController{
 		}else{
 			apiResponse( "error" , "返回错误！" );
 		}
-	
 	}
 
 	public function curl($data,$url,$type="POST"){
