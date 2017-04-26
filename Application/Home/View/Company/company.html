@@ -11,25 +11,25 @@
 			<div class="shop-body">
 				<div class="result-intro shop-intro">
 					<p>
-						<span>地址</span>
-						{$company.address}
+						<span style="float:left;">店铺地址</span>
+						<div>{$company.address}</div>
 					</p>
 					<p>
-						<span>负责人</span>
-						{$company.boss}
+						<span style="float:left;">负&nbsp;责&nbsp;人</span>
+						<div>{$company.boss}</div>
 					</p>
 					<p>
-						<span>代理产品</span>
-						{$company.paygoods}
+						<span style="float:left;">代理产品</span>
+						<div>{$company.paygoods}</div>
 					</p>
 					<p>
-						<span>代理期限</span>
-						{$company.b_time}--{$company.e_time}
+						<span style="float:left;">代理期限</span>
+						<div>{$company.b_time}--{$company.e_time}</div>
 					</p>
 					<if condition="!empty($company['wxcode'])">
 					<p class="disn">
-						<span>电话</span>
-						{$company.wxcode}
+						<span style="float:left;">联系电话</span>
+						<div>{$company.wxcode}</div>
 					</p>
 					</if>
 					<!--<p>
