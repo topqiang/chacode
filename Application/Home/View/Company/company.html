@@ -12,24 +12,24 @@
 				<div class="result-intro shop-intro">
 					<div>
 						<span style="float:left;">店铺地址</span>
-						<div>{$company.address}</div>
+						<div class="texovh">{$company.address}</div>
 					</div>
 					<div>
-						<span style="float:left;">负&nbsp;责&nbsp;人</span>
-						<div>{$company.boss}</div>
+						<span style="float:left;">负责人员</span>
+						<div class="texovh">{$company.boss}</div>
 					</div>
 					<div>
 						<span style="float:left;">代理产品</span>
-						<div>{$company.paygoods}</div>
+						<div class="texovh">{$company.paygoods}</div>
 					</div>
 					<div>
 						<span style="float:left;">代理期限</span>
-						<div>{$company.b_time}--{$company.e_time}</div>
+						<div class="texovh">{$company.b_time}--{$company.e_time}</div>
 					</div>
 					<if condition="!empty($company['wxcode'])">
 					<div class="disn">
 						<span style="float:left;">联系电话</span>
-						<div>{$company.wxcode}</div>
+						<div class="texovh">{$company.wxcode}</div>
 					</div>
 					</if>
 					<!--<p>
