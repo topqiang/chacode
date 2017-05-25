@@ -4,7 +4,7 @@ use Think\Controller;
 
 /**
  * Class IndexController
- * @package Home\Controller
+ * @package Wap\Controller
  */
 class IndexController extends BaseController {
     public function _initialize(){
