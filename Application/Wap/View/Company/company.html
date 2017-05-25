@@ -1,0 +1,92 @@
+<extend name="Public/header"/>
+<block name="main">
+		<div class="fake-head pad732 fs40">
+			<span></span>
+			{$company.name}
+		</div>
+		<div class="fake-body bot1">
+			<!--<div class="result-img" style="padding-top:50px;transform: translateY(56px);">
+				<img src="/Uploads/{$company.tel}"/>
+			</div>-->
+			<div class="shop-body">
+				<div class="result-intro shop-intro fs35">
+					<div>
+						<span style="float:left;">店铺地址</span>
+						<div style="display: inline-block;width: 580px;">{$company.address}</div>
+					</div>
+					<div>
+						<span style="float:left;">负责人员</span>
+						<div style="display: inline-block;width: 580px;">{$company.boss}</div>
+					</div>
+					<div>
+						<span style="float:left;">代理产品</span>
+						<div style="display: inline-block;width: 580px;">{$company.paygoods}</div>
+					</div>
+					<div>
+						<span style="float:left;">代理期限</span>
+						<div style="display: inline-block;width: 580px;">{$company.b_time}--{$company.e_time}</div>
+					</div>
+					<if condition="!empty($company['wxcode'])">
+					<div class="disn">
+						<span style="float:left;">联系电话</span>
+						<div style="display: inline-block;width: 580px;">{$company.wxcode}</div>
+					</div>
+					</if>
+					<!--<p>
+						<span>电子邮件</span>
+						{$company.email}
+					</p>
+					<p>
+						<span>经销商级别</span>
+						<if condition="$company['class'] eq 1">
+							省级
+						<elseif condition="$company['class'] eq 2"/>
+							市级
+						<elseif condition="$company['class'] eq 3"/>
+							县级
+						</if>
+					</p>-->
+				</div>
+				<div class="go-there">
+					<div class="go-center">
+						<i></i>
+						<span class="gothere">带我去这里</span>
+					</div>					
+				</div>
+			</div>
+			<div class="fake-footer fs35">
+				<p>云南西双版纳州古茶山茶业有限公司</p>
+				<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
+				<p>滇ICP备15000438号</p>
+			</div>
+		</div>
+</block>
+<block name="script">
+	<script type="text/javascript">
+		if (navigator.geolocation) {
+    		navigator.geolocation.getCurrentPosition(callback);
+    	}
+    	function callback( res ) {
+    		console.log(res);
+    	}
+
+    	$(".go-there").on('click',function () {
+    		var lat = "{$company['lat']}";
+    		var lnt = "{$company['lnt']}";
+    		if (lat && lnt) {
+    			sessionStorage.setItem("end",JSON.stringify({"lat":lat,"lnt":lnt}));
+    			window.location.href="{:U('Address/address')}";
+    		}else{
+    			alert("未找到地址！");
+    		}
+    	});
+
+    	<if condition="!empty($company['wxcode'])">
+			var city = sessionStorage.getItem('ci');
+			var pro = "{$company.provance}";
+			if (city && (pro.indexOf(city) != -1 || city.indexOf(pro) != -1)) {
+				$(".disn").show();
+			}
+		</if>
+	</script>
+</block>

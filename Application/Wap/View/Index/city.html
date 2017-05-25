@@ -1,0 +1,95 @@
+<extend name="Public/header"/>
+<block name="main">
+	<div class="fake-head pad732 fs40">
+		<span></span>
+		选择城市
+	</div>
+	<div class="fake-body bot1">
+		<div style="display:none" id="container"></div>
+	    <div class="shop-body">
+			<div class="city-city fs35">
+				<div class="city-location">
+					定位城市：
+					<span class="city0"></span>
+				</div>
+				<div class="city-hot">
+					<p>热门城市</p>
+					<ul>
+						<li>北京</li>
+						<li>山东</li>
+						<li>广东</li>
+						<li>云南</li>
+					</ul>
+				</div>
+			</div>
+			<div class="city-select" style="padding: 30px;"> 
+				<div class="select-item">
+					<volist name="citylist" id="city">
+						<p>{$city['provance']}</p>
+					</volist>						
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="fake-footer fs35">
+			<p>云南西双版纳州古茶山茶业有限公司</p>
+			<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
+			<p>滇ICP备15000438号</p>
+		</div>
+	</div>
+</block>
+<block name="script">
+	<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp"></script>
+	<script>
+		$(function () {
+			var citylocation,map,marker = null;
+            var init = function() {
+                var center = new qq.maps.LatLng(39.916527,116.397128);
+                map = new qq.maps.Map(document.getElementById('container'),{
+                    center: center,
+                    zoom: 13
+                });
+                //获取  城市位置信息查询 接口  
+                citylocation = new qq.maps.CityService({
+                    //设置地图
+                    map : map,
+
+                    complete : function(results){
+                    	var latlng = results.detail.latLng;
+                        console.log(latlng);
+                        $.ajax({
+                        	"url":"{:U('User/upduser')}",
+                        	"type":"post",
+                        	"dataType":"json",
+                        	"data":{"lat":latlng.lat,"lng":latlng.lng,"provance":results.detail.name},
+                        	"success":function ( res ) {
+                        		console.log( res );		
+                        	}
+                        })
+                        sessionStorage.setItem("ci",results.detail.name);
+                        $(".city0").text(results.detail.name);
+                    }
+                });
+            }
+            init();
+            if (navigator.geolocation) {
+    			navigator.geolocation.getCurrentPosition(callback);
+    		}
+	    	function callback( res ) {
+	    		console.log(res);
+
+	    		citylocation.searchCityByLatLng(new qq.maps.LatLng(res.coords.latitude, res.coords.longitude));
+	    	}
+            //citylocation.searchCityByIP("{$ip}");
+		});
+
+		function clickafter( txt ) {
+			if (txt) {
+				if (txt.indexOf('市') != -1 ) var txt = txt.substring(0,txt.length-1);
+				window.location.href = "{:U('Company/companylist')}/provance/"+txt;
+				
+			}
+		}
+
+	</script>
+</block>
