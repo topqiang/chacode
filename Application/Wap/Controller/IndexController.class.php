@@ -1,5 +1,5 @@
 <?php
-namespace Home\Controller;
+namespace Wap\Controller;
 use Think\Controller;
 
 /**
