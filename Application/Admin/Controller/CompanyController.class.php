@@ -208,9 +208,9 @@ class CompanyController extends AdminBasicController{
             );
         $res = $this->company->save($data);
         if($res){
-            echo "重置成功！";
+            apiResponse("success","重置成功！");
         }else{
-            echo "重置失败！";
+            apiResponse("error","重置失败！");
         }
     }
 
