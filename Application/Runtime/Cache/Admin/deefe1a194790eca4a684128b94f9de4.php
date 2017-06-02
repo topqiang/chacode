@@ -23,8 +23,10 @@
 
 		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
 			<form action="<?php echo U('Company/companyList');?>" method="post">
-				名称：<input type="text" name="name" class="text-input">
-				城市：<input type="text" name="provance" class="text-input">
+				名称：<input type="text" name="name" class="text-input" value="<?php echo ($_REQUEST['name']); ?>">
+				城市：<input type="text" name="provance" class="text-input" value="<?php echo ($_REQUEST['provance']); ?>">
+				手机号：<input type="tel" name="tel" class="text-input" value="<?php echo ($_REQUEST['tel']); ?>">
+
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>
@@ -44,9 +46,9 @@
 							<th width="10%">经销商名称</th>
 							<th width="10%">负责人</th>
 							<th width="10%">门店图片</th>
-							<!--<th width="10%">微信号</th>
-							<th width="10%">email</th>-->
-							<th width="5%">销售级别</th>
+							<th width="10%">电话</th>
+							<!--<th width="10%">email</th>
+							<th width="5%">销售级别</th>-->
 							<th width="10%">所处城市</th>
 							<th width="15%">代理时间</th>
 							<th width="15%">地址</th>
@@ -65,10 +67,18 @@
 									<?php echo ($vo["name"]); ?>
 								</td>
 								<td><?php echo ($vo["boss"]); ?></td>
-								<td><img src="/Uploads/<?php echo ($vo["tel"]); ?>" style="width:50px;"/></td>
-								<!--<td><?php echo ($vo["wxcode"]); ?></td>
-								<td><?php echo ($vo["email"]); ?></td>-->
-								<td><?php echo ($vo["class"]); ?></td>
+								<td>
+									<?php if(!empty($vo['tel'])): ?><img src="/Uploads/<?php echo ($vo["tel"]); ?>" style="width:50px;"/>
+									<?php else: ?>
+									无<?php endif; ?>
+								</td>
+								<td><?php echo ($vo["wxcode"]); ?></td>
+								<!--<td><?php echo ($vo["email"]); ?></td>
+								<td>
+									<?php if($vo['class'] == 1): ?>省级
+										<?php elseif($vo['class'] == 2): ?>市级
+										<?php elseif($vo['class'] == 3): ?>县级<?php endif; ?>
+								</td>-->
 								<td><?php echo ($vo["provance"]); ?></td>
 								<td><?php echo ($vo["b_time"]); ?>--<?php echo ($vo["e_time"]); ?></td>
 								<td><?php echo ($vo["address"]); ?></td>

@@ -110,7 +110,8 @@ class GoodsController extends Controller{
 			echo json_encode($date);
 			exit();
 		}
-		for ( $i=0; $i < 5-strlen($start); $i++) { 
+		$len = 10-strlen($codenum);
+		for ( $i=0; $i < $len-strlen($start); $i++) { 
 			$str .="0";
 		}
 		$startnum = $codenum.$str.$start;
@@ -124,7 +125,7 @@ class GoodsController extends Controller{
 
 		while ( $cnum > 0) {
 			$str = "";
-			for ( $i=0; $i < 5-strlen($start); $i++) { 
+			for ( $i=0; $i < $len-strlen($start); $i++) { 
 				$str .="0";
 			}
 			$code = $codenum.$str.$start;

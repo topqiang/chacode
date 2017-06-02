@@ -1,0 +1,67 @@
+<extend name="Public/header"/>
+<block name="main">
+	<div class="fake-head pad732 fs40">
+            <span></span>
+            防伪查询
+        </div>
+	<div class="fake-body bot1">
+	    <div class="" style="min-height:70vh;">
+			<div class="query-body">
+				<div class="query-code myquery">
+					<form action="{:U('Log/logbytime')}" method="post" name="thisform">
+					<input class="b_time" name="b_time" type="date" value="" placeholder="开始时间" value="{$_REQUEST['b_time']}"/>
+					<input class="e_time" name="e_time" type="date" value="" placeholder="结束时间" value="{$_REQUEST['e_time']}"/>
+				    <span class="postbtn">查询</span>
+				    </form>
+				</div>
+				<if condition="!empty($reslist)">
+					<div class="query-note fs35 result-note">
+						<div class="result-head">查询结果</div>
+						<volist name="reslist" id="res">
+						<div class="result-intro">
+							<p>
+								<span>编码</span>
+								{$res.begin}-{$res.end}
+							</p>
+							<p>
+								<span>批次</span>
+								{$res.creatcode}
+							</p>
+							<p>
+								<span>品名</span>
+								{$res.gname}
+							</p>
+							<p>
+								<span>生产日期</span>
+								{$res.ctime}
+							</p>
+							<p>
+								<span>经销商</span>
+								{$res.name}
+							</p>
+						</div>
+						</volist>
+					</div>
+				<else/>
+					<span class="" style="padding:20px;display:block;font-size: 40px;">
+						该时间段内没有对应的发货信息。
+					</span>
+				</if>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="script">
+<script>
+	$(".postbtn").on('click',function ( res ) {
+		var b_time = $(".b_time").val();
+		var e_time = $(".e_time").val();
+		if (b_time && e_time) {
+			console.log(b_time,e_time);
+			document.thisform.submit();
+		}else{
+			alert("请选择时间段！");
+		}
+	});
+	</script>
+</block>

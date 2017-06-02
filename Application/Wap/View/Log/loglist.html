@@ -1,0 +1,74 @@
+<extend name="Public/header"/>
+<block name="main">
+    <div class="fake-head pad732 fs40">
+            <span></span>
+            产品管理
+        </div>
+        <div class="fake-body bot1">
+            <volist name="reslist" id="resobj">
+                <div class="shop-body" style="padding-bottom:0px;padding-top:40px;">
+                    <div class="shop-item bgff0 colfff" style="padding: 30px 20px;">
+                        <span style="margin-right:20px;">上级经销商</span>
+                        <span>{$pname}</span>
+
+                        <span class="fr tuihu" id="{$resobj['id']}" status="{$resobj['status']}">
+                            <if condition="$shop_id eq $resobj['tocid']">
+                                <if condition="$resobj['status'] eq 0">
+                                退货
+                                <else/>
+                                已退回
+                                </if>
+                            <else/>
+                                <if condition="$resobj['status'] eq 0">
+                                已发货
+                                <else/>
+                                已退回
+                                </if>
+                            </if>
+                        </span>
+                    </div>
+                    <div class="shop-list fs40">
+                        <div class="shop-item">
+                            <div>
+                                <span>产品名称</span>
+                                <span class="fr">{$resobj.gname}</span>
+                            </div>
+                            <div>
+                                <span>产品数量</span>
+                                <span class="fr">{$resobj.num}</span>
+                            </div>
+                            <div>
+                                <span>防伪编号</span>
+                                <span class="fr">{$resobj.begin}-{$resobj.end}</span>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <span>发货时间</span>
+                            <span class="fr">{$resobj.time|date='Y-m-d H:m:i',###}</span>
+                        </div>
+                    </div>
+                </div>
+            </volist>
+
+        </div>
+</block>
+<block name="script">
+    <script>
+        $(".tuihu").on('click',function () {
+            if ($(this).attr("status")==1) {
+                console.log("不能单击");
+                return;
+            }
+           if (confirm("确定要退货吗？")) {
+                var id = $(this).attr("id");
+                requestUrl("{:U('Qcode/tui')}",{id:id},function (res) {
+                    alert(res.message);
+                    if (res.flag=="success") {
+                        location.reload();
+                    }
+                })
+           } 
+        });
+    </script>
+
+</block>

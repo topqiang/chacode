@@ -13,45 +13,65 @@
 				</div>
 				<if condition="!empty($res)">
 					<div class="query-note fs35 result-note">
-						
-							<div class="result-head">查询结果</div>
-							<div class="result-detail">
-								<div class="result-img">
-									<img src="{$res.pic}"/>
-								</div>
-								<p>您输入的“{$res['codenum']}”是“{$res.name}”产品，产品为正品。</p>
+						<div class="result-head">查询结果</div>
+						<div class="result-detail">
+							<div class="result-img">
+								<img src="{$res.pic}"/>
 							</div>
-							<div class="result-intro">
-								<p>
-									<span>批次</span>
-									{$res.creatcode}
-								</p>
-								<p>
-									<span>品名</span>
-									{$res.name}
-								</p>
-								<p>
-									<span>生产日期</span>
-									{$res.ctime}
-								</p>
-							</div>
-							
+							<p>您输入的“{$res['codenum']}”是“{$res.name}”产品，产品为正品。</p>
+						</div>
+						<div class="result-intro">
+							<p>
+								<span>批次</span>
+								{$res.creatcode}
+							</p>
+							<p>
+								<span>品名</span>
+								{$res.name}
+							</p>
+							<p>
+								<span>生产日期</span>
+								{$res.ctime}
+							</p>
+							<p>
+								<span>厂家</span>
+								
+							</p>
+							<p>
+								<span>经销商</span>
+								{$res.company}
+							</p>
+						</div>
 					</div>
-					<div class="fake-submit1 mat40 linkbtn"><span class="">经销商查询</span></div>
+				<elseif condition="!empty($companylist)"/>
+					<volist name="companylist" id="company">
+					<div class="shop-body" style="padding-bottom:0px;padding-top:40px;">
+						<div class="shop-list fs40">
+							<a class="shop-item">
+								<span>店名</span>
+								<span class="fr">{$company.name}</span>
+							</a>
+							<a class="shop-item">
+								<span>负责人</span>
+								<span class="fr">{$company.boss}</span>
+							</a>
+							<a class="shop-item">
+								<span>地址</span>
+								<span class="fr">{$company.address}</span>
+							</a>
+							<a class="shop-item">
+								<span>上级经销商</span>
+								<span class="fr">{$company.pwxcode}</span>
+							</a>
+						</div>
+					</div>
+					</volist>
 				<else/>
 					<span class="" style="padding:20px;display:block;font-size: 40px;">
-						您输入的”{$_REQUEST['code_name']}“没有对应的产品信息，请核对防伪识别码是否正确，或拨打客服电话0691-5170999进一步核实，谨防假冒。
-					<a href="{:U('Report/report')}">举报</a></span>
+						您输入的”{$_REQUEST['code_name']}“没有对应的产品信息。
+					</span>
 				</if>
-
-				
-
 			</div>
-		</div>
-		<div class="fake-footer fs35">
-			<p>云南西双版纳州古茶山茶业有限公司</p>
-			<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
-			<p>滇ICP备15000438号</p>
 		</div>
 	</div>
 </block>
@@ -59,15 +79,12 @@
 	<script type="text/javascript">
 		$(".postbtn").on('click',function () {
 			var code_name = $(".code_name").val();
-			if ( !/^\w{5}\d{5}$/.test(code_name) ) {
+			if (!code_name ) {
 				alert("请输入合法的防伪码！");
 				return;
 			}else{
-				window.location.href = '{:U("Home/Qcode/findcode")}/code_name/'+code_name;
+				window.location.href = '{:U("Qcode/findcode")}/code_name/'+code_name;
 			}
-		})
-		$(".linkbtn").on('click',function () {
-			window.location.href="{:U('Index/city')}";
 		});
 	</script>
 </block>

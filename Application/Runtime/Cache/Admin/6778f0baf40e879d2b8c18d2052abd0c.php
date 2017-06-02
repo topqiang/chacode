@@ -43,9 +43,11 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="nav-top-item">二维码生成信息</a>
+                    <a href="#" class="nav-top-item">防伪码生成</a>
                     <ul>
-                        <li><a href="<?php echo U('Qcode/qcodelist');?>" target="main">二维码列表</a></li>
+                        <li><a href="<?php echo U('Qcode/qcodelist');?>" target="main">防伪码列表</a></li>
+                        <li><a href="<?php echo U('Qcode/loglist');?>" target="main">发货记录</a></li>
+
                     </ul>
                 </li>
 				<li>

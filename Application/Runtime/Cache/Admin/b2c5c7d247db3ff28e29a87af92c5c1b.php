@@ -57,19 +57,23 @@
 						</p>
 						<p>
 							<label>授权起始时间</label>
-							<input class="text-input small-input" type="text" name="b_time" id="b_time" value="<?php echo (date('Y-m-d',$info["email"])); ?>"/>
+							<input class="text-input small-input" type="text" name="b_time" id="b_time" value="<?php echo ($info["b_time"]); ?>"/>
 						</p>
 						<p>
 							<label>授权结束时间</label>
-							<input class="text-input small-input" type="text" name="e_time" id="e_time" value="<?php echo (date('Y-m-d',$info["email"])); ?>"/>
+							<input class="text-input small-input" type="text" name="e_time" id="e_time" value="<?php echo ($info["e_time"]); ?>"/>
 						</p>
 						<p>
-							<label>微信号</label>
+							<label>电话/微信号</label>
 							<input class="text-input small-input" type="text" name="wxcode" value="<?php echo ($info["wxcode"]); ?>"/>
 						</p>
 						<p>
 							<label>邮箱</label>
 							<input class="text-input small-input" type="text" name="email" value="<?php echo ($info["email"]); ?>"/>
+						</p>
+						<p>
+							<label>代理的产品</label>
+							<?php if(is_array($goods)): $i = 0; $__LIST__ = $goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$good): $mod = ($i % 2 );++$i;?><input type="checkbox" name="paygoods[]" value="<?php echo ($good['id']); ?>" <?php if(in_array($good['id'],$info['paygoods'])): ?>checked<?php endif; ?>/><?php echo ($good['name']); endforeach; endif; else: echo "" ;endif; ?>
 						</p>
 						<p>
 							<label>销售商级别</label>
@@ -83,7 +87,11 @@
 							<input type="hidden" name="lnt" class="lnt" value="<?php echo ($info["lnt"]); ?>"/>
 						</p>
 						<p>
-							<input class="button" type="submit" value="保存" />
+							<label>上级经销商</label>
+							<input class="text-input small-input" type="tel" name="pwxcode" placeholder="非省级请填写上级经销商的手机号" value="<?php echo ($info["pwxcode"]); ?>"/>
+						</p>
+						<p>
+							<input class="button" type="submit" value="保存"/>
 						</p>
 					</fieldset>
 					<div class="clear"></div>
@@ -92,7 +100,7 @@
 		</div>
 	</div>
 </div>
-<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp"></script>
 <script type="text/javascript">
 	function ajax(){
 		var filesize = this.files[0].size;
@@ -145,9 +153,10 @@
 	var start = {
 	  elem: '#b_time',
 	  format: 'YYYY/MM/DD',
-	  min: laydate.now(), //设定最小日期为当前日期
+	  min: '2011-06-16', //设定最小日期为当前日期
 	  max: '2099-06-16', //最大日期
 	  istoday: false,
+	  start: '<?php echo ($info["b_time"]); ?>',  //开始日期
 	  choose: function(datas){
 	     end.min = datas; //开始日选好后，重置结束日的最小日期
 	     end.start = datas; //将结束日的初始值设定为开始日
@@ -159,6 +168,7 @@
 	  min: laydate.now(),
 	  max: '2099-06-16',
 	  istoday: false,
+	  start: '<?php echo ($info["e_time"]); ?>',  //开始日期
 	  choose: function(datas){
 	    start.max = datas; //结束日选好后，重置开始日的最大日期
 	  }

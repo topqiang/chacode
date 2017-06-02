@@ -21,7 +21,7 @@
 
         <div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
             <form action="<?php echo U('User/userlist');?>" method="post">
-                用户名：<input type="text" name="name" class="text-input">
+                用户名：<input type="text" name="name" class="text-input" value="<?php echo ($_REQUEST['name']); ?>">
                 <input type="submit" class="button search-btn" value="查询">
             </form>
         </div>
@@ -37,10 +37,10 @@
                         <th width="5%">ID</th>
                         <th width="5%">姓名</th>
                         <th width="5%">省份</th>
-                        <th width="5%">性别</th>
+                        <th width="5%">ip地址</th>
                         <th width="10%">电话</th>
-                        <th width="10%">地址</th>
-                        <th width="10%">首次访问</th>
+                        <th width="10%">使用设备</th>
+                        <th width="10%">首次访问时间</th>
                         <th width="10%">操作</th>
                     </tr>
                     </thead>
@@ -52,7 +52,7 @@
                             <td><?php echo ($user["name"]); ?></td>
                             <td><?php echo ($user["provance"]); ?></td>
                             <td>
-                                <?php echo ($user["sex"]); ?>
+                                <?php echo ($user["wx_id"]); ?>
                             </td>
                             <td>
                                 <?php echo ($user["tel"]); ?>
@@ -61,7 +61,7 @@
                                 <?php echo ($user["address"]); ?>
                             </td>
                             <td>
-                                <?php echo (date($user["c_time"],"y-m-d H:m:i")); ?>
+                                <?php echo (date("Y-m-d H:m:i",$user["c_time"])); ?>
                             </td>
                             <td>
                                 <!--<a href="<?php echo U('WeiXinArticle/editTextBack',array('wxa_id'=>$text_back['wxa_id']));?>" title="编辑">

@@ -40,7 +40,7 @@
 								ID
 							</th>
 							<th width="10%">商品名称</th>
-							<th width="20%">公司名</th>
+							<th width="20%">防伪区间</th>
 							<th width="10%">批次</th>
 							<th width="5%">查询次数</th>
 							<th width="15%">防伪码</th>
@@ -61,7 +61,7 @@
 								<td><?php echo ($vo["creatcode"]); ?></td>
 								<td><?php echo ($vo["visnum"]); ?></td>
 								<td><?php echo ($vo["codenum"]); ?></td>
-								<td><?php echo (date('Y-m-d H:m:i',$vo["ctime"])); ?></td>
+								<td><?php echo ($vo["ctime"]); ?></td>
 
 								<td><img class="imgcode" src="/chacode<?php echo ($vo["code_pic"]); ?>" style="width:30px"/></td>
 								<td>

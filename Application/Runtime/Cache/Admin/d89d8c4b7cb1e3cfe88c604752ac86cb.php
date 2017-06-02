@@ -62,7 +62,9 @@
 								<td><?php echo ($vo["name"]); ?></td>
 								<td><?php echo ($vo["tel"]); ?></td>
 								<td><?php echo ($vo["remark"]); ?></td>
-								<td><img src="<?php echo ($vo["pic"]); ?>" style="width:50px;"/></td>
+								<td>
+									<?php if(!empty($vo['pic'])): ?><img src="<?php echo ($vo["pic"]); ?>" class="imgcode" style="width:50px;"/><?php endif; ?>
+								</td>
 								<td>
 									<?php if($vo['status'] == 0): ?>未处理
 									<?php else: ?>已处理<?php endif; ?>
@@ -70,9 +72,9 @@
 								<td><?php echo (date("y-m-d H:m:i",$vo["c_time"])); ?></td>
 								<td><?php echo (date("y-m-d H:m:i",$vo["u_time"])); ?></td>
 								<td>
-                                    <a href="<?php echo U('Report/reportedit',array('id'=>$vo['id']));?>" title="处理">
-                                        <img src="/chacode/Public/Admin/images/icons/pencil.png" alt="处理" />
-                                    </a>
+                                    <?php if($vo['status'] == 0): ?><a href="<?php echo U('Report/reportedit',array('id'=>$vo['id']));?>" title="处理">
+                                        	<img src="/chacode/Public/Admin/images/icons/pencil.png" alt="处理" />
+                                    	</a><?php endif; ?>
                                     <a href="<?php echo U('Report/reportdel',array('id'=>$vo['id']));?>" title="删除">
                                         <img src="/chacode/Public/Admin/images/icons/cross.png" alt="Delete" />
                                     </a>
@@ -99,5 +101,23 @@
 		</div>
 	</div>
 </div>
+<div id="imgcode" style="text-align:center;display:none;">
+	<div style="padding:20px;">
+		<img id="codeimg" style="width:100%;"/>
+	</div>
+</div>
 </body>
+
+<script type="text/javascript" src="/chacode/Public/Admin/js/layer/layer.js"></script>
+<script type="text/javascript">
+$(".imgcode").on('click',function () {
+	$("#codeimg").attr("src",$(this).attr("src"));
+	layer.open({
+		type:1,
+		title:"右键另存为吧！",
+		content: $('#imgcode'),
+		area:["400px","auto"]
+	});
+});
+</script>
 </html>

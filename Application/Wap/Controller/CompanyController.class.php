@@ -1,13 +1,92 @@
 <?php
-namespace Home\Controller;
+namespace Wap\Controller;
 use Think\Controller;
 class CompanyController extends BaseController{
+	
 	public function _initialize(){
 		parent::_initialize();
 		$this -> goods = D('Goods');
+		$this -> company = M('Company');
 	}
+
+	public function regis(){
+		$wxcode = $_POST['wxcode'];
+		$password = $_POST['password'];
+		$tel = $_POST['tel'];
+		if ($wxcode && $password && $tel) {
+			$pid = 0;
+			$pwxcode = "";
+			$class = 1;
+			if ($tel != "123456") {
+				$whe['wxcode'] = $tel;
+				$whe['class'] = array('IN',array('1','2'));
+				$is_p = $this -> company -> where( $whe ) -> find();
+				if (empty($is_p)) {
+					apiResponse('error','上级不存在！');
+				}
+				$pid = $is_p['id'];
+				$pname = $is_p['name'];
+
+				if ($is_p['class'] == "1") {
+					$class = 2;
+				}else{
+					$class = 3;
+				}
+				$pwxcode = $tel;
+			}
+			$wh['wxcode'] = $wxcode;
+			$is_has = $this -> company -> where( $wh ) -> find();
+			if ($is_has) {
+				apiResponse('error','手机号已存在！');
+			}
+			$data = array(
+				'wxcode' => $wxcode,
+				'password' => md5($password),
+				'pwxcode' => $tel,
+				'pid' => $pid,
+				'class' => $class,
+				'pname' => $pname,
+				'status' => 1
+				);
+			$res = $this -> company -> add($data);
+			if ($res) {
+				session('shop_id',$res);
+				apiResponse('success','添加成功！');
+			}else{
+				apiResponse('error','添加失败！');
+			}
+
+		}else{
+			apiResponse("error","数据填写不完整！");
+		}
+	}
+
+	public function reset(){
+		$wxcode = $_POST['wxcode'];
+		$password = $_POST['password'];
+		if (empty($wxcode) || empty($password)) {
+			apiResponse("error","输入内容为空！");
+		}
+		$id = session('shop_id');
+		$rates = $this -> company -> where( array( 'id' => $id ) ) -> find();
+		if ($rates['password'] == md5($wxcode)) {
+			$data = array(
+				'id' => $id,
+				'password' => md5($password)
+				);
+			$res = $this -> company -> save($data);
+			if ($res) {
+				apiResponse("success","修改成功！");
+			}else{
+				apiResponse("error","修改失败！");
+			}
+		}else{
+			apiResponse("error","原密码输入错误！");
+		}
+	}
+
 	public function company(){
-		$id = $_GET['id'];
+		$id = session('shop_id');
 		$ratem = M('Company');
 		$rates = $ratem -> where( array( 'id' => $id ) ) -> select();
 		if ($rates) {
@@ -27,101 +106,18 @@ class CompanyController extends BaseController{
 	}
 
 	public function companylist(){
-		$provance = $_GET['provance'];
-		if (!empty($provance)) {
+		$id = session('shop_id');
+		if (!empty($id)) {
 			$ratem = M('Company');
 			$time = date('Y/m/d');
         	$where['b_time'] = array('lt' , $time);
         	$where['e_time'] = array('gt' , $time);
         	$where['status'] = array('neq' , 9);
-	        $where['provance'] = array('like' , "%$provance%");
+	        $where['pid'] = $id;
 			$rates = $ratem -> where( $where ) -> select();
-			$gsname = session('gsname');
-			$cprates = array();
-			foreach ($rates as $index => $obj) {
-				$flag = false;
-				$whe['id'] = array('in' , $obj['paygoods']);
-				$res = $this -> goods -> where($whe) -> select();
-				$str = "";
-
-				foreach ($res as $key => $value) {
-					if ($key != 0) {
-						$str .=",";
-					}
-					$str .= $value['name'];
-					if ( $gsname == $value['name']) {
-						$flag = true;
-					}
-				}
-				$rates[ $index ]['paygoods'] = $str;
-				if ($flag) {
-					array_push($cprates,$rates[ $index ]);
-				}
-			}
+			//dump($rates);
 		}
-		$this -> assign("companylist",$cprates);
+		$this -> assign("companylist",$rates);
 		$this -> display();
-	}
-
-
-	public function wxcompanylist(){
-		$provance = $_GET['provance'];
-		$gsname = $_GET['gsname'];
-		if (!empty($provance)) {
-			$ratem = M('Company');
-			$time = date('Y/m/d');
-        	$where['b_time'] = array('lt' , $time);
-        	$where['e_time'] = array('gt' , $time);
-        	$where['status'] = array('neq' , 9);
-	        $where['provance'] = array('like' , "%$provance%");
-			$rates = $ratem -> where( $where ) -> select();
-			$cprates = array();
-			foreach ($rates as $index => $obj) {
-				$flag = false;
-				$whe['id'] = array('in' , $obj['paygoods']);
-				$res = $this -> goods -> where($whe) -> select();
-				$str = "";
-
-				foreach ($res as $key => $value) {
-					if ($key != 0) {
-						$str .=",";
-					}
-					$str .= $value['name'];
-					if ( $gsname == $value['name']) {
-						$flag = true;
-					}
-				}
-				$rates[ $index ]['paygoods'] = $str;
-				if ($flag) {
-					array_push($cprates,$rates[ $index ]);
-				}
-			}
-			if ($cprates) {
-				apiResponse("success","查询成功！",$cprates);
-			}else{
-				apiResponse("error","查询失败！");
-			}
-		}
-	}
-
-	public function wxcompany(){
-		$id = $_GET['id'];
-		$ratem = M('Company');
-		$rates = $ratem -> where( array( 'id' => $id ) ) -> select();
-		if ($rates) {
-			$where['id'] = array('in' , $rates[0]['paygoods']);
-			$res = $this -> goods -> where($where) -> select();
-			$str = "";
-			foreach ($res as $key => $value) {
-				if ($key != 0) {
-					$str .=",";
-				}
-				$str .= $value['name'];
-			}
-			$rates[0]['paygoods'] = $str;
-			apiResponse("success","查询成功！",$rates[0]);
-		}else{
-			apiResponse("error","查询失败！");
-		}
 	}
 }

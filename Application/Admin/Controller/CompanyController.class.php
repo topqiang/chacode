@@ -16,6 +16,7 @@ class CompanyController extends AdminBasicController{
         
         if(!empty($_POST['name']))$where['name']=array('like','%'.$_POST['name'].'%');
         if(!empty($_POST['provance']))$where['provance'] = $_POST['provance'];
+        if(!empty($_POST['tel']))$where['wxcode'] = $_POST['tel'];
         $where['status'] = array('neq' , '9');
         // $time = date('Y/m/d');
         // $where['b_time'] = array('lt' , $time);
@@ -53,7 +54,6 @@ class CompanyController extends AdminBasicController{
             if (empty($_POST['e_time'])) {
                 $this->error('授权结束时间不能为空！');
             }
-            
             //存储数据
             $data=array(
                 'name'          =>$_POST['name'],
@@ -69,6 +69,23 @@ class CompanyController extends AdminBasicController{
                 'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
+
+            if ($_POST['class'] && $_POST['class']!=1) {
+                if ($_POST['pwxcode']) {
+                    $info=$this->company->where(array('wxcode'=>$_POST['pwxcode']))->find();
+                    if ($info) {
+                        $data['pid'] = $info['id'];
+                        $data['pname'] = $info['name'];
+                        $data['pwxcode'] = $_POST['pwxcode'];
+                    }else{
+                        $this->error('上级经销商手机号填写有误！');
+                    }
+                }else{
+                    $this->error('上级经销商手机号不能为空！');
+                }
+            }
+            
+
             if (!empty($_POST['paygoods'])) {
                 $data['paygoods'] = implode(",",$_POST['paygoods']);
             }
@@ -136,6 +153,24 @@ class CompanyController extends AdminBasicController{
                 'e_time'        =>$_POST['e_time'],
                 'status'        =>0,
             );
+
+            if ($_POST['class'] && $_POST['class']!=1) {
+                if ($_POST['pwxcode']) {
+                    $info=$this->company->where(array('wxcode'=>$_POST['pwxcode']))->find();
+                    if ($info) {
+                        $data['pid'] = $info['id'];
+                        $data['pname'] = $info['name'];
+                        $data['pwxcode'] = $_POST['pwxcode'];
+                    }else{
+                        $this->error('上级经销商手机号填写有误！');
+                    }
+                }else{
+                    $this->error('上级经销商手机号不能为空！');
+                }
+            }else{
+                $data['pid'] = 0;
+                $data['pwxcode'] = "";
+            }
 
             if (!empty($_POST['paygoods'])) {
                 $data['paygoods'] = implode(",",$_POST['paygoods']);

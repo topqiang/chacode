@@ -1,0 +1,54 @@
+<extend name="Public/header"/>
+<block name="main">
+<div class="fake-body bot1" style="top:0px">
+
+	<div class="maintop">
+		<div class="topshow fs40">
+			<div class="flex1 border1px">
+				<div class="">最近7天发货</div>
+				<div class="collv">
+					<span class="fs5">{$snum}</span>件
+				</div>
+			</div>
+			<div class="flex1">
+				<div class="">最近30天发货</div>
+				<div class="collv">
+					<span class="fs5">{$tnum}</span>件
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="shop-body">
+		<div class="shop-list fs40">
+			<a class="shop-item" href="{:U('Company/company')}">
+				<span>店铺资料</span>
+				<span class="fr">></span>
+			</a>
+			<a class="shop-item" href="{:U('Company/companylist')}">
+				<span>我的下级经销商</span>
+				<span class="fr">></span>
+				<span class="fr" style="margin-right:20px;">{$cnum}</span>
+			</a>
+			<a class="shop-item" href="{:U('Log/loglist')}">
+				<span>产品管理</span>
+				<span class="fr">></span>
+			</a>
+			<a class="shop-item" href="{:U('Log/logbytime')}">
+				<span>时间段查询</span>
+				<span class="fr">></span>
+			</a>
+			<a class="shop-item" href="{:U('Qcode/findcode')}">
+				<span>查询</span>
+				<span class="fr">></span>
+			</a>
+		</div>
+	</div>
+	<if condition="$class neq 3">
+	<div class="xq-footer">
+        <div class="fake-submit" style="margin-top:20px;" linkto="{:U('Qcode/fahuo')}"><span class="postbtn">发货</span></div>
+	</div>
+	</if>
+</div>
+</block>

@@ -23,8 +23,10 @@
 
 		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
 			<form action="{:U('Company/companyList')}" method="post">
-				名称：<input type="text" name="name" class="text-input">
-				城市：<input type="text" name="provance" class="text-input">
+				名称：<input type="text" name="name" class="text-input" value="{$_REQUEST['name']}">
+				城市：<input type="text" name="provance" class="text-input" value="{$_REQUEST['provance']}">
+				手机号：<input type="tel" name="tel" class="text-input" value="{$_REQUEST['tel']}">
+
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>

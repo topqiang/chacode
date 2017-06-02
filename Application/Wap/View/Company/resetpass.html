@@ -1,0 +1,52 @@
+<extend name="Public/header"/>
+<block name="main">
+		<div class="fake-head pad732 fs40">
+            <span></span>
+            修改密码
+        </div>
+		<div class="fake-body txtcen bot1">
+		<div style="display:none" id="container"></div>
+			<div class="shop-body">
+				<div class="fake-bg2"></div>
+				<div class="fake-word">
+					<div class="fs40 mat50">勐海龙园茶业</div>
+					<p class="fs25 mat10">MengHai&nbsp;Longyuan&nbsp;Tea&nbsp;Industry</p>
+					<div class="ma40-0" style="font-size:50px;">几棵树经销商服务系统</div>
+				</div>
+				<div class="fake-code "><input class="wxcode icon iconp" type="password" placeholder="请输入原密码" style="border: 1px solid #ccc;"/></div>
+                <div class="fake-code"><input class="password icon iconp" type="password" placeholder="请输入新密码" style="border: 1px solid #ccc;"/></div>
+
+                <div class="fake-submit" style="margin-top:20px;"><span class="postbtn">确认</span></div>
+				
+				<!--<div class="fake-footer fs35 footer1">
+					<p>龙园茶业勐海龙园茶厂</p>
+					<p><span>电话：0691-5170999</span></p>
+					<p>滇ICP备15000438号</p>
+				</div>-->
+			</div>
+		</div>
+		<if condition="$requri">
+			<div id="loginimg" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+		</if>
+</block>
+<block name="script">
+    <script src="https://s11.cnzz.com/z_stat.php?id=1261702682&web_id=1261702682" language="JavaScript"></script>
+	<script>
+		$(".postbtn").on('click',function () {
+			var wxcode = $(".wxcode").val();
+			var password = $(".password").val();
+			if ( wxcode && password ) {
+				requestUrl("{:U('Company/reset')}",{wxcode:wxcode,password:password},function ( res ) {
+					alert(res.message);
+					if ( res.flag == "success") {
+						setTimeout(function () {
+							history.go(-1);
+						},500);
+					}
+				});
+			}else{
+				alert("请输入合法密码！");
+			}
+		});
+	</script>
+</block>

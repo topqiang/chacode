@@ -43,7 +43,7 @@
 							<th width="15%">商品名称</th>
 							<th width="10%">缩略图</th>
 							<th width="20%">生产日期</th>
-							<th width="20%">厂家名称</th>
+							<th width="20%">防伪区间</th>
 							<th width="20%">批次</th>
 							<th width="10%">操作</th>
 						</tr>
@@ -60,13 +60,13 @@
 									<?php echo ($vo["name"]); ?>
 								</td>
 								<td><img src="/chacode/<?php echo ($vo["pic"]); ?>" height="30" /></td>
-								<td><?php echo (date("y-m-d H:m:i",$vo["ctime"])); ?></td>
-								<td>云南西双版纳州古茶山茶业有限公司勐海龙园茶厂</td>
+								<td><?php echo ($vo["ctime"]); ?></td>
+								<td><?php echo ($vo["company"]); ?></td>
 								<td><?php echo ($vo["creatcode"]); ?></td>
                                 <td>
-                                	<a id="<?php echo ($vo['id']); ?>" class="creatcode" title="生成防伪码">
-                                        <img src="/chacode/Public/Admin/images/icons/code.png" alt="生成防伪码" />
-                                    </a>
+                                	<?php if(empty($vo['company'])): ?><a id="<?php echo ($vo['id']); ?>" class="creatcode" title="生成防伪码">
+	                                        <img src="/chacode/Public/Admin/images/icons/code.png" alt="生成防伪码" />
+	                                    </a><?php endif; ?>
                                     <a href="<?php echo U('Goods/goodsEdit',array('id'=>$vo['id']));?>" title="编辑">
                                         <img src="/chacode/Public/Admin/images/icons/pencil.png" alt="Edit" />
                                     </a>
@@ -124,13 +124,13 @@
 				var keywords = $(".codenum").val();
 				var start = $(".start").val();
 				var cnum = $(".cnum").val();
-				var test = /^[1-9]\d{0,4}$/;
-
-				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)))) {
-					layer.msg("请输入5位数以内且相加后小于5位数！");
+				var test = /^[1-9]\d{0,5}$/;
+				console.log(parseInt(cnum)+parseInt(start)-1);
+				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)-1))) {
+					layer.msg("请输入6位以内有效数字且相加后小于6位数！");
 					return;
 				}
-				if (/^\w{5}$/.test(keywords)) {
+				if (/^\w{4}$/.test(keywords)) {
 					$.ajax({
 						"url":"<?php echo U('Admin/Goods/qrcode');?>",
 						"type":"post",
@@ -139,7 +139,7 @@
 						"success":function ( res ) {
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","/chacode"+res.data.code_pic);
-								layer.close(index);
+								
 								// layer.open({
 								// 	type:1,
 								// 	title:"右键另存为吧！",
@@ -147,13 +147,16 @@
 								// 	area:["400px",""]
 								// });
 								layer.msg("生成成功！请去二维码列表下载，或通过ftp批量下载吧！");
+								window.location.reload();
 							}else{
-								alert(res.message);
+								layer.msg(res.message);
 							}
 						}
 					});
+					layer.msg("后台生成中！请稍后查看！");
+					layer.close( index );
 				}else{
-					layer.msg("初始编码应为5位数字");
+					layer.msg("初始编码应为4位数字");
 				}
 			},
 			content: $('#sou'),

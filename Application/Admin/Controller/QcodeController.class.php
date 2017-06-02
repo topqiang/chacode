@@ -48,6 +48,32 @@ class QcodeController extends AdminBasicController{
         
     }
 
+    public function loglist(){
+        $logcom = M('Logcom');
+        $where['status'] = array('neq' , '9');
+        if(!empty($_REQUEST['gname'])){
+            $where['gname']=array('like','%'.$_REQUEST['gname'].'%');
+            $map['gname'] = $_REQUEST['gname'];
+        }
+        $b_time = strtotime($_REQUEST['b_time']);
+        $e_time = strtotime($_REQUEST['e_time']);
+        if(!empty($b_time) && !empty($e_time)){
+            $where['time']=array(array('egt',$b_time),array('elt',$e_time),'and');
+            $map['time'] = $where['time'];
+        }
+        $count = $logcom -> where( $where ) -> count();
+        $page = new \Think\Page($count,15);
+        foreach($map as $key=>$val) {
+            $page->parameter[$key]   =   $val;
+        }
+        $res=$logcom -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
+        
+        $this->assign('list',$res);
+        $this->assign('page',$page->show());
+
+        $this -> display();
+    }
+
     public function qcodeDel(){
         if(empty($_GET['id']))$this->error('没有商品id');
         

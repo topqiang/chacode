@@ -8,57 +8,41 @@
 			<!--<div class="result-img" style="padding-top:50px;transform: translateY(56px);">
 				<img src="/Uploads/{$company.tel}"/>
 			</div>-->
-			<div class="shop-body">
-				<div class="result-intro shop-intro fs35">
-					<div>
-						<span style="float:left;">店铺地址</span>
-						<div style="display: inline-block;width: 580px;">{$company.address}</div>
-					</div>
-					<div>
-						<span style="float:left;">负责人员</span>
-						<div style="display: inline-block;width: 580px;">{$company.boss}</div>
-					</div>
-					<div>
-						<span style="float:left;">代理产品</span>
-						<div style="display: inline-block;width: 580px;">{$company.paygoods}</div>
-					</div>
-					<div>
-						<span style="float:left;">代理期限</span>
-						<div style="display: inline-block;width: 580px;">{$company.b_time}--{$company.e_time}</div>
-					</div>
-					<if condition="!empty($company['wxcode'])">
-					<div class="disn">
-						<span style="float:left;">联系电话</span>
-						<div style="display: inline-block;width: 580px;">{$company.wxcode}</div>
-					</div>
-					</if>
-					<!--<p>
-						<span>电子邮件</span>
-						{$company.email}
-					</p>
-					<p>
-						<span>经销商级别</span>
-						<if condition="$company['class'] eq 1">
-							省级
-						<elseif condition="$company['class'] eq 2"/>
-							市级
-						<elseif condition="$company['class'] eq 3"/>
-							县级
-						</if>
-					</p>-->
-				</div>
-				<div class="go-there">
-					<div class="go-center">
-						<i></i>
-						<span class="gothere">带我去这里</span>
-					</div>					
+
+			<div class="shop-body" style="padding-bottom:0px;padding-top:40px;">
+				<div class="shop-list fs40">
+					<a class="shop-item">
+						<span>店名</span>
+						<span class="fr">{$company.name}</span>
+					</a>
+					<a class="shop-item">
+						<span>负责人</span>
+						<span class="fr">{$company.boss}</span>
+					</a>
+					<a class="shop-item">
+						<span>地址</span>
+						<span class="fr">{$company.address}</span>
+					</a>
+					<a class="shop-item">
+						<span>上级经销商</span>
+						<span class="fr">{$company.pwxcode}</span>
+					</a>
 				</div>
 			</div>
-			<div class="fake-footer fs35">
-				<p>云南西双版纳州古茶山茶业有限公司</p>
-				<p>勐海龙园茶厂<span>电话：0691-5170999</span></p>
-				<p>滇ICP备15000438号</p>
+
+			<div class="shop-body" style="padding-bottom:0px;padding-top:40px;">
+				<div class="shop-list fs40">
+					<a class="shop-item">
+						<span>手机号</span>
+						<span class="fr">{$company.wxcode}</span>
+					</a>
+					<a class="shop-item" href="{:U('Company/resetpass')}">
+						<span>修改密码</span>
+						<span class="fr">></span>
+					</a>
+				</div>
 			</div>
+
 		</div>
 </block>
 <block name="script">

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>后台管理系统</title>
+	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="__WEBPUBLIC__/Admin/css/invalid.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/laydate/laydate.js"></script>
+
+</head>
+<body>
+<div id="main-content">
+	<div class="content-box">
+		<!--头部切换-->
+		<div class="content-box-header">
+			<h3>发货记录</h3>
+			<div class="clear"></div>
+		</div>
+
+		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
+			<form action="{:U('Qcode/loglist')}" method="post">
+				接货商家：<input type="text" name="gname" class="text-input" value="{$_REQUEST['gname']}">
+				开始时间：<input class="text-input" type="date" name="b_time" value="{$_REQUEST['b_time']}"/>
+				结束时间：<input class="text-input" type="date" name="e_time" value="{$_REQUEST['e_time']}"/>
+				<input type="submit" class="button search-btn" value="查询">
+			</form>
+		</div>
+
+
+		<!--表格内容-->
+		<div class="content-box-content">
+			<div class="tab-content default-tab" id="tab1">
+				<form action="{:U('AdminBasic/delList',array('tname'=>'Qcode','type'=>'real'))}" method="post">
+					<table border="1">
+						<!--标题-->
+						<thead>
+						<tr>
+							<th width="">
+								<!-- <input class="check-all" type="checkbox" /> -->
+								ID
+							</th>
+							<th width="">商品名称</th>
+							<th width="">收货商家</th>
+							<th width="">批次</th>
+							<th>发货数量</th>
+							<th width="">发货区间</th>
+							<th width="">状态</th>
+							<th width="">发货时间</th>
+						</tr>
+						</thead>
+						<!--内容-->
+						<tbody>
+						<volist name="list" id="vo">
+							<tr>
+								<td>
+									<!-- <input type="checkbox" name="id[]" value="{$vo['id']}"/> -->
+									{$vo.id}
+								</td>
+								<td>{$vo.gname}</td>
+								<td>{$vo.name}</td>
+								<td>{$vo.creatcode}</td>
+								<td>{$vo.num}</td>
+								<td>{$vo.begin}-{$vo.end}</td>
+								<td>
+									<if condition="$vo['status'] eq 0">
+										已发货
+										<else/>
+										已退回
+									</if>
+								</td>
+
+								<td>{$vo.time|date="Y-m-d H:m:i",###}</td>
+							</tr>
+						</volist>
+						<!--表尾-->
+						</tbody>
+						<tfoot>
+						<tr>
+							<td colspan="20">
+								<!-- <div class="bulk-actions align-left">
+									<input type="submit" value="批量删除" class="button"/>
+								</div> -->
+								<div class="pagination">
+									{$page}
+								</div>
+								<div class="clear"></div>
+							</td>
+						</tr>
+						</tfoot>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="imgcode" style="text-align:center;display:none;">
+	<div style="padding:20px;">
+		<img id="codeimg" style="width:100%;"/>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript" src="__WEBPUBLIC__/Admin/js/layer/layer.js"></script>
+<script type="text/javascript">
+	var start = {
+	  elem: '#b_time',
+	  format: 'YYYY/MM/DD',
+	  min: '2011-06-16', //设定最小日期为当前日期
+	  max: '2099-06-16', //最大日期
+	  istoday: false,
+	  start: '{$info.b_time}',  //开始日期
+	  choose: function(datas){
+	     end.min = datas; //开始日选好后，重置结束日的最小日期
+	     end.start = datas; //将结束日的初始值设定为开始日
+	  }
+	};
+	var end = {
+	  elem: '#e_time',
+	  format: 'YYYY/MM/DD',
+	  min: laydate.now(),
+	  max: '2099-06-16',
+	  istoday: false,
+	  start: '{$info.e_time}',  //开始日期
+	  choose: function(datas){
+	    start.max = datas; //结束日选好后，重置开始日的最大日期
+	  }
+	};
+	laydate(start);
+	laydate(end);
+</script>
+</html>

@@ -85,13 +85,17 @@
 						</p>
 						<p>
 							<label>销售商级别</label>
-							<select name="class">
+							<select name="class" class="level">
 								<option value="1">省级</option>
 								<option value="2">市级</option>
 								<option value="3">县级</option>
 							</select>
 							<input type="hidden" class="lat" name="lat" />
 							<input type="hidden" class="lnt" name="lnt" />
+						</p>
+						<p>
+							<label>上级经销商</label>
+							<input class="text-input small-input" type="tel" name="pwxcode" placeholder="非省级请填写上级经销商的手机号"/>
 						</p>
 						<p>
 							<input class="button" type="submit" value="保存" />
@@ -106,6 +110,7 @@
 </body>
 <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp"></script>
 <script type="text/javascript">
+
 	$("input[type='file']").on("change",function(){
 		var filesize = this.files[0].size;
 		if (filesize > 500*1024) {
