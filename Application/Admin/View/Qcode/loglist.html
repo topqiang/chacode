@@ -99,9 +99,9 @@
 <div id="sou" style="text-align:center;display:none;">
 	<div style="padding:20px;">
 		<form>
-			<div><input type="text" class="codenum text-input" placeholder="请输入初始编码"/></div>
-			<div><input type="number" class="start text-input" placeholder="请输入起始序号"/></div>
-			<div><input type="number" class="cnum text-input" placeholder="请输入生成数量"/></div>
+			<div><input type="tel" class="codenum text-input" placeholder="商家手机号"/></div>
+			<div><input type="text" class="start text-input" placeholder="请输入起始序号"/></div>
+			<div><input type="text" class="cnum text-input" placeholder="请输入结束序号"/></div>
 		</form>
 	</div>
 </div>
@@ -114,7 +114,7 @@
 		var id = $(this).attr("id");
 		var index = layer.open({
 			type:1,
-			title: '请输入防伪码',
+			title: '请输入发货信息',
 			btn: ['确认'],
 			yes: function () {
 				console.log("点击了");
