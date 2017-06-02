@@ -200,6 +200,20 @@ class CompanyController extends AdminBasicController{
         }
     }
 
+    public function reset(){
+        $id = $_GET['id'];
+        $data = array(
+            'id' => $id,
+            'password' => md5("123456")
+            );
+        $res = $this->company->save($data);
+        if($res){
+            echo "重置成功！";
+        }else{
+            echo "重置失败！";
+        }
+    }
+
     public function upload($filename,$path){
         $config = array(
             'subName'    =>    $path, //设置文件名
