@@ -26,6 +26,7 @@
 				结束时间：<input class="text-input" type="date" name="e_time" value="{$_REQUEST['e_time']}"/>
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
+			<input type="button" class="button search-btn fahuo" value="发货">
 		</div>
 
 
@@ -95,9 +96,13 @@
 		</div>
 	</div>
 </div>
-<div id="imgcode" style="text-align:center;display:none;">
+<div id="sou" style="text-align:center;display:none;">
 	<div style="padding:20px;">
-		<img id="codeimg" style="width:100%;"/>
+		<form>
+			<div><input type="text" class="codenum text-input" placeholder="请输入初始编码"/></div>
+			<div><input type="number" class="start text-input" placeholder="请输入起始序号"/></div>
+			<div><input type="number" class="cnum text-input" placeholder="请输入生成数量"/></div>
+		</form>
 	</div>
 </div>
 </body>
@@ -129,5 +134,20 @@
 	};
 	laydate(start);
 	laydate(end);
+
+
+	$(".fahuo").on('click',function(){
+		var id = $(this).attr("id");
+		var index = layer.open({
+			type:1,
+			title: '请输入防伪码',
+			btn: ['确认'],
+			yes: function () {
+				console.log("点击了");
+			},
+			content: $('#sou'),
+			area:["300px","auto"]
+		});  
+	});
 </script>
 </html>
