@@ -86,7 +86,11 @@ class CompanyController extends BaseController{
 	}
 
 	public function company(){
-		$id = session('shop_id');
+		if ($_GET['id']) {
+			$id = $_GET['id'];
+		}else{
+			$id = session('shop_id');
+		}
 		$ratem = M('Company');
 		$rates = $ratem -> where( array( 'id' => $id ) ) -> select();
 		if ($rates) {

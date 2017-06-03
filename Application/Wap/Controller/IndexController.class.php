@@ -36,7 +36,7 @@ class IndexController extends BaseController {
                     apiResponse('error','密码错误！');
                 }
             }else{
-                apiResponse('error','用户不存在！');
+                apiResponse('error','用户不存在或未通过审核！');
             }
         }else{
             apiResponse("error","信息输入有误！");
