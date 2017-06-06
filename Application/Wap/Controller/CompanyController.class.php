@@ -13,6 +13,8 @@ class CompanyController extends BaseController{
 		$wxcode = $_POST['wxcode'];
 		$password = $_POST['password'];
 		$tel = $_POST['tel'];
+		$boss = $_POST['boss'];
+
 		if ($wxcode && $password && $tel) {
 			$pid = 0;
 			$pwxcode = "";
@@ -44,6 +46,7 @@ class CompanyController extends BaseController{
 				'password' => md5($password),
 				'pwxcode' => $tel,
 				'pid' => $pid,
+				'boss' => $boss,
 				'class' => $class,
 				'pname' => $pname,
 				'status' => 1

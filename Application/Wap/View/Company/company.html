@@ -36,10 +36,12 @@
 						<span>手机号</span>
 						<span class="fr">{$company.wxcode}</span>
 					</a>
-					<a class="shop-item" href="{:U('Company/resetpass')}">
-						<span>修改密码</span>
-						<span class="fr">></span>
-					</a>
+					<if condition="empty($_REQUEST['ccomp'])">
+						<a class="shop-item" href="{:U('Company/resetpass')}">
+							<span>修改密码</span>
+							<span class="fr">></span>
+						</a>
+					</if>
 				</div>
 			</div>
 

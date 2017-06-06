@@ -8,7 +8,7 @@
 			<div class="shop-body">
 				<div class="shop-list">
 					<volist name="companylist" id="comp">
-						<a class="shop-item" href="{:U('Company/company',array('id'=>$comp['id']))}">
+						<a class="shop-item" href="{:U('Company/company',array('id'=>$comp['id'],'ccomp'=>'true'))}">
 							<span>
 							{$comp.name}
 							</span>

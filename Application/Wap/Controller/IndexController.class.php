@@ -20,6 +20,7 @@ class IndexController extends BaseController {
             $wh = array(
                 'wxcode' => $wxcode
                 );
+            $curobj = $this -> company -> where($wh) -> find();
             $time = date('Y/m/d');
             $wh['b_time'] = array('lt' , $time);
             $wh['e_time'] = array('gt' , $time);
@@ -36,7 +37,10 @@ class IndexController extends BaseController {
                     apiResponse('error','密码错误！');
                 }
             }else{
-                apiResponse('error','用户不存在或未通过审核！');
+                if ($curobj) {
+                    apiResponse('error','审核中！');
+                }
+                apiResponse('error','用户不存在！');
             }
         }else{
             apiResponse("error","信息输入有误！");
@@ -69,6 +73,7 @@ class IndexController extends BaseController {
     }
 
     public function index(){
+         session("shop_id",null);
         $this -> display();
     }
 }
