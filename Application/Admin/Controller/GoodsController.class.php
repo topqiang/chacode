@@ -6,6 +6,9 @@ class GoodsController extends Controller{
 		$this->goods = D("Good");
 		$this->qcode = D('Qcode');
         $this->good = D("Goods");
+        $this -> qcg = M('Qcg');
+        $this -> log = M('Log');
+        $this -> company = M('Company');
 		$where['status'] = array('neq' , '9');
         $gods = $this->good ->where($where)->select();
         $this -> assign("goodss",$gods);
@@ -100,6 +103,13 @@ class GoodsController extends Controller{
 		$codenum = $_POST['codenum'];
 		$start = $_POST['start'];
 		$cnum = $_POST['cnum'];
+
+		$ptest = $_POST['ptest'];
+		$com = $this -> company -> where( "wxcode=$ptest && class = 1" ) -> find();
+        if (empty($com)) {
+            apiResponse("error","经销商不存在！");
+        }
+		
 		$path = $codenum."_".$start;
 		$web_path = '/Public/qrcode/'.$path.'/';        //图片在网页上显示的路径
 		if (empty($id) || empty($codenum)) {
@@ -162,11 +172,57 @@ class GoodsController extends Controller{
 			);
 		$res=$this->goods->save($gooddata);
 		if ($res) {
-			echo json_encode(array('flag'=>'success','message'=>'生成成功！'));
+			$this ->fa($ptest,$startnum,$code);
+			//echo json_encode(array('flag'=>'success','message'=>'生成成功！'));
 		}else{
 			echo json_encode(array('flag'=>'error','message'=>'数据保存失败！'));
 		}
-		
+    }
+
+    public function fa($tel,$start1,$end1){
+        $wxcode = $tel;
+        $com = $this -> company -> where( "wxcode=$wxcode" ) -> find();
+        if (empty($com)) {
+            apiResponse("error","经销商不存在！");
+        }
+        $compid = $com['id'];
+        $start = strtoupper($start1);
+        $end = strtoupper($end1);
+        if (substr($start,0,4) == substr($end,0,4)) {
+            $whe['codenum'] = array(array('egt',$start),array('elt',$end),'and');
+            $whe['curcomid'] = 0;
+            $count = $this -> qcg -> where( $whe ) -> find();
+            if ($count) {
+                $where['codenum'] = array(array('egt',$start),array('elt',$end),'and');
+                $data['curcomid'] = $compid;
+                $istrue = $this -> qcode -> where( $where ) -> save( $data );
+                if ($istrue) {
+                    $num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
+                    $logobj = array(
+                        'fromcid' => 0,
+                        'tocid' => $compid,
+                        'begin' => $start,
+                        'code' => substr($start,0,4),
+                        'end' => $end, 
+                        'status' => 0, 
+                        'num' => $num,
+                        'time' => time(), 
+                        'gname' => $count['name']
+                        );
+                    $islog = $this -> log -> add($logobj);
+                    if ($islog) {
+                        apiResponse("success","发货成功！");
+                    }
+                }else{
+                    apiResponse("error","发货失败！");
+                }
+            }else{
+                apiResponse("error","未找到符合条件的产品！");
+            }
+
+        }else{
+            apiResponse("error","初始编码不同！");
+        }
     }
 
 	/**

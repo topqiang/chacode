@@ -108,6 +108,8 @@
 		<div><input type="text" class="codenum text-input" placeholder="请输入初始编码"/></div>
 		<div><input type="number" class="start text-input" placeholder="请输入起始序号"/></div>
 		<div><input type="number" class="cnum text-input" placeholder="请输入生成数量"/></div>
+		<div><input type="tel" class="ptest text-input" placeholder="省级经销商手机号"/></div>
+
 		</form>
 	</div>
 </div>
@@ -130,19 +132,26 @@
 				var keywords = $(".codenum").val();
 				var start = $(".start").val();
 				var cnum = $(".cnum").val();
+				var ptest = $(".ptest").val();
 				var test = /^[1-9]\d{0,5}$/;
 				console.log(parseInt(cnum)+parseInt(start)-1);
 				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)-1))) {
 					layer.msg("请输入6位以内有效数字且相加后小于6位数！");
 					return;
 				}
+				if ( !/^1{1}[3|4|5|7|8]{1}\d{9}$/.test(ptest) ) {
+					layer.msg("请输入合法手机号！");
+					return;
+				}
 				if (/^\w{4}$/.test(keywords)) {
+					layer.open({type:3});
 					$.ajax({
 						"url":"{:U('Admin/Goods/qrcode')}",
 						"type":"post",
-						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum},
+						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum,"ptest":ptest},
 						"dataType":"json",
 						"success":function ( res ) {
+							layer.closeAll();
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","__ROOT__"+res.data.code_pic);
 								
@@ -159,8 +168,8 @@
 							}
 						}
 					});
-					layer.msg("后台生成中！请稍后查看！");
-					layer.close( index );
+					//layer.msg("后台生成中！请稍后查看！");
+					//layer.close( index );
 				}else{
 					layer.msg("初始编码应为4位数字");
 				}
