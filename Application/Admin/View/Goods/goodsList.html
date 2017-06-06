@@ -144,13 +144,15 @@
 					return;
 				}
 				if (/^\w{4}$/.test(keywords)) {
-					layer.open({type:3});
+					var load = layer.open({type:3});
 					$.ajax({
 						"url":"{:U('Admin/Goods/qrcode')}",
 						"type":"post",
 						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum,"ptest":ptest},
 						"dataType":"json",
 						"success":function ( res ) {
+							layer.close(load);
+
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","__ROOT__"+res.data.code_pic);
 								
@@ -162,7 +164,6 @@
 								// });
 								layer.msg("生成成功！请去二维码列表下载，或通过ftp批量下载吧！");
 								setTimeout(function () {
-									layer.closeAll();
 									window.location.reload();
 								});
 							}else{
