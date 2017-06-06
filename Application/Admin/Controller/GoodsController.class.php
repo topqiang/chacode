@@ -132,7 +132,6 @@ class GoodsController extends Controller{
 			exit();
 		}
 
-
 		while ( $cnum > 0) {
 			$str = "";
 			for ( $i=0; $i < $len-strlen($start); $i++) { 
