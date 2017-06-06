@@ -3,7 +3,12 @@ namespace Wap\Controller;
 use Think\Controller;
 class BaseController extends Controller{
 	public function _initialize(){
-		$this -> assign('com_id',session("shop_id"));
+        $shop_id = session("shop_id");
+		$this -> assign('com_id',$shop_id);
+        if (empty($shop_id)) {
+           $this -> display('Index/index');
+           exit();
+        }
 	}
 
 

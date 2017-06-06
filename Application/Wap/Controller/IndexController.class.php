@@ -73,7 +73,7 @@ class IndexController extends BaseController {
     }
 
     public function index(){
-         session("shop_id",null);
+        session("shop_id",null);
         $this -> display();
     }
 }
