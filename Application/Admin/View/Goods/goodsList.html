@@ -151,7 +151,6 @@
 						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum,"ptest":ptest},
 						"dataType":"json",
 						"success":function ( res ) {
-							layer.closeAll();
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","__ROOT__"+res.data.code_pic);
 								
@@ -162,7 +161,10 @@
 								// 	area:["400px",""]
 								// });
 								layer.msg("生成成功！请去二维码列表下载，或通过ftp批量下载吧！");
-								window.location.reload();
+								setTimeout(function () {
+									layer.closeAll();
+									window.location.reload();
+								});
 							}else{
 								layer.msg(res.message);
 							}

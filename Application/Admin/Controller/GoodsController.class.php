@@ -190,7 +190,7 @@ class GoodsController extends Controller{
         $end = strtoupper($end1);
         if (substr($start,0,4) == substr($end,0,4)) {
             $whe['codenum'] = array(array('egt',$start),array('elt',$end),'and');
-            $whe['curcomid'] = 0;
+            $whe['curcomid'] = 1;
             $count = $this -> qcg -> where( $whe ) -> find();
             if ($count) {
                 $where['codenum'] = array(array('egt',$start),array('elt',$end),'and');
