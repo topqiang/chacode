@@ -13,7 +13,7 @@ class IndexController extends BaseController {
         $this -> company = D('Company');
     }
 
-    public function login(){
+    public function loginin(){
         $wxcode = $_POST['wxcode'];
         $password = $_POST['password'];
         if ($wxcode && $password) {
