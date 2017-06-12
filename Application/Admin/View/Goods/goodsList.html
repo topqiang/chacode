@@ -23,7 +23,11 @@
 
 		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
 			<form action="{:U('Goods/goodsList')}" method="post">
-				商品名称：<input type="text" name="name" class="text-input">
+				商品名称：<input type="text" name="name" class="text-input" value="{$_REQUEST['name']}">
+				批次：<input type="text" name="creatcode" class="text-input" value="{$_REQUEST['creatcode']}">
+				开始时间：<input class="text-input" type="date" name="b_time" value="{$_REQUEST['b_time']}"/>
+				结束时间：<input class="text-input" type="date" name="e_time" value="{$_REQUEST['e_time']}"/>
+				
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>
@@ -68,7 +72,7 @@
 								<td>{$vo.creatcode}</td>
                                 <td>
                                 	<if condition="empty($vo['company'])">
-	                                	<a id="{$vo['id']}" class="creatcode" title="生成防伪码">
+	                                	<a id="{$vo['id']}" gname="{$vo.name}" class="creatcode" title="生成防伪码">
 	                                        <img src="__WEBPUBLIC__/Admin/images/icons/code.png" alt="生成防伪码" />
 	                                    </a>
                                     </if>
@@ -124,6 +128,8 @@
 
 	$(".creatcode").on('click',function(){
 		var id = $(this).attr("id");
+		var gname = $(this).attr("gname");
+
 		var index = layer.open({
 			type:1,
 			title: '请输入防伪码',
@@ -148,7 +154,7 @@
 					$.ajax({
 						"url":"{:U('Admin/Goods/qrcode')}",
 						"type":"post",
-						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum,"ptest":ptest},
+						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum,"ptest":ptest,"gname":gname},
 						"dataType":"json",
 						"success":function ( res ) {
 							layer.close(load);

@@ -5,7 +5,7 @@ class BaseController extends Controller{
 	public function _initialize(){
         $shop_id = session("shop_id");
 		$this -> assign('com_id',$shop_id);
-        if (empty($shop_id) && ACTION_NAME != "loginin") {
+        if (empty($shop_id) && ACTION_NAME != "register" && ACTION_NAME != "loginin") {
            $this -> display('Index/index');
            exit();
         }

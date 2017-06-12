@@ -170,6 +170,8 @@ class CompanyController extends AdminBasicController{
             }else{
                 $data['pid'] = 0;
                 $data['pwxcode'] = "";
+                $data['pname'] = "";
+
             }
 
             if (!empty($_POST['paygoods'])) {
@@ -204,7 +206,8 @@ class CompanyController extends AdminBasicController{
         $id = $_GET['id'];
         $data = array(
             'id' => $id,
-            'password' => md5("123456")
+            'password' => md5("123456"),
+            'utime' => time()
             );
         $res = $this->company->save($data);
         if($res){

@@ -16,6 +16,13 @@ class GoodsController extends Controller{
 
 	public function goodsList(){
 		if(!empty($_POST['name']))$where['name']=array('like','%'.$_POST['name'].'%');
+		if(!empty($_POST['creatcode']))$where['creatcode']=array('like','%'.$_POST['creatcode'].'%');
+		$b_time = strtotime($_REQUEST['b_time']);
+        $e_time = strtotime($_REQUEST['e_time']);
+        if(!empty($b_time) && !empty($e_time)){
+            $where['ctime']=array(array('egt',date('Y/m/d',$b_time)),array('elt',date('Y/m/d',$e_time)),'and');
+        }
+
 		$where['status'] = array('neq' , '9');
 		$count = $this -> goods -> where($where) -> count();
 		$page = new \Think\Page($count,100);
@@ -105,9 +112,20 @@ class GoodsController extends Controller{
 		$cnum = $_POST['cnum'];
 
 		$ptest = $_POST['ptest'];
+		$gname = $_POST['gname'];
+		$hasgood = $this->good -> where("name = '".$gname."'") -> find();
 		$com = $this -> company -> where( "wxcode=$ptest && class = 1" ) -> find();
         if (empty($com)) {
             apiResponse("error","经销商不存在！");
+        }
+        $arr = explode(",",$com['paygoods']);
+        if ($hasgood) {
+        	if (!in_array($hasgood['id'],$arr)) {
+        		apiResponse("error","该经销商不具备代理权限");
+        	}
+        }else{
+        	echo $this->good->getLastsql();
+        	apiResponse("error","商品不存在！");
         }
 		
 		$path = $codenum."_".$start;
@@ -147,7 +165,8 @@ class GoodsController extends Controller{
 	            	'codenum' => $code,
 	            	'code_pic' => $pic,
 	            	'ctime' => $ctime,
-	            	'status' => $status
+	            	'status' => $status,
+	            	'curcomid' => 1
 	            	);
 	            $res = $this->qcode->add($data);
 	            if (!$res) {

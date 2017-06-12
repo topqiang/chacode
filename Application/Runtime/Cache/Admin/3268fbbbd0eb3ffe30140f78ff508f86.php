@@ -23,7 +23,11 @@
 
 		<div class="content-search" style="height: 40px;margin: 10px 0 0 10px;">
 			<form action="<?php echo U('Goods/goodsList');?>" method="post">
-				商品名称：<input type="text" name="name" class="text-input">
+				商品名称：<input type="text" name="name" class="text-input" value="<?php echo ($_REQUEST['name']); ?>">
+				批次：<input type="text" name="creatcode" class="text-input" value="<?php echo ($_REQUEST['creatcode']); ?>">
+				开始时间：<input class="text-input" type="date" name="b_time" value="<?php echo ($_REQUEST['b_time']); ?>"/>
+				结束时间：<input class="text-input" type="date" name="e_time" value="<?php echo ($_REQUEST['e_time']); ?>"/>
+				
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>
@@ -64,7 +68,7 @@
 								<td><?php echo ($vo["company"]); ?></td>
 								<td><?php echo ($vo["creatcode"]); ?></td>
                                 <td>
-                                	<?php if(empty($vo['company'])): ?><a id="<?php echo ($vo['id']); ?>" class="creatcode" title="生成防伪码">
+                                	<?php if(empty($vo['company'])): ?><a id="<?php echo ($vo['id']); ?>" gname="<?php echo ($vo["name"]); ?>" class="creatcode" title="生成防伪码">
 	                                        <img src="/chacode/Public/Admin/images/icons/code.png" alt="生成防伪码" />
 	                                    </a><?php endif; ?>
                                     <a href="<?php echo U('Goods/goodsEdit',array('id'=>$vo['id']));?>" title="编辑">
@@ -102,6 +106,8 @@
 		<div><input type="text" class="codenum text-input" placeholder="请输入初始编码"/></div>
 		<div><input type="number" class="start text-input" placeholder="请输入起始序号"/></div>
 		<div><input type="number" class="cnum text-input" placeholder="请输入生成数量"/></div>
+		<div><input type="tel" class="ptest text-input" placeholder="省级经销商手机号"/></div>
+
 		</form>
 	</div>
 </div>
@@ -116,6 +122,8 @@
 
 	$(".creatcode").on('click',function(){
 		var id = $(this).attr("id");
+		var gname = $(this).attr("gname");
+
 		var index = layer.open({
 			type:1,
 			title: '请输入防伪码',
@@ -124,19 +132,27 @@
 				var keywords = $(".codenum").val();
 				var start = $(".start").val();
 				var cnum = $(".cnum").val();
+				var ptest = $(".ptest").val();
 				var test = /^[1-9]\d{0,5}$/;
 				console.log(parseInt(cnum)+parseInt(start)-1);
 				if (!(test.test(start) && test.test(cnum) && test.test(parseInt(cnum)+parseInt(start)-1))) {
 					layer.msg("请输入6位以内有效数字且相加后小于6位数！");
 					return;
 				}
+				if ( !/^1{1}[3|4|5|7|8]{1}\d{9}$/.test(ptest) ) {
+					layer.msg("请输入合法手机号！");
+					return;
+				}
 				if (/^\w{4}$/.test(keywords)) {
+					var load = layer.open({type:3});
 					$.ajax({
 						"url":"<?php echo U('Admin/Goods/qrcode');?>",
 						"type":"post",
-						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum},
+						"data":{"id":id,"codenum":keywords.toUpperCase(),"start":start,"cnum":cnum,"ptest":ptest,"gname":gname},
 						"dataType":"json",
 						"success":function ( res ) {
+							layer.close(load);
+
 							if (res.flag == "success") {
 								//$("#codeimg").attr("src","/chacode"+res.data.code_pic);
 								
@@ -147,14 +163,16 @@
 								// 	area:["400px",""]
 								// });
 								layer.msg("生成成功！请去二维码列表下载，或通过ftp批量下载吧！");
-								window.location.reload();
+								setTimeout(function () {
+									window.location.reload();
+								});
 							}else{
 								layer.msg(res.message);
 							}
 						}
 					});
-					layer.msg("后台生成中！请稍后查看！");
-					layer.close( index );
+					//layer.msg("后台生成中！请稍后查看！");
+					//layer.close( index );
 				}else{
 					layer.msg("初始编码应为4位数字");
 				}

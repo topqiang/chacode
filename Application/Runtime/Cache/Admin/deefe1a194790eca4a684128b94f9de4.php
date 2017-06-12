@@ -83,6 +83,9 @@
 								<td><?php echo ($vo["b_time"]); ?>--<?php echo ($vo["e_time"]); ?></td>
 								<td><?php echo ($vo["address"]); ?></td>
                                 <td>
+                                	<a gohref="<?php echo U('Company/reset',array('id'=>$vo['id']));?>" title="重置密码">
+                                        <img src="/chacode/Public/Admin/images/icons/code.png" alt="Reset" />
+                                    </a>
                                     <a href="<?php echo U('Company/companyEdit',array('id'=>$vo['id']));?>" title="编辑">
                                         <img src="/chacode/Public/Admin/images/icons/pencil.png" alt="Edit" />
                                     </a>
@@ -113,4 +116,20 @@
 	</div>
 </div>
 </body>
+<script>
+	$("[gohref]").on('click',function () {
+		var src = $(this).attr("gohref");
+		if (!confirm("您确定重置该商家密码？")) {
+			return;
+		}
+		$.ajax({
+			url: src,
+			type: "get",
+			dataType: "json",
+			success: function ( res ) {
+				alert(res.message);
+			}
+		})
+	});
+</script>
 </html>
