@@ -10,6 +10,7 @@ class QcodeController extends AdminBasicController{
 
     public $article = '';
     public function _initialize(){
+        
         $this -> qcg = M('Qcg');
         $this -> qcode = M('Qcode');
         $this -> log = M('Log');
@@ -19,6 +20,7 @@ class QcodeController extends AdminBasicController{
     }
 
     public function fa(){
+
         $wxcode = $_POST['wxcode'];
         $com = $this -> company -> where( "wxcode=$wxcode" ) -> find();
         if (empty($com)) {

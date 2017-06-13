@@ -30,7 +30,7 @@
 		<!--表格内容-->
 		<div class="content-box-content">
 			<div class="tab-content default-tab" id="tab1">
-				<form action="{:U('AdminBasic/delList',array('tname'=>'Qcode','type'=>'real'))}" method="post">
+				<form method="post">
 					<table border="1">
 						<!--标题-->
 						<thead>
@@ -43,9 +43,10 @@
 							<th width="20%">防伪区间</th>
 							<th width="10%">批次</th>
 							<th width="5%">查询次数</th>
-							<th width="15%">防伪码</th>
+							<th width="10%">防伪码</th>
+							<th width="10%">所属企业</th>
 							<th width="10%">创建时间</th>
-							<th width="10%">二维码</th>
+							<th width="5%">二维码</th>
 							<th width="10%">操作</th>
 						</tr>
 						</thead>
@@ -62,8 +63,8 @@
 								<td>{$vo.creatcode}</td>
 								<td>{$vo.visnum}</td>
 								<td>{$vo.codenum}</td>
+								<td>{$vo.sjname}</td>
 								<td>{$vo.ctime}</td>
-
 								<td><img class="imgcode" src="__ROOT__{$vo.code_pic}" style="width:30px"/></td>
 								<td>
 									<a href="{:U('Qcode/qcodeDel',array('id'=>$vo['id']))}" title="删除"><img src="__WEBPUBLIC__/Admin/images/icons/cross.png" alt="Delete" /></a>
