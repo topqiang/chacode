@@ -22,6 +22,7 @@
 				商品名称：<input type="text" name="name" class="text-input" value="{$_REQUEST['name']}">
 				防伪码：<input type="text" name="codenum" class="text-input" value="{$_REQUEST['codenum']}">
 				批次：<input type="text" name="creatcode" class="text-input" value="{$_REQUEST['creatcode']}">
+				<input type="hidden" name="visnum" value="{$_REQUEST['visnum']}">
 				<input type="submit" class="button search-btn" value="查询">
 			</form>
 		</div>
@@ -42,7 +43,7 @@
 							<th width="10%">商品名称</th>
 							<th width="20%">防伪区间</th>
 							<th width="10%">批次</th>
-							<th width="5%">查询次数</th>
+							<th width="5%" >查询次数</th>
 							<th width="10%">防伪码</th>
 							<th width="10%">所属企业</th>
 							<th width="10%">创建时间</th>
