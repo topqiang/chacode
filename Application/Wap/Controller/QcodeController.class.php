@@ -119,8 +119,8 @@ class QcodeController extends BaseController{
 				'end' => $end, 
 				'status' => 1,
 				'num' => $num,
-				'time' => time(), 
-				'gname' => $gname
+				'time' => time(),
+				'gname' => $_POST['gname']
 			);
 
 			$thdui = $this -> log -> add($logobj);

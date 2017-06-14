@@ -217,7 +217,7 @@ class GoodsController extends Controller{
                 if ($istrue) {
                     $num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
                     $logobj = array(
-                        'fromcid' => 0,
+                        'fromcid' => 1,
                         'tocid' => $compid,
                         'begin' => $start,
                         'code' => substr($start,0,4),
