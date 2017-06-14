@@ -41,7 +41,7 @@
 			var tel = $(".tel").val();
 			var ver = /^1{1}[3|4|5|8|7]{1}[0-9]{9}$/;
 			if ( ver.test(wxcode) && password && boss) {
-				if (tel && !ver.test(tel) {
+				if (tel && !ver.test(tel)) {
 					alert("请输入上级经销商手机号！");
 					return;
 				}
