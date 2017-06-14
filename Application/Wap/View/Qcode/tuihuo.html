@@ -45,6 +45,17 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="xq_title">
+		填写备注
+	</div>
+	<div class="shop-body myinput">
+		<div class="shop-list fs40" style="margin-bottom: 20px;">
+			<div class="shop-item iconz">
+				<textarea name="remark" placeholder="请填写退货备注"></textarea>
+			</div>
+		</div>
+	</div>
 	<div class="xq-footer">
         <div class="fake-submit postbtn" style="margin-top:20px;"><span class="">确认退货 </span></div>
 	</div>
@@ -57,9 +68,10 @@
 			var gname = "{$res['gname']}";
 			var start = $(".start").val();
 			var end = $(".end").val();
+			var remark = $(".remark").val();
 			var flag = compid && gname && /^\w{4}\d{6}$/.test(start) && /^\w{4}\d{6}$/.test(end);
 			if (flag) {
-				requestUrl("{:U('Qcode/tui')}",{compid:compid,gname:gname,start:start,end:end},function ( res ) {
+				requestUrl("{:U('Qcode/tui')}",{compid:compid,gname:gname,start:start,end:end,remark:remark},function ( res ) {
 					alert(res.message);
 					if (res.flag=="success") {
 						window.location.href="{:U('Log/loglist')}";

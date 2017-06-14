@@ -120,6 +120,7 @@ class QcodeController extends BaseController{
 				'status' => 1,
 				'num' => $num,
 				'time' => time(),
+				'remark' => $_POST['remark'],
 				'gname' => $_POST['gname']
 			);
 
