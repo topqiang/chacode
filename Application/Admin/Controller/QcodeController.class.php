@@ -88,12 +88,12 @@ class QcodeController extends AdminBasicController{
 
         $where['status'] = array('neq' , '9');
 
-        $count = $this -> qcg -> where( $where ) -> order('visnum desc,id desc') -> count();
+        $count = $this -> qcg -> where( $where ) -> order('id desc') -> count();
         $page = new \Think\Page($count,15);
         foreach($map as $key=>$val) {
             $page->parameter[$key]   =   $val;
         }
-        $res=$this -> qcg -> where($where) -> order('id desc') -> limit($page->firstRow,$page->listRows) -> select();
+        $res=$this -> qcg -> where($where) -> order('visnum desc,id desc') -> limit($page->firstRow,$page->listRows) -> select();
 
 
         $this->assign('list',$res);
