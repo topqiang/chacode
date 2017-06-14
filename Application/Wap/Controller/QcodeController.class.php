@@ -107,8 +107,8 @@ class QcodeController extends BaseController{
 		$where['curcomid'] = session("shop_id");
 		$data['curcomid'] = $_POST['compid'];
 		$istrue = $this -> qcode -> where( $where ) -> save( $data );
-		echo $this -> qcode -> getLastsql();
-		exit();
+		// echo $this -> qcode -> getLastsql();
+		// exit();
 		$num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
 		if ($istrue) {
 			$logobj = array(
@@ -131,7 +131,7 @@ class QcodeController extends BaseController{
 				apiResponse("error","退货成功,记录失败！");
 			}
 		}else{
-			apiResponse("error","退货失败！");
+			apiResponse("error","退货失败！请确认该商品是否在仓库！");
 		}
 
 	}
