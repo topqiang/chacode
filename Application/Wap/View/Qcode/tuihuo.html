@@ -62,8 +62,7 @@
 				requestUrl("{:U('Qcode/tui')}",{compid:compid,gname:gname,start:start,end:end},function ( res ) {
 					alert(res.message);
 					if (res.flag=="success") {
-						//console.log(res.data);
-						history.go(-1);
+						window.location.href="{:U('Log/loglist')}";
 					}
 				});
 			}else{
