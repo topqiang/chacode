@@ -1,0 +1,75 @@
+<extend name="Public/header"/>
+<block name="main">
+<div class="fake-head pad732 fs40">
+	<span></span>
+	发货
+</div>
+<div class="fake-body bot1">
+
+	<div class="shop-body" style="padding-bottom:0px;padding-top:40px;">
+		<div class="shop-list fs40">
+			<div class="shop-item">
+				<span class="fr">></span>
+				<span class="colccc">选择经销商</span>
+				
+				<span ele="comp">
+					<if condition="empty($pname)">
+					无上级经销商
+					<else/>
+					{$pname}
+					</if>
+				</span>
+
+			</div>
+			<div class="shop-item">
+				<span class="fr">></span>
+				<span class="colccc">选择产品</span>
+				<span ele="goodsp">{$res['gname']}</span>
+			</div>
+		</div>
+	</div>
+	<div class="xq_title">
+		添加产品防伪码
+	</div>
+	<div class="shop-body myinput">
+		<div class="shop-list fs40" style="margin-bottom: 20px;">
+			<div class="shop-item iconz">
+				<span>开始值</span>
+				<input type="text" class="start" name="start" value="{$res['begin']}"/>
+			</div>
+		</div>
+		<div class="shop-list fs40" style="margin-bottom: 20px;">
+			<div class="shop-item iconz">
+				<span>结束值</span>
+				<input type="text" class="end" name="end" value="{$res['end']}"/>
+			</div>
+		</div>
+	</div>
+	<div class="xq-footer">
+        <div class="fake-submit postbtn" style="margin-top:20px;"><span class="">确认退货 </span></div>
+	</div>
+</div>
+</block>
+<block name="script">
+	<script>
+		$(".postbtn").on('click',function () {
+			var compid = "{$res['fromcid']}";
+			var gname = "{$res['gname']}";
+			var start = $(".start").val();
+			var end = $(".end").val();
+			var flag = compid && gname && /^\w{4}\d{6}$/.test(start) && /^\w{4}\d{6}$/.test(end);
+			if (flag) {
+				requestUrl("{:U('Qcode/tui')}",{compid:compid,gname:gname,start:start,end:end},function ( res ) {
+					alert(res.message);
+					if (res.flag=="success") {
+						//console.log(res.data);
+						history.go(-1);
+					}
+				});
+			}else{
+				alert("数据填写有误！");
+			}
+		});
+
+	</script>
+</block>

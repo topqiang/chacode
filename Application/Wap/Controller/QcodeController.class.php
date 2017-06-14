@@ -91,32 +91,49 @@ class QcodeController extends BaseController{
 		}
 	}
 
+	public function tuihuo(){
+		$id = $_GET['id'];
+		$res = $this -> log -> where("id=$id") -> find();
+		$this -> assign('pname',session('pname'));
+		$this -> assign("res",$res);
+		$this -> display();
+	}
+
 
 	public function tui(){
-		$id = $_POST['id'];
-		$res = $this -> log -> where("id=$id") -> find();
-		if ($res) {
-			$where['codenum'] = array(array('egt',$res['begin']),array('elt',$res['end']),'and');
-			$where['curcomid'] = session("shop_id");
-			$data['curcomid'] = $res['fromcid'];
-			$istrue = $this -> qcode -> where( $where ) -> save( $data );
-			if ($istrue) {
-				$logobj = array(
-					'id' => $id,
-					'status' => 1
-					);
-				$thdui = $this -> log -> save($logobj);
-				if ($thdui) {
-					apiResponse("success","退货成功！");
-				}else{
-					apiResponse("error","退货成功,记录失败！");
-				}
+		$start = strtoupper($_POST['start']);
+		$end = strtoupper($_POST['end']);
+		$where['codenum'] = array(array('egt',$start),array('elt',$end),'and');
+		$where['curcomid'] = session("shop_id");
+		$data['curcomid'] = $_POST['compid'];
+		$istrue = $this -> qcode -> where( $where ) -> save( $data );
+		// echo $this -> qcode -> getLastsql();
+		// exit();
+		$num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
+		if ($istrue) {
+			$logobj = array(
+				'fromcid' => $_POST['compid'],
+				'tocid' => session("shop_id"),
+				'begin' => $start,
+				'code' => substr($start,0,4),
+				'end' => $end, 
+				'status' => 1,
+				'num' => $num,
+				'time' => time(), 
+				'gname' => $gname
+			);
+
+			$thdui = $this -> log -> add($logobj);
+
+			if ($thdui) {
+				apiResponse("success","退货成功！");
 			}else{
-				apiResponse("error","退货失败！");
+				apiResponse("error","退货成功,记录失败！");
 			}
 		}else{
-			apiResponse("error","不存在！");
+			apiResponse("error","退货失败！");
 		}
+
 	}
 
 	public function fahuo(){

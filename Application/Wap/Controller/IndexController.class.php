@@ -30,7 +30,6 @@ class IndexController extends BaseController {
                 if (md5($password) == $obj['password']) {
                     session("shop_id",$obj['id']);
                     session("class",$obj['class']);
-
                     session("pname",$obj['pname']);
                     apiResponse('success','登录成功！');
                 }else{

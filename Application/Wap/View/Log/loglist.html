@@ -11,10 +11,10 @@
                         <span style="margin-right:20px;">上级经销商</span>
                         <span>{$pname}</span>
 
-                        <span class="fr tuihu" id="{$resobj['id']}" status="{$resobj['status']}">
+                        <span class="fr" id="{$resobj['id']}" status="{$resobj['status']}">
                             <if condition="$shop_id eq $resobj['tocid']">
                                 <if condition="$resobj['status'] eq 0">
-                                退货
+                                <span class="tuihu" id="{$resobj['id']}">退货</span>
                                 <else/>
                                 已退回
                                 </if>
@@ -54,6 +54,7 @@
 </block>
 <block name="script">
     <script>
+
         $(".tuihu").on('click',function () {
             if ($(this).attr("status")==1) {
                 console.log("不能单击");
@@ -61,12 +62,14 @@
             }
            if (confirm("确定要退货吗？")) {
                 var id = $(this).attr("id");
-                requestUrl("{:U('Qcode/tui')}",{id:id},function (res) {
-                    alert(res.message);
-                    if (res.flag=="success") {
-                        location.reload();
-                    }
-                })
+                var pname = "{$pname}";
+                window.location.href="{:U('Qcode/tuihuo')}/id/"+id+"/pname"+pname;
+                // requestUrl("{:U('Qcode/tui')}",{id:id},function (res) {
+                //     alert(res.message);
+                //     if (res.flag=="success") {
+                //         location.reload();
+                //     }
+                // })
            } 
         });
     </script>
