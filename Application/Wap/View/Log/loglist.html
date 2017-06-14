@@ -51,7 +51,14 @@
                         <div class="shop-item">
                             <div>
                                 <span>备注</span>
-                                <span class="">{$resobj.remark}</span>
+                                <span class="">
+                                    <if condition="empty($resobj['remark'])">
+                                        {$resobj.remark}
+                                        <else/>
+                                        无数据
+                                    </if>
+
+                                </span>
                             </div>
                         </div>
                         </if>
