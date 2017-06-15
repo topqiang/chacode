@@ -44,6 +44,7 @@ class LogController extends BaseController {
             $res = $this -> logcom -> where("(fromcid=$id or tocid =$id) and time >= $btime and time <= $etime") -> select();
             // exit();
             echo $this -> logcom -> getLastsql();
+            dump($res);
             //exit();
             if ( $res ) {
                 $this -> assign('reslist',$res);
