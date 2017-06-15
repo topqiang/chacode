@@ -46,6 +46,7 @@
 							<th width="">收货商家</th>
 							<th width="">批次</th>
 							<th>发货数量</th>
+							<th>备注</th>
 							<th width="">发货区间</th>
 							<th width="">状态</th>
 							<th width="">发货时间</th>
@@ -63,6 +64,7 @@
 								<td>{$vo.name}</td>
 								<td>{$vo.creatcode}</td>
 								<td>{$vo.num}</td>
+								<td>{$vo.remark}</td>
 								<td>{$vo.begin}-{$vo.end}</td>
 								<td>
 									<if condition="$vo['status'] eq 0">
@@ -71,7 +73,6 @@
 										已退回
 									</if>
 								</td>
-
 								<td>{$vo.time|date="Y-m-d H:m:i",###}</td>
 							</tr>
 						</volist>

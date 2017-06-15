@@ -46,9 +46,7 @@
                             <span>发货时间</span>
                             <span class="fr">{$resobj.time|date='Y-m-d H:m:i',###}</span>
                         </div>
-                        <if condition="$shop_id eq $resobj['tocid']">
-                            <if condition="$resobj['status'] eq 0">
-                        <div class="shop-item">
+                            <div class="shop-item">
                             <div>
                                 <span>备注</span>
                                 <span class="fr">
@@ -61,8 +59,6 @@
                                 </span>
                             </div>
                         </div>
-                        </if>
-                        </if>
                     </div>
                 </div>
             </volist>
