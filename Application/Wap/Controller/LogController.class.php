@@ -43,7 +43,7 @@ class LogController extends BaseController {
             $etime = strtotime($_POST['e_time']);
             echo $btime;
             echo $etime;
-            dump(($_POST);
+            dump($_POST);
             exit();
             $res = $this -> logcom -> where("(fromcid=$id or tocid =$id) and time >= $btime and time <= $etime") -> select();
             // exit();
