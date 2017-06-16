@@ -53,23 +53,6 @@
 </block>
 <block name="script">
 	<script type="text/javascript">
-		if (navigator.geolocation) {
-    		navigator.geolocation.getCurrentPosition(callback);
-    	}
-    	function callback( res ) {
-    		console.log(res);
-    	}
-
-    	$(".go-there").on('click',function () {
-    		var lat = "{$company['lat']}";
-    		var lnt = "{$company['lnt']}";
-    		if (lat && lnt) {
-    			sessionStorage.setItem("end",JSON.stringify({"lat":lat,"lnt":lnt}));
-    			window.location.href="{:U('Address/address')}";
-    		}else{
-    			alert("未找到地址！");
-    		}
-    	});
 
     	<if condition="!empty($company['wxcode'])">
 			var city = sessionStorage.getItem('ci');
