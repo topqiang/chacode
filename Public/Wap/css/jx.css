@@ -349,6 +349,9 @@ a{
     color: currentColor;
     position: relative;
 }
+.shop-item >div {
+    overflow: hidden;
+}
 .opainput{
 	position: absolute;
 	width: 100%;
@@ -362,7 +365,8 @@ a{
 	border-bottom:0;
 }
 .shop-item span{
-	font-size:35px;
+	font-size: 2rem;
+    float: left;
 }
 .shop-item1{
 	background-image:url("../img/v2.png");
@@ -551,7 +555,7 @@ a{
 	color: #A87B64;
 }
 .fr{
-	float: right;
+	float: right !important;
 }
 .txtrig{
 	text-align: right;
