@@ -9,7 +9,7 @@
                 <div class="shop-body" style="padding-bottom:0px;padding-top:40px;">
                     <div class="shop-item bgff0 colfff" style="padding: 30px 20px;">
                         <span style="margin-right:20px;">上级经销商</span>
-                        <span>{$pname}</span>
+                        <span style="width:60%;white-space:nowarp;overflow:hidden;font-size:1rem;">{$pname}</span>
 
                         <span class="fr" id="{$resobj['id']}" status="{$resobj['status']}">
                             <if condition="$shop_id eq $resobj['tocid']">
@@ -43,10 +43,21 @@
                             </div>
                         </div>
                         <div class="shop-item">
-                            <span>发货时间</span>
+                            <if condition="$resobj['status'] eq 0">
+                                <span>发货时间</span>
+                                <else/>
+                                <span>退货时间</span>
+                            </if>
                             <span class="fr">{$resobj.time|date='Y-m-d H:m:i',###}</span>
                         </div>
-                            <div class="shop-item">
+                        <div class="shop-item">
+                            <if condition="$resobj['status'] eq 0">
+                                <span>发货</span>
+                                <else/>
+                                <span>退货</span>
+                            </if>
+                        </div>
+                        <div class="shop-item">
                             <div>
                                 <span>备注</span>
                                 <span class="fr">

@@ -81,6 +81,10 @@
 				alert("数据填写有误！");
 			}
 		});
-
+		$("input").on('focus',function () {
+			$(".xq-footer").addClass('disn');
+		}).on('bluur',function () {
+			$(".xq-footer").removeClass('disn');
+		})
 	</script>
 </block>
