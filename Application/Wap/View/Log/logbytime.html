@@ -36,6 +36,14 @@
 								{$res.ctime}
 							</p>
 							<p>
+								<if condition="$res['status'] eq 0">
+	                                <span>发货时间</span>
+	                                <else/>
+	                                <span>退货时间</span>
+	                            </if>
+	                            <span class="fr">{$res.time|date='Y-m-d H:m:i',###}</span>
+							</p>
+							<p>
 								<span>经销商</span>
 								{$res.name}
 							</p>
