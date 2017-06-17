@@ -4,7 +4,7 @@ use Think\Controller;
 class CompanyController extends BaseController{
 	
 	public function _initialize(){
-		parent::_initialize();
+		//parent::_initialize();
 		$this -> goods = D('Goods');
 		$this -> company = M('Company');
 	}
