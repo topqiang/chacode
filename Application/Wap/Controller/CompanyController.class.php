@@ -14,7 +14,6 @@ class CompanyController extends BaseController{
 		$password = $_POST['password'];
 		$tel = $_POST['tel'];
 		$boss = $_POST['boss'];
-
 		if ($wxcode && $password && $tel) {
 			$pid = 0;
 			$pwxcode = "";
