@@ -53,8 +53,8 @@ class QcodeController extends BaseController{
 		$gname = $_POST['gname'];
 		$start = strtoupper($_POST['start']);
 		$end = strtoupper($_POST['end']);
-		$ishas1 = $this -> qcode -> where( "codenum = $start" ) -> find();
-		$ishas2 = $this -> qcode -> where( "codenum = $end" ) -> find();
+		$ishas1 = $this -> qcode -> where( "codenum = $start and curcomid=$compid" ) -> find();
+		$ishas2 = $this -> qcode -> where( "codenum = $end and curcomid=$compid" ) -> find();
 		if (!$ishas1 || !$ishas2) {
 			apiResponse("error","区间有误！");
 		}
