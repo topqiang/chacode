@@ -108,8 +108,9 @@ class QcodeController extends BaseController{
 		$where['curcomid'] = session("shop_id");
 		$data['curcomid'] = $_POST['compid'];
 		$istrue = $this -> qcode -> where( $where ) -> save( $data );
-		$num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
+		//$num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
 		if ($istrue) {
+			$num = $istrue;
 			$logobj = array(
 				'fromcid' => $_POST['compid'],
 				'tocid' => session("shop_id"),
