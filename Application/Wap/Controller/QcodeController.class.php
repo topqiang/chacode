@@ -110,8 +110,10 @@ class QcodeController extends BaseController{
 	public function tui(){
 		$start = strtoupper($_POST['start']);
 		$end = strtoupper($_POST['end']);
-		$ishas1 = $this -> qcode -> where( "codenum = $start" ) -> find();
-		$ishas2 = $this -> qcode -> where( "codenum = $end" ) -> find();
+		$fromcid = session("shop_id");
+		
+		$ishas1 = $this -> qcode -> where( "codenum = $start and curcomid=$fromcid" ) -> find();
+		$ishas2 = $this -> qcode -> where( "codenum = $end and curcomid=$fromcid" ) -> find();
 		if (!$ishas1 || !$ishas2) {
 			apiResponse("error","区间有误！");
 		}
