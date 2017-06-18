@@ -53,11 +53,12 @@ class IndexController extends BaseController {
         $thirty = time()-30*24*60*60;
         $time = date('Y/m/d');
         $where['pid'] = $com_id;
-        $where['status'] = 0;
+        $where['status'] = array('neq' , 9);
         $where['b_time'] = array('lt' , $time);
         $where['e_time'] = array('gt' , $time);
         $cnum = $this -> company -> where($where) -> count('id');
         $w['fromcid'] = $com_id;
+        $w['status'] = 0;
         $w['time'] = array('gt',$serday);
         $snum = $log -> where($w) -> sum('num');
         $w['time'] = array('gt',$thirty);
