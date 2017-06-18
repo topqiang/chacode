@@ -121,7 +121,6 @@ class QcodeController extends AdminBasicController{
             $page->parameter[$key]   =   $val;
         }
         $res=$logcom -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
-        
         $this->assign('list',$res);
         $this->assign('page',$page->show());
 
