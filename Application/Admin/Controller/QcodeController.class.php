@@ -116,7 +116,7 @@ class QcodeController extends AdminBasicController{
             $map['time'] = $where['time'];
         }
         $count = $logcom -> where( $where ) -> count();
-        $page = new \Think\Page($count,15);
+        $page = new \Think\Page($count,100);
         foreach($map as $key=>$val) {
             $page->parameter[$key]   =   $val;
         }
