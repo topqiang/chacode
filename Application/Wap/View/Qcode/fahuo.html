@@ -74,7 +74,7 @@
 					alert(res.message);
 					if (res.flag=="success") {
 						//console.log(res.data);
-						history.go(-1);
+						window.location.href ="{:U('Index/main')}";
 					}
 				});
 			}else{
