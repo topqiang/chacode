@@ -53,6 +53,11 @@ class QcodeController extends BaseController{
 		$gname = $_POST['gname'];
 		$start = strtoupper($_POST['start']);
 		$end = strtoupper($_POST['end']);
+		$ishas1 = $this -> qcode -> where( "codenum = $start" ) -> find();
+		$ishas2 = $this -> qcode -> where( "codenum = $end" ) -> find();
+		if (!$ishas1 || !$ishas2) {
+			apiResponse("error","区间有误！");
+		}
 		if (substr($start,0,4) == substr($end,0,4)) {
 			$whe['codenum'] = array(array('egt',$start),array('elt',$end),'and');
 			$whe['name'] = $gname;
@@ -104,9 +109,15 @@ class QcodeController extends BaseController{
 	public function tui(){
 		$start = strtoupper($_POST['start']);
 		$end = strtoupper($_POST['end']);
+		$ishas1 = $this -> qcode -> where( "codenum = $start" ) -> find();
+		$ishas2 = $this -> qcode -> where( "codenum = $end" ) -> find();
+		if (!$ishas1 || !$ishas2) {
+			apiResponse("error","区间有误！");
+		}
 		$where['codenum'] = array(array('egt',$start),array('elt',$end),'and');
 		$where['curcomid'] = session("shop_id");
 		$data['curcomid'] = $_POST['compid'];
+
 		$istrue = $this -> qcode -> where( $where ) -> save( $data );
 		//$num = intval(substr($end,4,6)) - intval(substr($start,4,6))+1;
 		if ($istrue) {
