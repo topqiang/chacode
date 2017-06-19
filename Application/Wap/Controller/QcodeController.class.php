@@ -126,8 +126,8 @@ class QcodeController extends BaseController{
 		if ($istrue) {
 			$num = $istrue;
 			$logobj = array(
-				'fromcid' => $_POST['compid'],
-				'tocid' => session("shop_id"),
+				'fromcid' => session("shop_id"),
+				'tocid' => $_POST['compid'],
 				'begin' => $start,
 				'code' => substr($start,0,4),
 				'end' => $end, 
