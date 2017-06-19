@@ -54,10 +54,8 @@ class QcodeController extends BaseController{
 		$start = strtoupper($_POST['start']);
 		$end = strtoupper($_POST['end']);
 		$fromcid = session("shop_id");
-		$ishas1 = $this -> qcode -> where( "codenum = $start and curcomid=$fromcid" ) -> find();
-		$ishas2 = $this -> qcode -> where( "codenum = $end and curcomid=$fromcid" ) -> find();
-		echo $this -> qcode -> getLastsql();
-		exit();
+		$ishas1 = $this -> qcode -> where( "codenum ='$start' and curcomid='$fromcid'" ) -> find();
+		$ishas2 = $this -> qcode -> where( "codenum ='$end' and curcomid='$fromcid'") -> find();
 		if (!$ishas1 || !$ishas2) {
 			apiResponse("error","区间有误！");
 		}
@@ -114,11 +112,8 @@ class QcodeController extends BaseController{
 		$end = strtoupper($_POST['end']);
 		$fromcid = session("shop_id");
 
-		$ishas1 = $this -> qcode -> where( "codenum = $start and curcomid=$fromcid" ) -> find();
-		$ishas2 = $this -> qcode -> where( "codenum = $end and curcomid=$fromcid" ) -> find();
-		echo $this -> qcode -> getLastsql();
-		exit();
-
+		$ishas1 = $this -> qcode -> where( "codenum='$start' and curcomid='$fromcid'" ) -> find();
+		$ishas2 = $this -> qcode -> where( "codenum='$end' and curcomid='$fromcid'" ) -> find();
 		if (!$ishas1 || !$ishas2) {
 			apiResponse("error","区间有误！");
 		}
