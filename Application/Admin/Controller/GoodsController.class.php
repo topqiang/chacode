@@ -20,9 +20,8 @@ class GoodsController extends Controller{
 		$b_time = strtotime($_REQUEST['b_time']);
         $e_time = strtotime($_REQUEST['e_time']);
         if(!empty($b_time) && !empty($e_time)){
-            $where['ctime']=array(array('egt',date('Y/m/d',$b_time)),array('elt',date('Y/m/d',$e_time)),'and');
+            $where['ctime']=array(array('egt',date('Y/m/d',$b_time)),array('elt',date('Y/m/d',$e_time+24*60*60)),'and');
         }
-
 		$where['status'] = array('neq' , '9');
 		$count = $this -> goods -> where($where) -> count();
 		$page = new \Think\Page($count,100);

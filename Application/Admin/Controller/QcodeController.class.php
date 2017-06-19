@@ -112,7 +112,7 @@ class QcodeController extends AdminBasicController{
         $b_time = strtotime($_REQUEST['b_time']);
         $e_time = strtotime($_REQUEST['e_time']);
         if(!empty($b_time) && !empty($e_time)){
-            $where['time']=array(array('egt',$b_time),array('elt',$e_time),'and');
+            $where['time']=array(array('egt',$b_time),array('elt',$e_time+24*60*60),'and');
             $map['time'] = $where['time'];
         }
         $count = $logcom -> where( $where ) -> count();
@@ -120,7 +120,7 @@ class QcodeController extends AdminBasicController{
         foreach($map as $key=>$val) {
             $page->parameter[$key]   =   $val;
         }
-        $res=$logcom -> where($where) -> limit($page->firstRow,$page->listRows) -> select();
+        $res=$logcom -> where($where) -> limit($page->firstRow,$page->listRows) -> order('time desc') -> select();
         $this->assign('list',$res);
         $this->assign('page',$page->show());
 
