@@ -106,7 +106,7 @@ class QcodeController extends AdminBasicController{
         $logcom = M('Logcom');
         $where['status'] = array('neq' , '9');
         if(!empty($_REQUEST['gname'])){
-            $where['gname']=array('like','%'.$_REQUEST['gname'].'%');
+            $where['name']=array('like','%'.$_REQUEST['gname'].'%');
             $map['gname'] = $_REQUEST['gname'];
         }
         $b_time = strtotime($_REQUEST['b_time']);
