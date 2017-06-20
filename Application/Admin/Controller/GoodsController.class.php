@@ -103,6 +103,42 @@ class GoodsController extends Controller{
         return createQRcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix);
 	}
 
+// 回复二维码
+	public function crecode(){
+		$p = $_GET['p'];
+		$where['status'] = array('neq',9);
+		$res = $this -> qcode -> where( $where ) -> field('id,codenum,code_pic') -> order('ctime desc') -> limit(($p-1)*2000,2000) -> select();
+		if (empty($res)) {
+			echo "数据为空！";
+			exit();
+		}
+		$istrue = true;
+		foreach ($res as $key => $value) {
+			$code = $value['codenum'];
+			$path = $value['code_pic'];
+			$filename = strstr($path,$code);
+			$save_path = substr($path,1,strlen($path)-1);
+			echo $filename;
+			echo "<br>";
+			echo str_replace($filename,"",$save_path);
+
+			$save_path = str_replace($filename,"",$save_path);  //图片存储的绝对路径
+  		      $qr_data = "http://".$_SERVER['HTTP_HOST'].U('Home/Qcode/findcode',array('code_name'=>$code));
+  		      $qr_level ='L';
+  		      $qr_size = '4';
+  		      $save_prefix = $code;
+			$istrue = Qcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix,$filename);
+			if ( !$istrue ) {
+				break;
+			}
+		}
+		if ($istrue) {
+			echo "正确！";
+		}else{
+			echo "错误！";
+		}
+	}
+
 	public function qrcode(){
 		set_time_limit(0);
 		$id = $_POST['id'];
