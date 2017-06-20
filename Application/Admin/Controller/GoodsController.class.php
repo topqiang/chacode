@@ -107,9 +107,12 @@ class GoodsController extends Controller{
 	public function crecode(){
 		$p = $_GET['p'];
 		$where['status'] = array('neq',9);
-		$res = $this -> qcode -> where( $where ) -> field('id,codenum,code_pic') -> order('ctime desc') -> limit(($p-1)*2000,2000) -> select();
+		$res = $this -> qcode -> where( $where ) -> field('id,codenum,code_pic') -> order('ctime asc') -> limit(($p-1)*2000,2000) -> select();
 		if (empty($res)) {
 			echo "数据为空！";
+			exit();
+		}else{
+			dump($res);
 			exit();
 		}
 		$istrue = true;
