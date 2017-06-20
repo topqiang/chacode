@@ -111,9 +111,6 @@ class GoodsController extends Controller{
 		if (empty($res)) {
 			echo "数据为空！";
 			exit();
-		}else{
-			dump($res);
-			exit();
 		}
 		$istrue = true;
 		foreach ($res as $key => $value) {
@@ -131,7 +128,7 @@ class GoodsController extends Controller{
   		      $qr_size = '4';
   		      $save_prefix = $code;
 			$istrue = Qcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix,$filename);
-			if ( !$istrue ) {
+			if ( empty($istrue) ) {
 				break;
 			}
 		}
