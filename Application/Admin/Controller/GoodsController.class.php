@@ -113,6 +113,7 @@ class GoodsController extends Controller{
 			exit();
 		}
 		$istrue = true;
+		header("Content-type: text/html; charset=utf-8");
 		foreach ($res as $key => $value) {
 			$code = $value['codenum'];
 			$path = $value['code_pic'];
