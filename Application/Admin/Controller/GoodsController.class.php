@@ -119,6 +119,7 @@ class GoodsController extends Controller{
 			$path = $value['code_pic'];
 			$filename = strstr($path,$code);
 			$save_path = substr($path,1,strlen($path)-1);
+			echo "<br>";
 			echo $filename;
 			echo "<br>";
 			echo str_replace($filename,"",$save_path);
@@ -131,6 +132,8 @@ class GoodsController extends Controller{
 			$istrue = Qcode($save_path,$qr_data,$qr_level,$qr_size,$save_prefix,$filename);
 			if ( empty($istrue) ) {
 				break;
+			}else{
+				echo "正确！";
 			}
 		}
 		if ($istrue) {
