@@ -105,13 +105,16 @@ class CompanyController extends BaseController{
 
 	public function wxcomlist(){
 		$provance = $_GET['provance'];
+		$city = $_GET['city'];
+		$area = $_GET['area'];
+
 		if (!empty($provance)) {
 			$ratem = M('Company');
 			$time = date('Y/m/d');
         	$where['b_time'] = array('lt' , $time);
         	$where['e_time'] = array('gt' , $time);
         	$where['status'] = array('neq' , 9);
-	        $where['provance'] = array('like' , "%$provance%");
+	        $where['provance'] = array(array('like' , "%$provance%"),array('like' , "%$city%"),array('like' , "%$area%"),'or');
 			$rates = $ratem -> where( $where ) -> select();
 			foreach ($rates as $index => $obj) {
 				$whe['id'] = array( 'in' , $obj['paygoods'] );
