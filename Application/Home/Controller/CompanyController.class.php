@@ -78,10 +78,9 @@ class CompanyController extends BaseController{
 			$cprates = array();
 			foreach ($rates as $index => $obj) {
 				$flag = false;
-				$whe['id'] = array('in' , $obj['paygoods']);
+				$whe['id'] = array( 'in' , $obj['paygoods'] );
 				$res = $this -> goods -> where($whe) -> select();
 				$str = "";
-
 				foreach ($res as $key => $value) {
 					if ($key != 0) {
 						$str .=",";
@@ -123,5 +122,14 @@ class CompanyController extends BaseController{
 		}else{
 			apiResponse("error","查询失败！");
 		}
+	}
+
+
+	public function lngLatCity(){
+		$url = "http://zxty.91fluid.com/index.php/Api/Shop/lngLatCity";
+		$data['lnt'] = $_POST['lnt'];
+		$data['lat'] = $_POST['lat'];
+		$res = $this -> curl ($data,$url);
+		echo $res;
 	}
 }
