@@ -103,6 +103,37 @@ class CompanyController extends BaseController{
 		}
 	}
 
+	public function wxcomlist(){
+		$provance = $_GET['provance'];
+		if (!empty($provance)) {
+			$ratem = M('Company');
+			$time = date('Y/m/d');
+        	$where['b_time'] = array('lt' , $time);
+        	$where['e_time'] = array('gt' , $time);
+        	$where['status'] = array('neq' , 9);
+	        $where['provance'] = array('like' , "%$provance%");
+			$rates = $ratem -> where( $where ) -> select();
+			foreach ($rates as $index => $obj) {
+				$whe['id'] = array( 'in' , $obj['paygoods'] );
+				$res = $this -> goods -> where($whe) -> select();
+				$str = "";
+				foreach ($res as $key => $value) {
+					if ($key != 0) {
+						$str .=",";
+					}
+					$str .= $value['name'];
+					
+				}
+				$rates[ $index ]['paygoods'] = $str;
+			}
+			if ($rates) {
+				apiResponse("success","查询成功！",$rates);
+			}else{
+				apiResponse("error","查询失败！");
+			}
+		}
+	}
+
 	public function wxcompany(){
 		$id = $_GET['id'];
 		$ratem = M('Company');
