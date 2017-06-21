@@ -107,7 +107,9 @@ class CompanyController extends BaseController{
 		$provance = $_GET['provance'];
 		$city = $_GET['city'];
 		$area = $_GET['area'];
-
+		str_replace("市","",$provance);
+		str_replace("市","",$city);
+		str_replace("市","",$area);
 		if (!empty($provance)) {
 			$ratem = M('Company');
 			$time = date('Y/m/d');
@@ -132,7 +134,7 @@ class CompanyController extends BaseController{
 			if ($rates) {
 				apiResponse("success","查询成功！",$rates);
 			}else{
-				apiResponse("error","查询失败！");
+				apiResponse("error","查询失败！",$ratem->getLastsql());
 			}
 		}
 	}
