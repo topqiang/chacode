@@ -107,9 +107,9 @@ class CompanyController extends BaseController{
 		$provance = $_GET['provance'];
 		$city = $_GET['city'];
 		$area = $_GET['area'];
-		str_replace("市","",$provance);
-		str_replace("市","",$city);
-		str_replace("市","",$area);
+		$provance = str_replace("市","",$provance);
+		$city = str_replace("市","",$city);
+		$area = str_replace("市","",$area);
 		if (!empty($provance)) {
 			$ratem = M('Company');
 			$time = date('Y/m/d');
