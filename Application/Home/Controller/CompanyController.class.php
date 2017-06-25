@@ -86,7 +86,7 @@ class CompanyController extends BaseController{
 						$str .=",";
 					}
 					$str .= $value['name'];
-					if ( $gsname == $value['name']) {
+					if ( $gsname == $value['name'] ) {
 						$flag = true;
 					}
 				}
@@ -118,7 +118,9 @@ class CompanyController extends BaseController{
         	$where['status'] = array('neq' , 9);
 	        $where['provance'] = array(array('like' , "%$provance%"),array('like' , "%$city%"),array('like' , "%$area%"),'or');
 			$rates = $ratem -> where( $where ) -> select();
+			$cprates = array();
 			foreach ($rates as $index => $obj) {
+				$flag = false;
 				$whe['id'] = array( 'in' , $obj['paygoods'] );
 				$res = $this -> goods -> where($whe) -> select();
 				$str = "";
@@ -127,12 +129,17 @@ class CompanyController extends BaseController{
 						$str .=",";
 					}
 					$str .= $value['name'];
-					
+					if ( strstr($value['name'],$gsname) ) {
+						$flag = true;
+					}
 				}
 				$rates[ $index ]['paygoods'] = $str;
+				if ($flag) {
+					array_push($cprates,$rates[ $index ]);
+				}
 			}
-			if ($rates) {
-				apiResponse("success","查询成功！",$rates);
+			if ($cprates) {
+				apiResponse("success","查询成功！",$cprates);
 			}else{
 				apiResponse("error","查询无数据！",$ratem->getLastsql());
 			}
