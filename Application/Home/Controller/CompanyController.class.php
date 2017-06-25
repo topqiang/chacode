@@ -134,7 +134,7 @@ class CompanyController extends BaseController{
 			if ($rates) {
 				apiResponse("success","查询成功！",$rates);
 			}else{
-				apiResponse("error","查询失败！",$ratem->getLastsql());
+				apiResponse("error","查询无数据！",$ratem->getLastsql());
 			}
 		}
 	}
