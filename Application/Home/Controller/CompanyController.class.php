@@ -107,6 +107,7 @@ class CompanyController extends BaseController{
 		$provance = $_GET['provance'];
 		$city = $_GET['city'];
 		$area = $_GET['area'];
+		$gsname = $_GET['gsname'];
 		$provance = str_replace("市","",$provance);
 		$city = str_replace("市","",$city);
 		$area = str_replace("市","",$area);
