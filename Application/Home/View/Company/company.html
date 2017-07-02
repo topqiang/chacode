@@ -27,12 +27,12 @@
 						<div style="display: inline-block;width: 580px;color:#777;">{$company.b_time}--{$company.e_time}</div>
 					</div>
 					<if condition="!empty($company['wxcode'])">
-					<div class="disn">
+					<!--<div class="disn">
 						<span style="float:left;">联系电话</span>
 						<div style="display: inline-block;width: 580px;">{$company.wxcode}</div>
 					</div>
 					</if>
-					<!--<p>
+					<p>
 						<span>电子邮件</span>
 						{$company.email}
 					</p>
@@ -69,7 +69,6 @@
     	function callback( res ) {
     		console.log(res);
     	}
-
     	$(".go-there").on('click',function () {
     		var lat = "{$company['lat']}";
     		var lnt = "{$company['lnt']}";
@@ -80,7 +79,6 @@
     			alert("未找到地址！");
     		}
     	});
-
     	<if condition="!empty($company['wxcode'])">
 			var city = sessionStorage.getItem('ci');
 			var pro = "{$company.provance}";

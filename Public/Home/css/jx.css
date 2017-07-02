@@ -400,8 +400,8 @@ html{
 	color:#fff;
 	background:url("../img/bar.png")0 0 no-repeat;
 	background-size:100% 100%;
-	width:94%;
-	margin:0 3%;
+	width: 40%;
+    margin: 0 auto;
 	height:100px;
 	line-height:100px;
 	text-align:center;
