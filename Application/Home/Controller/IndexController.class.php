@@ -37,7 +37,9 @@ class IndexController extends BaseController {
         $where['status'] = array('neq' , 9);
         $gsid = $_GET['gsid'];
         $compan = M('Company');
-        $where['paygoods'] = array('like',"%$gsid%");
+        if ( $gsid ) {
+            $where['paygoods'] = array('like',"%$gsid%");
+        }
         $city = $compan -> distinct(true) -> field('provance') -> where($where) -> select();
         if ($city) {
             apiResponse('success','查询成功！',$city);
